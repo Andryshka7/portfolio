@@ -1,0 +1,14 @@
+---
+import { backend, frontend } from 'content'
+import { SkillList } from './components'
+---
+
+<div id='skills' class='my-20 sm:my-36'>
+    <h1 class='text-center text-5xl font-bold text-zinc-700 dark:text-teal-400 sm:text-6xl'>
+        Skills
+    </h1>
+    <div class='m-auto mt-14 flex w-fit flex-wrap gap-x-24 gap-y-12 sm:mt-20'>
+        <SkillList title='Frontend' skills={frontend} />
+        <SkillList title='Backend' skills={backend} />
+    </div>
+</div>

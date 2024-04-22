@@ -1,0 +1,52 @@
+{
+    "navbar": {
+        "title": "Portfolio",
+        "navigators": {
+            "about": "About",
+            "skills": "Skills",
+            "experience": "Experience",
+            "contact": "Contact"
+        }
+    },
+    "about": {
+        "greeting": "Hi, i am Andrey Lapchik",
+        "description": "17-year-old computer science student from Latvia specializing in full-stack development, and passionate about creating efficient web applications.",
+        "speciality": "Full-stack web developer"
+    },
+    "experience": {
+        "title": "Experience",
+        "description": "Since 2021, I've gained programming experience through olympiads, projects, freelancing, and coding challenges. These experiences improved my problem-solving skills and expanded my tech knowledge. I am ready to make an effective contribution to the future of programming.",
+        "warning": "* hosted on free platforms, so loading may take some time :)",
+        "buttons": {
+            "source": "Source",
+            "preview": "Preview"
+        }
+    },
+    "skills": {
+        "title": "Development skills",
+        "skillLevels": {
+            "1": "Beginner",
+            "2": "Intermediate",
+            "3": "Experienced"
+        }
+    },
+    "contact": {
+        "title": "Contact me",
+        "placeHolders": {
+            "email": "Your email",
+            "name": "Your name",
+            "message": "Your message"
+        },
+        "alert": {
+            "messageSent": {
+                "name": "Message sent!",
+                "text": "Your message has been sent"
+            },
+            "messageError": {
+                "name": "Error!",
+                "text": "Failed to send message"
+            }
+        },
+        "button": "Send"
+    }
+}

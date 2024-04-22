@@ -1,0 +1,37 @@
+---
+interface Props {
+    title: string
+}
+
+const { title } = Astro.props
+---
+
+<html lang={Astro.currentLocale}>
+    <head>
+        <meta charset='UTF-8' />
+        <link rel='icon' href='/favicon.png' />
+        <title>{title}</title>
+        <script is:inline>
+            const theme = localStorage.getItem('theme')
+            document.querySelector('html').classList.toggle('dark', theme !== 'light')
+        </script>
+    </head>
+
+    <body class='min-h-screen bg-slate-100 px-5 dark:bg-[#0f1829]'>
+        <slot />
+    </body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const anchors = document.querySelectorAll('a[href^="#"]')
+            anchors.forEach((anchor) => {
+                anchor.addEventListener('click', (event) => {
+                    event.preventDefault()
+                    const target = anchor?.getAttribute('href')?.substring(1)!
+                    const element = document.getElementById(target)!
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                })
+            })
+        })
+    </script>
+</html>

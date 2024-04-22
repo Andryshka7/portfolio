@@ -1,0 +1,52 @@
+{
+    "navbar": {
+        "title": "Portfolio",
+        "navigators": {
+            "about": "Par mani",
+            "skills": "Prasmes",
+            "experience": "Pieredze",
+            "contact": "Sazināties"
+        }
+    },
+    "about": {
+        "greeting": "Sveiki, esmu Andrejs Lapčiks",
+        "description": "17 gadus vecs datorzinātnes students no Latvijas, specializējos web izstrādē un aizraujos ar efektīvu tīmekļa lietojumprogrammu izveidi.",
+        "speciality": "Full-stack web izstrādātājs"
+    },
+    "experience": {
+        "title": "Pieredze",
+        "description": "Kopš 2021. gada esmu guvis programmēšanas pieredzi olimpiādēs, projektos, freelancē  un kodēšanas izaicinājumos. Šī pieredze uzlaboja manas problēmu risināšanas prasmes un paplašināja manas zināšanas par tehnoloģijām. Esmu gatavs sniegt efektīvu ieguldījumu programmēšanas nākotnē.",
+        "warning": "* izvietoti bezmaksas platformās, tāpēc ielāde var aizņemt kādu laiku :)",
+        "buttons": {
+            "source": "Kods",
+            "preview": "Vietne"
+        }
+    },
+    "skills": {
+        "title": "Izstrādes prasmes",
+        "skillLevels": {
+            "1": "Iesācejs",
+            "2": "Augsts",
+            "3": "Pieredzējis"
+        }
+    },
+    "contact": {
+        "title": "Sazināties ar mani",
+        "placeHolders": {
+            "email": "Jūsu e-pasts",
+            "name": "Jūsu vārds",
+            "message": "Jūsu ziņa"
+        },
+        "alert": {
+            "messageSent": {
+                "name": "Nosūtīts!",
+                "text": "Jūsu ziņa ir nosūtīta"
+            },
+            "messageError": {
+                "name": "Kļūda!",
+                "text": "Neizdevās nosūtīt ziņojumu"
+            }
+        },
+        "button": "Nosūtīt"
+    }
+}

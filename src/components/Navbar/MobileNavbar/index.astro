@@ -1,0 +1,70 @@
+---
+import { HiMenu } from 'react-icons/hi'
+import { IoIosCloseCircleOutline } from 'react-icons/io'
+import { ThemeSelector, LanguageSelector } from '../shared'
+---
+
+<nav class='flex w-full items-center justify-between px-5 py-8 lg:hidden'>
+    <h1 class='-mt-1.5 text-4xl font-bold text-zinc-800 dark:text-white'>Portfolio</h1>
+    <HiMenu size={35} className='dark:text-white' id='open-navbar' />
+
+    <div
+        class='fixed left-0 z-10 top-0 h-full w-full bg-zinc-200 duration-200 dark:bg-slate-800 -translate-y-full'
+        id='navbar'
+    >
+        <div class='flex flex-col items-center h-full w-full px-10'>
+            <div class='mx-8 my-10 flex w-full items-center justify-between'>
+                <ThemeSelector />
+                <LanguageSelector />
+            </div>
+            <div class='my-10 flex h-full flex-col justify-between items-center'>
+                <a
+                    class='close-navbar text-xl font-semibold text-zinc-700 dark:text-white'
+                    href='#about'
+                >
+                    About
+                </a>
+                <a
+                    class='close-navbar text-xl font-semibold text-zinc-700 dark:text-white'
+                    href='#skills'
+                >
+                    Skills
+                </a>
+                <a
+                    class='close-navbar text-xl font-semibold text-zinc-700 dark:text-white'
+                    href='#experience'
+                >
+                    Experience
+                </a>
+                <a
+                    class='close-navbar text-xl font-semibold text-zinc-700 dark:text-white'
+                    href='#contact'
+                >
+                    Contact
+                </a>
+            </div>
+            <IoIosCloseCircleOutline
+                className='close-navbar my-10 text-zinc-800 transition duration-200 hover:scale-105 dark:text-white'
+                size={100}
+            />
+        </div>
+    </div>
+</nav>
+<script>
+    const navbar = document.getElementById('navbar')!
+
+    const openNavbarButton = document.getElementById('open-navbar')!
+    const closeNavbarButtons = document.querySelectorAll('.close-navbar')!
+
+    openNavbarButton.addEventListener('click', () => {
+        document.documentElement.classList.toggle('overflow-hidden')
+        navbar.classList.toggle('-translate-y-full')
+    })
+
+    closeNavbarButtons.forEach((element) => {
+        element.addEventListener('click', () => {
+            document.documentElement.classList.toggle('overflow-hidden')
+            navbar.classList.toggle('-translate-y-full')
+        })
+    })
+</script>

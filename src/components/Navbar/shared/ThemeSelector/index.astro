@@ -1,0 +1,22 @@
+---
+import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
+---
+
+<div
+    class='relative flex w-16 cursor-pointer items-center justify-between rounded-full bg-zinc-500 px-2.5 py-1.5 dark:bg-[#2A2A67]'
+    id='theme-toggler'
+>
+    <div
+        class='absolute right-9 h-5 w-5 rounded-full bg-white transition-all duration-200 dark:right-2'
+    >
+    </div>
+    <BsFillSunFill color='white' size={18} />
+    <BsFillMoonStarsFill color='white' size={16} />
+</div>
+<script>
+    document.getElementById('theme-toggler')?.addEventListener('click', () => {
+        const theme = localStorage.getItem('theme')
+        localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light')
+        document.documentElement.classList.toggle('dark')
+    })
+</script>
