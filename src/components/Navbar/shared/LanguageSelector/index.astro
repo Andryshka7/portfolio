@@ -1,23 +1,26 @@
 ---
-import { BiSolidDownArrow } from 'react-icons/bi'
-import { MdLanguage } from 'react-icons/md'
+import type { Locale } from 'types'
 
 const options = [
-    { flag: './gb.svg', locale: 'en', language: 'English' },
-    { flag: './ru.svg', locale: 'ru', language: 'Русский' },
-    { flag: './lv.svg', locale: 'lv', language: 'Latviešu' }
+    { flag: './gb.svg', href: './', language: 'English' },
+    { flag: './ru.svg', href: './ru', language: 'Русский' },
+    { flag: './lv.svg', href: './lv', language: 'Latviešu' }
 ]
+
+const locale = Astro.currentLocale as Locale
 ---
 
 <div id='language-selector'>
     <div class='flex cursor-pointer items-center gap-1'>
-        <MdLanguage className='text-zinc-800 dark:text-white' size={30} />
-        <h2 class='w-5 text-base font-semibold dark:text-white'>En</h2>
-        <BiSolidDownArrow
-            className={`transition-transform duration-200 dark:text-white`}
-            id='language-arrow'
-            size={12}
-        />
+        <i data-lucide='earth' class='h-7 w-7 text-zinc-800 dark:text-white'></i>
+
+        <h2 class='w-5 text-base font-semibold dark:text-white'>
+            {locale.toUpperCase()}
+        </h2>
+        <i
+            data-lucide='chevron-down'
+            class='h-5 w-5 -ml-0.5 transition-transform dark:text-white'
+            id='language-arrow'></i>
     </div>
 
     <div
@@ -25,10 +28,10 @@ const options = [
         id='options'
     >
         {
-            options.map(({ locale, flag, language }) => (
+            options.map(({ flag, language, href }) => (
                 <a
-                    href={`/`}
-                    class='my-1 flex cursor-pointer items-center gap-3 px-10 transition duration-200 hover:bg-zinc-400 hover:bg-opacity-80 dark:hover:bg-[#05CEC2]'
+                    href={href}
+                    class='my-1 flex cursor-pointer items-center gap-3 px-10 transition hover:bg-zinc-400 hover:bg-opacity-80 dark:hover:bg-[#05CEC2]'
                 >
                     <img src={flag} class='w-6 rounded-[3px] aspect-auto' />
                     <h2 class='text-lg font-semibold text-zinc-800 dark:text-white'>{language}</h2>

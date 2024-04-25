@@ -1,0 +1,3 @@
+*:not(img):not(svg) {
+    transition: 200ms;
+}

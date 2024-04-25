@@ -14,10 +14,17 @@ const getLocaleFromUrl = (url: string) => {
 }
 
 const useTranslations = (language: keyof typeof translations) => (key: string) => {
-    console.log(key)
-    console.log(translations[defaultLocale]['navbar.title'])
+    const keys = key.split('.')
 
-    return translations[language][key] || translations[defaultLocale][key]
+    let value = translations[language][keys[0]] || translations[defaultLocale][keys[0]]
+
+    for (const key of keys) {
+        if (value[key]) {
+            value = value[key]
+        }
+    }
+
+    return value
 }
 
 export { getLocaleFromUrl, useTranslations }
