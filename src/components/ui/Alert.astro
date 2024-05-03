@@ -1,0 +1,27 @@
+---
+import Icon from 'components/ui/Icon.astro'
+---
+
+<div
+    class='fixed bottom-10 right-20 overflow-hidden rounded-xl bg-gray-200 transition dark:bg-[#172642] translate-x-10 opacity-0'
+    id='alert'
+>
+    <div class='absolute h-full w-1/2' id='alert-background'></div>
+
+    <div class='flex items-center gap-7 px-10 py-3'>
+        <div id='alert-icons'>
+            <Icon
+                name='Checkmark'
+                height='30'
+                width='30'
+                class='text-green-600 dark:text-green-500'
+            />
+            <Icon name='Error' height='30' width='30' class='text-red-500' />
+        </div>
+
+        <div>
+            <p class='font-semibold' id='alert-name'></p>
+            <p class='text-zinc-500 dark:text-slate-400' id='alert-text'></p>
+        </div>
+    </div>
+</div>

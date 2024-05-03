@@ -1,11 +1,17 @@
 ---
+import { useTranslations } from 'i18n'
+import type { Locale } from 'types'
 import { backend, frontend } from 'content'
-import { SkillList } from './components'
+
+import SkillList from './components/SkillList.astro'
+
+const locale = Astro.currentLocale as Locale
+const t = useTranslations(locale)
 ---
 
 <div id='skills' class='my-20 sm:my-36'>
     <h1 class='text-center text-5xl font-bold text-zinc-700 dark:text-teal-400 sm:text-6xl'>
-        Skills
+        {t('skills.title')}
     </h1>
     <div class='m-auto mt-14 flex w-fit flex-wrap gap-x-24 gap-y-12 sm:mt-20'>
         <SkillList title='Frontend' skills={frontend} />

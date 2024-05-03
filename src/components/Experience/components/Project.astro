@@ -1,0 +1,44 @@
+---
+import { useTranslations } from 'i18n'
+import type { Locale } from 'types'
+
+interface Props {
+    description: string
+    image: {
+        source: string
+        style: string
+    }
+    source: string
+    preview: string
+}
+
+const { description, image, source, preview } = Astro.props
+
+const locale = Astro.currentLocale as Locale
+const t = useTranslations(locale)
+---
+
+<div class='rounded-3xl bg-zinc-200 px-10 pb-1 pt-5 dark:bg-[#2A2A67]'>
+    <img src={image.source} class={`${image.style} sm:scale-1 scale-75`} alt='' />
+    <h3
+        class='w-64 text-center text-base font-bold text-zinc-800 sm:mt-4 sm:w-80 sm:text-lg dark:text-white'
+    >
+        {description}
+    </h3>
+    <div class='m-auto my-5 flex w-fit gap-8 sm:gap-10'>
+        <a
+            href={source}
+            target='blank'
+            class='w-24 rounded-md border-2 border-red-400 font-medium text-red-400 transition duration-300 hover:border-slate-400 hover:bg-slate-400 hover:text-zinc-200 sm:w-28 sm:py-0.5 dark:border-[#05CEC2] dark:bg-[#2A2A67] dark:text-teal-400 dark:hover:border-slate-200 dark:hover:bg-slate-200 dark:hover:text-[#2A2A67]'
+        >
+            {t('experience.buttons.source')}
+        </a>
+        <a
+            href={preview}
+            target='blank'
+            class='w-24 rounded-md bg-red-400 font-medium text-zinc-200 transition duration-300 hover:bg-slate-400 sm:w-28 sm:py-0.5 dark:bg-[#05CEC2] dark:text-[#2A2A67] dark:hover:bg-slate-200'
+        >
+            {t('experience.buttons.preview')}
+        </a>
+    </div>
+</div>

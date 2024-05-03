@@ -1,0 +1,77 @@
+---
+import type { Locale } from 'types'
+import Icon from 'components/ui/Icon.astro'
+
+const options = [
+    { icon: 'flags/gb', href: '.', language: 'English' },
+    { icon: 'flags/ru', href: './ru', language: 'Русский' },
+    { icon: 'flags/lv', href: './lv', language: 'Latviešu' }
+]
+
+const language = Astro.currentLocale as Locale
+---
+
+<div id='language-selector'>
+    <div class='flex cursor-pointer items-center gap-1'>
+        <Icon name='Earth' width={28} height={28} class='text-zinc-800 dark:text-white' />
+
+        <h2 class='w-5 text-base font-semibold dark:text-white'>
+            {language.toUpperCase()}
+        </h2>
+
+        <Icon
+            name='Chevron'
+            width={16}
+            height={16}
+            id='language-arrow'
+            class='-ml-0.5 transition-transform dark:text-white'
+        />
+    </div>
+
+    <div
+        class='absolute right-10 top-20 rounded-md bg-zinc-200 py-4 dark:bg-[#2A2A67] md:right-16 md:top-16 hidden'
+        id='options'
+    >
+        {
+            options.map(({ icon, language, href }) => (
+                <a
+                    href={href}
+                    class='my-1 flex cursor-pointer items-center gap-2.5 px-10 transition hover:bg-zinc-400 hover:bg-opacity-80 dark:hover:bg-[#05CEC2]'
+                >
+                    <Icon name={icon} width={24} class='rounded-[3px]' />
+                    <h2 class='text-lg font-semibold text-zinc-800 dark:text-white'>{language}</h2>
+                </a>
+            ))
+        }
+    </div>
+</div>
+
+<script>
+    const languageSelector = document.getElementById('language-selector')!
+    const arrow = document.getElementById('language-arrow')!
+    const options = document.getElementById('options')!
+
+    const toggleLanguageSelector = () => {
+        arrow.classList.toggle('rotate-180')
+        options.classList.toggle('hidden')
+    }
+
+    const hideLanguageSelector = (e: MouseEvent) => {
+        if (!options.contains(e.target as Node)) {
+            toggleLanguageSelector()
+            document.removeEventListener('mousedown', hideLanguageSelector)
+        }
+    }
+
+    languageSelector.addEventListener('mousedown', (e) => {
+        e.stopPropagation()
+
+        if (options.classList.contains('hidden')) {
+            toggleLanguageSelector()
+            document.addEventListener('mousedown', hideLanguageSelector)
+        } else if (!options.contains(e.target as Node)) {
+            toggleLanguageSelector()
+            document.removeEventListener('mousedown', hideLanguageSelector)
+        }
+    })
+</script>

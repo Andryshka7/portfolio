@@ -1,23 +1,25 @@
 ---
-import { Project } from './components'
-
-import { projects } from 'content'
 import { useTranslations } from 'i18n'
+import { projects } from 'content'
+import type { Locale } from 'types'
 
-const locale = 'en'
+import Project from './components/Project.astro'
+
+const locale = Astro.currentLocale as Locale
+const t = useTranslations(locale)
 ---
 
 <div class='m-auto mt-20 w-fit text-center sm:mt-36' id='experience'>
-    <h1 class='text-5xl font-bold text-zinc-700 dark:text-teal-400 sm:text-6xl'>Experience</h1>
+    <h1 class='text-5xl font-bold text-zinc-700 dark:text-teal-400 sm:text-6xl'>
+        {t('experience.title')}
+    </h1>
     <p class='m-auto mt-10 max-w-[800px] text-xl font-medium dark:text-white sm:text-2xl'>
-        Since 2021, I've gained programming experience through olympiads, projects, freelancing, and
-        coding challenges. These experiences improved my problem-solving skills and expanded my tech
-        knowledge. I am ready to make an effective contribution to the future of programming.
+        {t('experience.description')}
     </p>
     <div class='m-auto mt-10 flex w-fit flex-wrap justify-center gap-x-10 gap-y-5'>
         {projects.map((project) => <Project {...project} />)}
     </div>
-    <p class='mt-4 text-lg font-semibold text-gray-500'>
+    <!-- <p class='mt-4 text-lg font-semibold text-gray-500'>
         * hosted on free platforms, so loading may take some time :)
-    </p>
+    </p> -->
 </div>

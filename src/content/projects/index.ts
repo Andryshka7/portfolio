@@ -1,6 +1,6 @@
 const lapchess = {
     image: {
-        source: './lapchess.png',
+        source: './images/lapchess.png',
         style: 'sm:mt-1 mx-auto h-28 w-28'
     },
     description: 'Lapchess - online chess platform with practice mode',
@@ -10,7 +10,7 @@ const lapchess = {
 
 const shopify = {
     image: {
-        source: './shopify.png',
+        source: './images/shopify.png',
         style: 'sm:my-1 mx-auto h-28'
     },
     description: 'Shopify - ecommerce app using fake store API',
@@ -20,7 +20,7 @@ const shopify = {
 
 const wordScope = {
     image: {
-        source: './wordScope.png',
+        source: './images/wordScope.png',
         style: 'sm:my-1 mx-auto h-28 w-28'
     },
     description: 'WordScope - online assistant for eglish studies',

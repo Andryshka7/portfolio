@@ -1,23 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import { Navbar, About, Experience, Skills, ContactMe, Alert } from 'components'
-
-export const getStaticPaths = () => [
-    { params: { locale: 'en' } },
-    { params: { locale: 'lv' } },
-    { params: { locale: 'ru' } }
-]
+import Layout from 'layouts/Layout.astro'
+import { About, Experience, Skills, ContactMe } from 'components'
 ---
 
 <Layout title='Andrey Lapchik'>
     <main>
-        <Navbar />
         <About />
         <Skills />
         <Experience />
         <ContactMe />
     </main>
-    <div id='portal'>
-        <Alert />
-    </div>
 </Layout>

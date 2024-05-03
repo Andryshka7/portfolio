@@ -1,0 +1,30 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+type Props = {
+    name: string
+} & HTMLAttributes<'svg'>
+
+const { name, ...newAttributes } = Astro.props as Props
+const { default: innerHTML } = (await import(`/public/icons/${name}.svg?raw`)) as ImportAttributes
+
+const existingAttributes: Record<string, string> = {}
+
+innerHTML
+    .slice(5, innerHTML.indexOf('>') - 1)
+    .split('" ')
+    .forEach((attribute) => {
+        const [key, value] = attribute.split('="')
+        existingAttributes[key] = value
+    })
+
+const attributes = { existingAttributes, ...newAttributes }
+
+const attributesString = Object.entries(attributes)
+    .map(([key, value]) => `${key}="${value}"`)
+    .join(' ')
+
+const HTML = innerHTML.replace('<svg', `<svg ${attributesString}`)
+---
+
+<Fragment {...attributes} set:html={HTML} />

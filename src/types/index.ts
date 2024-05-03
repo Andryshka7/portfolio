@@ -5,11 +5,11 @@ interface Alert {
     visible: boolean
 }
 
-type Locale = 'en' | 'ru' | 'lv'
-
 interface Skill {
     skill: string
     level: 1 | 2 | 3
 }
 
-export { type Alert, type Locale, type Skill }
+type Locale = 'en' | 'ru' | 'lv'
+
+export { type Alert, type Skill, type Locale }

@@ -4,27 +4,24 @@ import en from './locales/en.json'
 import lv from './locales/lv.json'
 import ru from './locales/ru.json'
 
-const defaultLocale = 'en'
-
 const translations = { en, ru, lv }
 
-const getLocaleFromUrl = (url: string) => {
-    const [, locale] = url.split('/')
-    return locale in translations ? (locale as Locale) : defaultLocale
+type NestedObject = {
+    [key: string]: string | NestedObject
 }
 
-const useTranslations = (language: keyof typeof translations) => (key: string) => {
-    const keys = key.split('.')
+const returnNested = (object: NestedObject, nestedKey: string) => {
+    if (!nestedKey.includes('.')) return object[nestedKey] as string
 
-    let value = translations[language][keys[0]] || translations[defaultLocale][keys[0]]
+    const key = nestedKey.slice(0, nestedKey.indexOf('.'))
+    const nestedKeys = nestedKey.slice(nestedKey.indexOf('.') + 1)
 
-    for (const key of keys) {
-        if (value[key]) {
-            value = value[key]
-        }
-    }
-
-    return value
+    return returnNested(object[key] as NestedObject, nestedKeys)
 }
 
-export { getLocaleFromUrl, useTranslations }
+const useTranslations =
+    (language: Locale = 'en') =>
+    (key: string) =>
+        returnNested(translations[language], key)
+
+export { useTranslations }

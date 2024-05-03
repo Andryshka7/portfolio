@@ -1,0 +1,19 @@
+---
+import Icon from 'components/ui/Icon.astro'
+---
+
+<div
+    class='relative flex w-16 text-white cursor-pointer items-center justify-between rounded-full bg-zinc-500 px-2.5 py-1.5 dark:bg-[#2A2A67]'
+    id='theme-toggler'
+>
+    <div class='absolute right-9 h-5 w-5 rounded-full bg-white transition-all dark:right-2'></div>
+    <Icon name='Sun' height={18} width={18} />
+    <Icon name='Moon' height={18} width={18} />
+</div>
+<script>
+    document.getElementById('theme-toggler')?.addEventListener('click', () => {
+        const theme = localStorage.getItem('theme')
+        localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light')
+        document.documentElement.classList.toggle('dark')
+    })
+</script>

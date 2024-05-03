@@ -1,0 +1,45 @@
+---
+import { useTranslations } from 'i18n'
+import type { Locale } from 'types'
+
+import Icon from 'components/ui/Icon.astro'
+
+interface Props {
+    title: string
+    skills: {
+        skill: string
+        level: 1 | 2 | 3
+    }[]
+}
+
+const { title, skills } = Astro.props
+
+const locale = Astro.currentLocale as Locale
+const t = useTranslations(locale)
+---
+
+<div
+    class='m-auto w-[335px] rounded-[32px] bg-gray-200 px-7 pb-6 dark:bg-[#2A2A67] sm:w-[420px] sm:px-12'
+>
+    <h1 class='my-5 text-center text-3xl font-bold text-zinc-800 dark:text-white sm:text-4xl'>
+        {title}
+    </h1>
+
+    <div class='m-auto grid grid-cols-2 gap-y-2.5'>
+        {
+            skills.map(({ skill, level }) => (
+                <div class='flex gap-2'>
+                    <Icon name='Checkmark' height='20' width='20' class='mt-1 text-[#3EB9ED]' />
+                    <div class='h-fit w-fit'>
+                        <h1 class='text-base font-bold text-zinc-800 dark:text-white sm:text-xl'>
+                            {skill}
+                        </h1>
+                        <h3 class='text-sm font-bold text-zinc-600 dark:text-white dark:text-opacity-50 sm:text-base'>
+                            {t(`skills.skillLevels.${level}`)}
+                        </h3>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</div>
