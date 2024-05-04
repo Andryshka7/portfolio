@@ -2,13 +2,25 @@
 import type { Locale } from 'types'
 import Icon from 'components/ui/Icon.astro'
 
-const options = [
-    { icon: 'flags/gb', href: '.', language: 'English' },
-    { icon: 'flags/ru', href: './ru', language: 'Русский' },
-    { icon: 'flags/lv', href: './lv', language: 'Latviešu' }
+interface Option {
+    locale: Locale
+    language: string
+}
+
+const options: Option[] = [
+    { locale: 'en', language: 'English' },
+    { locale: 'ru', language: 'Русский' },
+    { locale: 'lv', language: 'Latviešu' }
 ]
 
 const language = Astro.currentLocale as Locale
+
+const creteLocaleUrl = (locale: Locale) => {
+    const pathName = Astro.url.pathname
+    const origin = Astro.url.origin
+
+    return `${origin}/${locale}` + pathName.replace(`/${language}`, '')
+}
 ---
 
 <div id='language-selector'>
@@ -29,16 +41,16 @@ const language = Astro.currentLocale as Locale
     </div>
 
     <div
-        class='absolute right-10 top-20 rounded-md bg-zinc-200 py-4 dark:bg-[#2A2A67] md:right-16 md:top-16 hidden'
+        class='absolute right-10 top-20 hidden rounded-md bg-zinc-200 py-4 dark:bg-[#2A2A67] md:right-16'
         id='options'
     >
         {
-            options.map(({ icon, language, href }) => (
+            options.map(({ locale, language }) => (
                 <a
-                    href={href}
+                    href={creteLocaleUrl(locale)}
                     class='my-1 flex cursor-pointer items-center gap-2.5 px-10 transition hover:bg-zinc-400 hover:bg-opacity-80 dark:hover:bg-[#05CEC2]'
                 >
-                    <Icon name={icon} width={24} class='rounded-[3px]' />
+                    <Icon name={`flags/${locale}`} width={24} class='rounded-[3px]' />
                     <h2 class='text-lg font-semibold text-zinc-800 dark:text-white'>{language}</h2>
                 </a>
             ))

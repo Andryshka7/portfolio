@@ -11,16 +11,8 @@
     },
     "about": {
         "greeting": "Hi, i am Andrey Lapchik",
-        "description": "17-year-old computer science student from Latvia specializing in full-stack development, and passionate about creating efficient web applications.",
+        "description": "Experienced developer from Riga, Latvia. Passionate about creating user friendly web applications. Eager learner and active participant in tech communities. Seeking opportunities to apply skills and contribute to innovative projects.",
         "speciality": "Full-stack web developer"
-    },
-    "experience": {
-        "title": "Experience",
-        "description": "Since 2021, I've gained programming experience through olympiads, projects, freelancing, and coding challenges. These experiences improved my problem-solving skills and expanded my tech knowledge. I am ready to make an effective contribution to the future of programming.",
-        "buttons": {
-            "source": "Source",
-            "preview": "Preview"
-        }
     },
     "skills": {
         "title": "Development skills",
@@ -30,6 +22,26 @@
             "3": "Experienced"
         }
     },
+    "experience": {
+        "title": "Experience",
+        "description": "Since 2021, I've gained programming experience through olympiads, projects, freelancing, and coding challenges. These experiences improved my problem-solving skills and expanded my tech knowledge. I am ready to make an effective contribution to the future of programming.",
+        "projects": {
+            "tasker": {
+                "description": "A powerful task management system to boost team productivity"
+            },
+            "lapchess": {
+                "description": "Online chess platform where players can play against each other"
+            },
+            "carmarket": {
+                "description": "User-friendly platform for buying and selling cars effortlessly"
+            }
+        },
+        "buttons": {
+            "about": "About",
+            "preview": "Preview"
+        }
+    },
+
     "contact": {
         "title": "Contact me",
         "placeHolders": {

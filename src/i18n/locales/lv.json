@@ -11,16 +11,8 @@
     },
     "about": {
         "greeting": "Sveiki, esmu Andrejs Lapčiks",
-        "description": "17 gadus vecs datorzinātnes students no Latvijas, specializējos web izstrādē un aizraujos ar efektīvu tīmekļa lietojumprogrammu izveidi.",
+        "description": "Pieredzējis web izstrādātājs no Rīgas, kas specializējas lietotājam draudzīgu tīmekļa aplikāciju veidošanā. Pastāvīgi attīstos un esmu gatavs jauniem izaicinājumiem. Meklēju iespējas pielietot savas prasmes inovatīvos projektos.",
         "speciality": "Full-stack web izstrādātājs"
-    },
-    "experience": {
-        "title": "Pieredze",
-        "description": "Kopš 2021. gada esmu guvis programmēšanas pieredzi olimpiādēs, projektos, freelancē  un kodēšanas izaicinājumos. Šī pieredze uzlaboja manas problēmu risināšanas prasmes un paplašināja manas zināšanas par tehnoloģijām. Esmu gatavs sniegt efektīvu ieguldījumu programmēšanas nākotnē.",
-        "buttons": {
-            "source": "Kods",
-            "preview": "Vietne"
-        }
     },
     "skills": {
         "title": "Izstrādes prasmes",
@@ -28,6 +20,25 @@
             "1": "Iesācejs",
             "2": "Augsts",
             "3": "Pieredzējis"
+        }
+    },
+    "experience": {
+        "title": "Pieredze",
+        "description": "Kopš 2021. gada esmu guvis programmēšanas pieredzi olimpiādēs, projektos, freelancē  un kodēšanas izaicinājumos. Šī pieredze uzlaboja manas problēmu risināšanas prasmes un paplašināja manas zināšanas par tehnoloģijām. Esmu gatavs sniegt efektīvu ieguldījumu programmēšanas nākotnē.",
+        "projects": {
+            "tasker": {
+                "description": "Uzdevumu pārvaldības sistēma komandas darbam"
+            },
+            "lapchess": {
+                "description": "Šaha platforma tiešsaistē, kur var sacensties viens pret otru"
+            },
+            "carmarket": {
+                "description": "Ērta platforma vieglai automašīnu pirkšanai un pārdošanai"
+            }
+        },
+        "buttons": {
+            "about": "Par projektu",
+            "preview": "Vietne"
         }
     },
     "contact": {

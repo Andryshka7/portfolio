@@ -1,20 +1,20 @@
 import type { Skill } from 'types'
 
 const frontend: Skill[] = [
-    { skill: 'HTML', level: 3 },
-    { skill: 'CSS', level: 2 },
-    { skill: 'TypeScript', level: 3 },
-    { skill: 'Tailwind', level: 2 },
     { skill: 'React', level: 3 },
-    { skill: 'Redux Toolkit', level: 3 }
+    { skill: 'Next Js', level: 3 },
+    { skill: 'TypeScript', level: 3 },
+    { skill: 'Webpack', level: 2 },
+    { skill: 'Tailwind', level: 3 },
+    { skill: 'Astro', level: 2 }
 ]
 const backend: Skill[] = [
-    { skill: 'Node Js', level: 2 },
-    { skill: 'MongoDB', level: 3 },
-    { skill: 'Socket Io', level: 3 },
-    { skill: 'JWT', level: 2 },
-    { skill: 'Express Js', level: 2 },
-    { skill: 'SQL', level: 1 }
+    { skill: 'Node Js', level: 3 },
+    { skill: 'Nest Js', level: 3 },
+    { skill: 'SQL', level: 2 },
+    { skill: 'ORM libraries', level: 3 },
+    { skill: 'WebSockets', level: 3 },
+    { skill: 'JWT', level: 2 }
 ]
 
-export { frontend, backend }
+export { backend, frontend }

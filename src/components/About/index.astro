@@ -6,20 +6,15 @@ const locale = Astro.currentLocale as Locale
 const t = useTranslations(locale)
 ---
 
-<div
-    class='m-auto mt-10 w-fit text-center sm:mt-36'
-    id='about'
-    data-aos='fade-up'
-    data-aos-duration='500'
->
-    <h1 class='text-5xl font-bold text-zinc-700 sm:text-6xl dark:text-teal-400'>
+<div class='mt-10 w-fit text-center sm:mt-36' id='about' data-aos='fade-up' data-aos-duration='500'>
+    <h1 class='text-5xl font-bold text-zinc-700 dark:text-teal-400 sm:text-6xl'>
         {t('about.greeting')}
     </h1>
-    <h2 class='mt-4 text-2xl font-semibold text-zinc-800 sm:text-3xl dark:text-white'>
+    <h2 class='mt-4 text-2xl font-semibold text-zinc-800 dark:text-white sm:text-3xl'>
         {t('about.speciality')}
     </h2>
     <p
-        class='m-auto mt-5 max-w-[650px] text-xl font-medium text-zinc-900 sm:text-2xl dark:text-white'
+        class='m-auto mt-5 max-w-[690px] text-xl font-medium text-zinc-900 dark:text-white sm:text-2xl'
     >
         {t('about.description')}
     </p>

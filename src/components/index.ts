@@ -1,4 +1,3 @@
-export { default as Navbar } from './Navbar/index.astro'
 export { default as Skills } from './Skills/index.astro'
 export { default as About } from './About/index.astro'
 export { default as Experience } from './Experience/index.astro'

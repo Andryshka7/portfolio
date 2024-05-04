@@ -1,6 +1,5 @@
 ---
 import Layout from 'layouts/Layout.astro'
-import { About, Experience, Skills, ContactMe } from 'components'
 
 export const getStaticPaths = () => [
     { params: { locale: 'en' } },
@@ -9,9 +8,4 @@ export const getStaticPaths = () => [
 ]
 ---
 
-<Layout title='Andrey Lapchik'>
-    <About />
-    <Skills />
-    <Experience />
-    <ContactMe />
-</Layout>
+<Layout title='Hello'> <p>Lapchess</p> </Layout>

@@ -22,37 +22,25 @@ const t = useTranslations(locale)
 </nav>
 
 <div
-    class='fixed left-0 z-10 top-0 h-full w-full bg-zinc-200 dark:bg-slate-800 -translate-y-full'
+    class='fixed left-0 top-0 z-10 h-full w-full -translate-y-full bg-zinc-200 dark:bg-slate-800'
     id='navbar'
 >
-    <div class='flex flex-col items-center h-full w-full px-10'>
+    <div class='flex h-full w-full flex-col items-center px-10'>
         <div class='mx-8 my-10 flex w-full items-center justify-between'>
             <ThemeSelector />
             <LanguageSelector />
         </div>
-        <div class='my-10 flex h-full flex-col justify-between items-center'>
-            <a
-                class='close-navbar text-xl font-semibold text-zinc-700 dark:text-white'
-                href='#about'
-            >
+        <div class='my-10 flex h-full flex-col items-center justify-between text-xl font-semibold'>
+            <a class='close-navbar text-zinc-700 dark:text-white' href='#about'>
                 {t('navbar.navigators.about')}
             </a>
-            <a
-                class='close-navbar text-xl font-semibold text-zinc-700 dark:text-white'
-                href='#skills'
-            >
+            <a class='close-navbar text-zinc-700 dark:text-white' href='#skills'>
                 {t('navbar.navigators.skills')}
             </a>
-            <a
-                class='close-navbar text-xl font-semibold text-zinc-700 dark:text-white'
-                href='#experience'
-            >
+            <a class='close-navbar text-zinc-700 dark:text-white' href='#experience'>
                 {t('navbar.navigators.experiences')}
             </a>
-            <a
-                class='close-navbar text-xl font-semibold text-zinc-700 dark:text-white'
-                href='#contact'
-            >
+            <a class='close-navbar text-zinc-700 dark:text-white' href='#contact'>
                 {t('navbar.navigators.contact')}
             </a>
         </div>

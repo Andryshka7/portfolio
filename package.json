@@ -20,6 +20,9 @@
     "devDependencies": {
         "@types/node": "^20.12.7",
         "prettier-plugin-astro": "^0.13.0",
+        "prettier-plugin-organize-imports": "^3.2.4",
         "prettier-plugin-tailwindcss": "^0.5.14"
-    }
+    },
+    "prettier:write-fix": "prettier --write . --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss",
+    "prettier:check-fix": "prettier --check . --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss"
 }

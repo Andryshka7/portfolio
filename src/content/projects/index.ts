@@ -1,31 +1,31 @@
 const lapchess = {
     image: {
         source: './images/lapchess.png',
-        style: 'sm:mt-1 mx-auto h-28 w-28'
+        style: 'h-20 sm:h-24'
     },
-    description: 'Lapchess - online chess platform with practice mode',
-    source: 'https://github.com/Andryshka16/lapchess',
+    title: 'Lapchess',
+    about: './lapchess',
     preview: 'https://lapchess.netlify.app'
 }
 
-const shopify = {
+const tasker = {
     image: {
-        source: './images/shopify.png',
-        style: 'sm:my-1 mx-auto h-28'
+        source: './images/tasker.png',
+        style: 'h-20 sm:h-24'
     },
-    description: 'Shopify - ecommerce app using fake store API',
-    source: 'https://github.com/Andryshka16/shopify',
+    title: 'Tasker',
+    about: './tasker',
     preview: 'https://shopify-online.netlify.app'
 }
 
-const wordScope = {
+const carmarket = {
     image: {
-        source: './images/wordScope.png',
-        style: 'sm:my-1 mx-auto h-28 w-28'
+        source: './images/carmarket.png',
+        style: 'h-20 sm:h-24'
     },
-    description: 'WordScope - online assistant for eglish studies',
-    source: 'https://github.com/Andryshka16/english-learner',
+    title: 'Carmarket',
+    about: './carmarket',
     preview: 'https://wordscope.netlify.app'
 }
 
-export default [lapchess, shopify, wordScope]
+export default [tasker, lapchess, carmarket]
