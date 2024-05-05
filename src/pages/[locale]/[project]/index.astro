@@ -1,0 +1,20 @@
+---
+import Layout from 'layouts/Layout.astro'
+
+export const getStaticPaths = () => {
+    const locales = ['en', 'lv', 'ru']
+    const projects = ['tasker', 'lapchess', 'carmarket']
+
+    const paths = locales
+        .map((locale) => projects.map((project) => ({ params: { locale, project } })))
+        .flat()
+
+    return paths
+}
+
+const { project } = Astro.params
+---
+
+<Layout title='Lapchess'>
+    <p class='text-4xl font-semibold text-zinc-800 dark:text-white'>{project}</p>
+</Layout>

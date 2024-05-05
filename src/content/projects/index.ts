@@ -4,7 +4,7 @@ const lapchess = {
         style: 'h-20 sm:h-24'
     },
     title: 'Lapchess',
-    about: './lapchess',
+    about: 'lapchess',
     preview: 'https://lapchess.netlify.app'
 }
 
@@ -14,7 +14,7 @@ const tasker = {
         style: 'h-20 sm:h-24'
     },
     title: 'Tasker',
-    about: './tasker',
+    about: 'tasker',
     preview: 'https://shopify-online.netlify.app'
 }
 
@@ -24,7 +24,7 @@ const carmarket = {
         style: 'h-20 sm:h-24'
     },
     title: 'Carmarket',
-    about: './carmarket',
+    about: 'carmarket',
     preview: 'https://wordscope.netlify.app'
 }
 

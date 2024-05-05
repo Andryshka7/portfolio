@@ -12,4 +12,4 @@ interface Skill {
 
 type Locale = 'en' | 'ru' | 'lv'
 
-export { type Alert, type Skill, type Locale }
+export { type Alert, type Locale, type Skill }

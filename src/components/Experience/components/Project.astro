@@ -1,4 +1,5 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n'
 import { useTranslations } from 'i18n'
 import type { Locale } from 'types'
 
@@ -32,7 +33,7 @@ const t = useTranslations(locale)
     </h3>
     <div class='m-auto my-6 flex w-fit gap-8 sm:my-7 sm:gap-10'>
         <a
-            href={about}
+            href={getRelativeLocaleUrl(locale, about)}
             class='w-24 rounded-md border-2 border-red-400 font-medium text-red-400 transition duration-300 hover:border-slate-400 hover:bg-slate-400 hover:text-zinc-200 dark:border-[#05CEC2] dark:bg-[#2A2A67] dark:text-teal-400 dark:hover:border-slate-200 dark:hover:bg-slate-200 dark:hover:text-[#2A2A67] sm:w-[120px] sm:py-0.5'
         >
             {t('experience.buttons.about')}
