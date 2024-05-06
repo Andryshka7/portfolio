@@ -1,15 +1,21 @@
 ---
 import Layout from 'layouts/Layout.astro'
 
-export const getStaticPaths = () => [
-    { params: { project: 'tasker' } },
-    { params: { project: 'lapchess' } },
-    { params: { project: 'carmarket' } }
-]
+export const getStaticPaths = () => {
+    const paths = [
+        { params: { project: 'tasker' } },
+        { params: { project: 'lapchess' } },
+        { params: { project: 'carmarket' } }
+    ] as const
+
+    return paths
+}
 
 const { project } = Astro.params
 ---
 
 <Layout title='Lapchess'>
-    <p class='text-4xl font-semibold text-zinc-800 dark:text-white'>{project}</p>
+    <div>
+        <div class='flex'>{project}</div>
+    </div>
 </Layout>

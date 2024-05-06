@@ -25,17 +25,6 @@
     "experience": {
         "title": "Pieredze",
         "description": "Kopš 2021. gada esmu guvis programmēšanas pieredzi olimpiādēs, projektos, freelancē  un kodēšanas izaicinājumos. Šī pieredze uzlaboja manas problēmu risināšanas prasmes un paplašināja manas zināšanas par tehnoloģijām. Esmu gatavs sniegt efektīvu ieguldījumu programmēšanas nākotnē.",
-        "projects": {
-            "tasker": {
-                "description": "Uzdevumu pārvaldības sistēma komandas darbam"
-            },
-            "lapchess": {
-                "description": "Šaha platforma tiešsaistē, kur var sacensties viens pret otru"
-            },
-            "carmarket": {
-                "description": "Ērta platforma vieglai automašīnu pirkšanai un pārdošanai"
-            }
-        },
         "buttons": {
             "about": "Par projektu",
             "preview": "Vietne"
@@ -59,5 +48,25 @@
             }
         },
         "button": "Nosūtīt"
+    },
+    "projects": {
+        "tasker": {
+            "brief-description": "Uzdevumu pārvaldības sistēma komandas darbam",
+            "description": "Lapchess is a comprehensive chess platform tailored to cater to enthusiasts and professionals alike.  Whether you're a novice looking to learn the basics or a seasoned player aiming to master advanced techniques, Lapchess equips you with the tools needed to enhance your gameplay.",
+            "tech-stack": "React, TypeScript, ReduxToolkit, Express Js, JWT, Socket Io, MongoDB",
+            "development-process": "The development process involved a lot of careful planning and hard work. We started by gathering ideas and figuring out what features players would enjoy the most. Then, our team of developers got to work, writing code and creating the platform from scratch."
+        },
+        "lapchess": {
+            "brief-description": "Šaha platforma tiešsaistē, kur var sacensties viens pret otru",
+            "description": "Lapchess is a comprehensive chess platform tailored to cater to enthusiasts and professionals alike.  Whether you're a novice looking to learn the basics or a seasoned player aiming to master advanced techniques, Lapchess equips you with the tools needed to enhance your gameplay.",
+            "tech-stack": "React, TypeScript, ReduxToolkit, Express Js, JWT, Socket Io, MongoDB",
+            "development-process": "The development process involved a lot of careful planning and hard work. We started by gathering ideas and figuring out what features players would enjoy the most. Then, our team of developers got to work, writing code and creating the platform from scratch."
+        },
+        "carmarket": {
+            "brief-description": "Ērta platforma vieglai automašīnu pirkšanai un pārdošanai",
+            "description": "Lapchess is a comprehensive chess platform tailored to cater to enthusiasts and professionals alike.  Whether you're a novice looking to learn the basics or a seasoned player aiming to master advanced techniques, Lapchess equips you with the tools needed to enhance your gameplay.",
+            "tech-stack": "React, TypeScript, ReduxToolkit, Express Js, JWT, Socket Io, MongoDB",
+            "development-process": "The development process involved a lot of careful planning and hard work. We started by gathering ideas and figuring out what features players would enjoy the most. Then, our team of developers got to work, writing code and creating the platform from scratch."
+        }
     }
 }

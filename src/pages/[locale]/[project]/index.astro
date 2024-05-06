@@ -1,9 +1,14 @@
 ---
+import { useTranslations } from 'i18n'
+import projects from 'content/projects'
+
 import Layout from 'layouts/Layout.astro'
+import type { Locale } from 'types'
+import Images from './components/Images.astro'
 
 export const getStaticPaths = () => {
     const locales = ['en', 'lv', 'ru']
-    const projects = ['tasker', 'lapchess', 'carmarket']
+    const projects = ['tasker', 'lapchess', 'carmarket'] as const
 
     const paths = locales
         .map((locale) => projects.map((project) => ({ params: { locale, project } })))
@@ -13,8 +18,62 @@ export const getStaticPaths = () => {
 }
 
 const { project } = Astro.params
+
+const { title, icon, images, figma, preview, source } = projects.find(
+    (element) => element.title.toLowerCase() === project
+)!
+
+const locale = Astro.currentLocale as Locale
+const t = useTranslations(locale)
 ---
 
 <Layout title='Lapchess'>
-    <p class='text-4xl font-semibold text-zinc-800 dark:text-white'>{project}</p>
+    <div class='mt-10 w-[1100px]'>
+        <div class='flex items-center justify-between'>
+            <div class='flex items-center gap-2'>
+                <img src={icon.source} class={icon.style} />
+                <h3 class='mt-1 text-4xl font-bold text-zinc-800 dark:text-white'>{title}</h3>
+            </div>
+            <div class='mt-2 flex gap-4'>
+                <a
+                    href={source}
+                    target='blank'
+                    class='w-32 rounded-md border-2 border-red-400 py-0.5 text-center font-medium text-red-400 transition duration-300 hover:border-slate-400 hover:bg-slate-400 hover:text-zinc-200 dark:border-[#05CEC2] dark:text-teal-400 dark:hover:border-slate-200 dark:hover:bg-slate-200 dark:hover:text-midnight'
+                >
+                    Source
+                </a>
+                <a
+                    href={preview}
+                    target='blank'
+                    class='w-32 rounded-md bg-red-400 py-0.5 text-center font-medium text-zinc-200 transition duration-300 hover:bg-slate-400 dark:bg-[#05CEC2] dark:text-midnight dark:hover:bg-slate-200'
+                >
+                    Preview
+                </a>
+            </div>
+        </div>
+
+        <Images images={images} />
+
+        <h2 class='mt-4 text-3xl font-bold text-zinc-800 dark:text-white'>Description</h2>
+        <p class='mt-2 text-2xl font-normal text-zinc-800 dark:text-white'>
+            {t(`projects.${project}.description`)}
+        </p>
+
+        <h2 class='mt-6 text-3xl font-bold text-zinc-800 dark:text-white'>Tech stack</h2>
+        <p class='mt-2 text-2xl font-normal text-zinc-800 dark:text-white'>
+            {t(`projects.${project}.tech-stack`)}
+        </p>
+
+        <h2 class='mt-6 text-3xl font-bold text-zinc-800 dark:text-white'>Development process</h2>
+        <p class='mt-2 text-2xl font-normal text-zinc-800 dark:text-white'>
+            {t(`projects.${project}.development-process`)}
+        </p>
+
+        <h2 class='mt-6 text-3xl font-bold text-zinc-800 dark:text-white'>Links</h2>
+        <p class='mt-2 text-2xl font-normal text-zinc-800 dark:text-white'>
+            <a href={figma} target='blank' class='mr-1 underline'> Figma file</a> |
+            <a href={source} target='blank' class='mx-1 underline'> Source code</a> |
+            <a href={preview} target='blank' class='ml-1 underline'> Preview</a>
+        </p>
+    </div>
 </Layout>

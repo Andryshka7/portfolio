@@ -1,0 +1,94 @@
+---
+import { Icon } from 'components/ui'
+
+interface Props {
+    images: string[]
+}
+
+const { images } = Astro.props
+---
+
+<div class='relative mt-6 w-full'>
+    <Icon
+        name='Chevron'
+        width={40}
+        height={40}
+        class='pointer-events-none absolute right-full top-1/2 mx-1 -translate-y-full rotate-90 text-gray-400 opacity-50 duration-200 hover:scale-110'
+        stroke-width={2.5}
+        id='previous'
+    />
+
+    <div class='overflow-hidden'>
+        <div class='flex select-none' id='imagesContainer'>
+            {images.map((source) => <img src={source} />)}
+        </div>
+    </div>
+
+    <Icon
+        name='Chevron'
+        width={40}
+        height={40}
+        stroke-width={2.5}
+        class='absolute left-full top-1/2 mx-1 -translate-y-full -rotate-90 text-gray-400 duration-200 hover:scale-110'
+        id='next'
+    />
+    <div class='indicators mx-auto mt-5 flex w-fit gap-1.5'>
+        <div class='h-4 w-4 scale-110 rounded-full bg-zinc-400'></div>
+        <div class='h-4 w-4 rounded-full bg-zinc-600'></div>
+        <div class='h-4 w-4 rounded-full bg-zinc-600'></div>
+        <div class='h-4 w-4 rounded-full bg-zinc-600'></div>
+        <div class='h-4 w-4 rounded-full bg-zinc-600'></div>
+    </div>
+</div>
+
+<script>
+    let currentIndex = 0
+
+    const previous = document.getElementById('previous')!
+    const next = document.getElementById('next')!
+
+    const indicators = document.querySelector('.indicators')!
+
+    const imagesContainer = document.getElementById('imagesContainer')!
+
+    previous.addEventListener('click', () => {
+        const currentIndicator = indicators.children[currentIndex]
+        const newIndicator = indicators.children[currentIndex - 1]
+
+        currentIndicator.classList.toggle('scale-110')
+        currentIndicator.classList.replace('bg-zinc-400', 'bg-zinc-600')
+
+        newIndicator.classList.toggle('scale-110')
+        newIndicator.classList.replace('bg-zinc-600', 'bg-zinc-400')
+
+        imagesContainer.style.translate = `${-(currentIndex - 1) * 1100}px 0`
+
+        if (currentIndex === 1) {
+            previous.classList.add('pointer-events-none', 'opacity-50')
+        } else if (currentIndex === 4) {
+            next.classList.remove('pointer-events-none', 'opacity-50')
+        }
+
+        currentIndex -= 1
+    })
+    next.addEventListener('click', () => {
+        const currentIndicator = indicators.children[currentIndex]
+        const newIndicator = indicators.children[currentIndex + 1]
+
+        currentIndicator.classList.toggle('scale-110')
+        currentIndicator.classList.replace('bg-zinc-400', 'bg-zinc-600')
+
+        newIndicator.classList.toggle('scale-110')
+        newIndicator.classList.replace('bg-zinc-600', 'bg-zinc-400')
+
+        imagesContainer.style.translate = `${-(currentIndex + 1) * 1100}px 0`
+
+        if (currentIndex === 0) {
+            previous.classList.remove('pointer-events-none', 'opacity-50')
+        } else if (currentIndex === 3) {
+            next.classList.add('pointer-events-none', 'opacity-50')
+        }
+
+        currentIndex += 1
+    })
+</script>

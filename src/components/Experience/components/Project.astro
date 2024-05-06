@@ -4,7 +4,7 @@ import { useTranslations } from 'i18n'
 import type { Locale } from 'types'
 
 interface Props {
-    image: {
+    icon: {
         source: string
         style: string
     }
@@ -13,7 +13,7 @@ interface Props {
     preview: string
 }
 
-const { title, image, about, preview } = Astro.props
+const { title, icon, about, preview } = Astro.props
 
 const locale = Astro.currentLocale as Locale
 const t = useTranslations(locale)
@@ -21,7 +21,7 @@ const t = useTranslations(locale)
 
 <div class='rounded-3xl bg-zinc-200 px-8 pt-5 dark:bg-[#2A2A67] sm:px-10'>
     <div class='m-auto flex w-fit items-center sm:mt-1'>
-        <img src={image.source} class={`${image.style} sm:scale-1 scale-75`} alt='' />
+        <img src={icon.source} class={`${icon.style} sm:scale-1 scale-75`} alt='' />
         <h2 class='text-4xl font-bold text-zinc-800 dark:text-white'>
             {title}
         </h2>
@@ -29,7 +29,7 @@ const t = useTranslations(locale)
     <h3
         class='mt-1 w-72 text-base font-bold text-zinc-800 dark:text-white sm:mt-3 sm:w-80 sm:text-lg'
     >
-        {t(`experience.projects.${title.toLowerCase()}.description`)}
+        {t(`projects.${title.toLowerCase()}.brief-description`)}
     </h3>
     <div class='m-auto my-6 flex w-fit gap-8 sm:my-7 sm:gap-10'>
         <a
