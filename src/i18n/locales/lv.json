@@ -1,41 +1,50 @@
 {
-    "navbar": {
-        "title": "Portfolio",
-        "navigators": {
-            "about": "Par mani",
-            "skills": "Prasmes",
-            "experience": "Pieredze",
-            "contact": "Sazināties"
-        },
-        "downloadCV": "Lejupielādēt CV"
-    },
+    "title": "Portfolio",
+
     "about": {
         "greeting": "Sveiki, esmu Andrejs Lapčiks",
         "description": "Pieredzējis web izstrādātājs no Rīgas, kas specializējas lietotājam draudzīgu tīmekļa aplikāciju veidošanā. Pastāvīgi attīstos un esmu gatavs jauniem izaicinājumiem. Meklēju iespējas pielietot savas prasmes inovatīvos projektos.",
         "speciality": "Full-stack web izstrādātājs"
     },
+
     "skills": {
-        "title": "Izstrādes prasmes",
-        "skillLevels": {
-            "1": "Iesācejs",
-            "2": "Augsts",
-            "3": "Pieredzējis"
-        }
+        "1": "Iesācejs",
+        "2": "Augsts",
+        "3": "Pieredzējis"
     },
-    "experience": {
-        "title": "Pieredze",
-        "description": "Kopš 2021. gada esmu guvis programmēšanas pieredzi olimpiādēs, projektos, freelancē  un kodēšanas izaicinājumos. Šī pieredze uzlaboja manas problēmu risināšanas prasmes un paplašināja manas zināšanas par tehnoloģijām. Esmu gatavs sniegt efektīvu ieguldījumu programmēšanas nākotnē.",
-        "buttons": {
-            "about": "Par projektu",
-            "preview": "Vietne"
-        }
-    },
+
+    "experience": "Kopš 2021. gada esmu guvis programmēšanas pieredzi olimpiādēs, projektos, freelancē  un kodēšanas izaicinājumos. Šī pieredze uzlaboja manas problēmu risināšanas prasmes un paplašināja manas zināšanas par tehnoloģijām. Esmu gatavs sniegt efektīvu ieguldījumu programmēšanas nākotnē.",
+
     "contact": {
-        "title": "Sazināties ar mani",
-        "placeHolders": {
-            "email": "Jūsu e-pasts",
-            "name": "Jūsu vārds",
-            "message": "Jūsu ziņa"
+        "email": "Jūsu e-pasts",
+        "name": "Jūsu vārds",
+        "message": "Jūsu ziņa"
+    },
+
+    "ui": {
+        "labels": {
+            "about": "Par mani",
+            "skills": "Prasmes",
+            "development-skills": "Izstrādes prasmes",
+            "experience": "Pieredze",
+            "contact": "Sazināties",
+            "contact-form": "Sazināties ar mani",
+            "description": "Apraksts",
+            "tech-stack": "Izmantotas tehnoloģijas",
+            "development-process": "Izstrādes process",
+            "links": "Saites"
+        },
+        "buttons": {
+            "downloadCV": "Lejupielādēt CV",
+            "about": "Par projektu",
+            "preview": "Vietne",
+            "source": "Kods",
+            "send": "Nosūtīt"
+        },
+        "links": {
+            "figma-file": "Figma fails",
+            "source-code": "Pirmkods",
+            "live-version": "Tīmekļa vietne"
         },
         "alert": {
             "messageSent": {
@@ -46,26 +55,28 @@
                 "name": "Kļūda!",
                 "text": "Neizdevās nosūtīt ziņojumu"
             }
-        },
-        "button": "Nosūtīt"
+        }
     },
+
     "projects": {
         "tasker": {
             "brief-description": "Uzdevumu pārvaldības sistēma komandas darbam",
             "description": "Lapchess is a comprehensive chess platform tailored to cater to enthusiasts and professionals alike.  Whether you're a novice looking to learn the basics or a seasoned player aiming to master advanced techniques, Lapchess equips you with the tools needed to enhance your gameplay.",
-            "tech-stack": "React, TypeScript, ReduxToolkit, Express Js, JWT, Socket Io, MongoDB",
+            "tech-stack": "Next Js, TypeScript, Nest Js, Zustand, TanStack Query, MySQL, TypeORM, JWT",
             "development-process": "The development process involved a lot of careful planning and hard work. We started by gathering ideas and figuring out what features players would enjoy the most. Then, our team of developers got to work, writing code and creating the platform from scratch."
         },
+
         "lapchess": {
             "brief-description": "Šaha platforma tiešsaistē, kur var sacensties viens pret otru",
             "description": "Lapchess is a comprehensive chess platform tailored to cater to enthusiasts and professionals alike.  Whether you're a novice looking to learn the basics or a seasoned player aiming to master advanced techniques, Lapchess equips you with the tools needed to enhance your gameplay.",
             "tech-stack": "React, TypeScript, ReduxToolkit, Express Js, JWT, Socket Io, MongoDB",
             "development-process": "The development process involved a lot of careful planning and hard work. We started by gathering ideas and figuring out what features players would enjoy the most. Then, our team of developers got to work, writing code and creating the platform from scratch."
         },
+
         "carmarket": {
             "brief-description": "Ērta platforma vieglai automašīnu pirkšanai un pārdošanai",
-            "description": "Lapchess is a comprehensive chess platform tailored to cater to enthusiasts and professionals alike.  Whether you're a novice looking to learn the basics or a seasoned player aiming to master advanced techniques, Lapchess equips you with the tools needed to enhance your gameplay.",
-            "tech-stack": "React, TypeScript, ReduxToolkit, Express Js, JWT, Socket Io, MongoDB",
+            "description": "Experience the ultimate convenience in buying and selling cars with Carmarket. Our user-friendly platform seamlessly connects buyers and sellers, offering a hassle-free experience from browsing to final purchase. With intuitive search filters, transparent pricing, and secure transactions, Carmarket ensures that every interaction is smooth and efficient. Say goodbye to traditional car buying stress and hello to a streamlined, effortless process with Carmarket.",
+            "tech-stack": "React, TypeScript, Zustand, Express Js, JWT, MySQL",
             "development-process": "The development process involved a lot of careful planning and hard work. We started by gathering ideas and figuring out what features players would enjoy the most. Then, our team of developers got to work, writing code and creating the platform from scratch."
         }
     }

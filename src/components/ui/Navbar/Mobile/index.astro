@@ -17,7 +17,7 @@ const t = useTranslations(locale)
         class='-mt-1.5 text-4xl font-bold text-zinc-800 dark:text-white'
         href={getRelativeLocaleUrl(locale)}
     >
-        Portfolio
+        {t('title')}
     </a>
     <Icon name='Menu' width='35' height='35' class='open-navbar dark:text-white' />
 
@@ -32,7 +32,7 @@ const t = useTranslations(locale)
                     href='./CV.pdf'
                     download='CV.pdf'
                 >
-                    {t('navbar.downloadCV')}
+                    {t('ui.buttons.downloadCV')}
                 </a>
                 <div class='flex items-center gap-3'>
                     <ThemeSelector />
@@ -43,16 +43,16 @@ const t = useTranslations(locale)
                 class='my-12 flex h-full flex-col items-center justify-between text-4xl font-semibold'
             >
                 <a class='close-navbar text-zinc-700 dark:text-white' href='#about'>
-                    {t('navbar.navigators.about')}
+                    {t('ui.labels.about')}
                 </a>
                 <a class='close-navbar text-zinc-700 dark:text-white' href='#skills'>
-                    {t('navbar.navigators.skills')}
+                    {t('ui.labels.skills')}
                 </a>
                 <a class='close-navbar text-zinc-700 dark:text-white' href='#experience'>
-                    {t('navbar.navigators.experience')}
+                    {t('ui.labels.experience')}
                 </a>
                 <a class='close-navbar text-zinc-700 dark:text-white' href='#contact'>
-                    {t('navbar.navigators.contact')}
+                    {t('ui.labels.contact')}
                 </a>
             </div>
             <Icon

@@ -11,10 +11,10 @@ const t = useTranslations(locale)
 
 <div class='mt-20 w-fit text-center sm:mt-36' id='experience'>
     <h1 class='text-5xl font-bold text-zinc-700 dark:text-teal-400 sm:text-6xl'>
-        {t('experience.title')}
+        {t('ui.labels.experience')}
     </h1>
     <p class='m-auto mt-10 max-w-[800px] text-xl font-medium dark:text-white sm:text-2xl'>
-        {t('experience.description')}
+        {t('experience')}
     </p>
     <div class='m-auto mt-10 flex w-fit flex-wrap justify-center gap-x-10 gap-y-5'>
         {projects.map((project) => <Project {...project} />)}

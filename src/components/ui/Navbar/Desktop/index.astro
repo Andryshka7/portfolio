@@ -14,21 +14,21 @@ const homeLink = `${Astro.url.origin}/${locale}`
 
 <nav class='hidden w-full items-center justify-between px-12 py-8 lg:flex'>
     <a class='-mt-1.5 text-4xl font-bold text-zinc-800 dark:text-white' href={homeLink}>
-        {t('navbar.title')}
+        {t('title')}
     </a>
 
     <div class='mx-4 ml-10 hidden min-w-fit items-center gap-8 text-xl font-semibold md:flex'>
         <a class='text-zinc-700 dark:text-white' href='#about'>
-            {t('navbar.navigators.about')}
+            {t('ui.labels.about')}
         </a>
         <a class='text-zinc-700 dark:text-white' href='#skills'>
-            {t('navbar.navigators.skills')}
+            {t('ui.labels.skills')}
         </a>
         <a class='text-zinc-700 dark:text-white' href='#experience'>
-            {t('navbar.navigators.experience')}
+            {t('ui.labels.experience')}
         </a>
         <a class='text-zinc-700 dark:text-white' href='#contact'>
-            {t('navbar.navigators.contact')}
+            {t('ui.labels.contact')}
         </a>
     </div>
 
@@ -38,7 +38,7 @@ const homeLink = `${Astro.url.origin}/${locale}`
             href='./CV.pdf'
             download='CV.pdf'
         >
-            {t('navbar.downloadCV')}
+            {t('ui.buttons.downloadCV')}
         </a>
         <ThemeSelector />
         <LanguageSelector />

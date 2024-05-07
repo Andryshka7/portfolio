@@ -53,4 +53,4 @@ const showAlert = ({ content, type }: Alert) => {
     }, 2000)
 }
 
-export default showAlert
+export { showAlert }

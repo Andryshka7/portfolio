@@ -7,30 +7,30 @@ const t = useTranslations(locale)
 ---
 
 <form
-    class='mb-14 mt-20 flex w-[360px] flex-col rounded-3xl bg-zinc-200 px-12 py-10 dark:bg-[#2A2A67] xs:w-5/6 sm:mt-36 md:w-[700px] md:px-24'
+    class='mt-20 flex w-[360px] flex-col rounded-3xl bg-zinc-200 px-12 py-10 dark:bg-[#2A2A67] xs:w-5/6 sm:mt-36 md:w-[700px] md:px-24'
     id='contact-form'
 >
     <h1 class='mb-2 text-center text-4xl font-bold text-zinc-700 dark:text-teal-400 sm:text-5xl'>
-        {t('contact.title')}
+        {t('ui.labels.contact-form')}
     </h1>
 
     <input
         name='name'
         type='text'
-        placeholder={t('contact.placeHolders.name')}
+        placeholder={t('contact.name')}
         class='my-6 block h-12 w-full border-b-2 border-b-zinc-400 bg-transparent p-2 text-lg font-medium text-zinc-800 transition focus:outline-none dark:border-b-[#05CEC2] dark:text-white sm:text-xl'
         required
     />
     <input
         name='email'
         type='email'
-        placeholder={t('contact.placeHolders.email')}
+        placeholder={t('contact.email')}
         class='my-6 block h-12 w-full border-b-2 border-b-zinc-400 bg-transparent p-2 text-lg font-medium text-zinc-800 transition focus:outline-none dark:border-b-[#05CEC2] dark:text-white sm:text-xl'
         required
     />
     <textarea
         name='message'
-        placeholder={t('contact.placeHolders.message')}
+        placeholder={t('contact.message')}
         class='my-6 block h-12 min-h-12 w-full border-b-2 border-b-zinc-400 bg-transparent p-2 text-lg font-medium text-zinc-800 transition focus:outline-none dark:border-b-[#05CEC2] dark:text-white sm:text-xl'
         required></textarea>
 
@@ -38,7 +38,7 @@ const t = useTranslations(locale)
         type='submit'
         class='mt-6 w-full rounded-md bg-red-400 py-1 text-xl font-bold text-zinc-100 transition hover:bg-opacity-70 dark:bg-[#05CEC2] dark:text-[#2A2A67] dark:hover:bg-opacity-70'
     >
-        {t('contact.button')}
+        {t('ui.buttons.send')}
     </button>
 </form>
 
@@ -47,7 +47,7 @@ const t = useTranslations(locale)
     import type { Locale } from 'types'
 
     import { sendForm } from 'emailjs-com'
-    import { showAlert } from 'helpers'
+    import { showAlert } from './helpers'
 
     const locale = document.documentElement.lang as Locale
     const t = useTranslations(locale)

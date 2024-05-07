@@ -57,31 +57,33 @@ const creteLocaleUrl = (locale: Locale) => {
 </div>
 
 <script>
+    let isOpen = false
+
     document.querySelectorAll('.language-selector').forEach((languageSelector) => {
         const arrow = languageSelector.querySelector('.language-arrow')!
         const options = languageSelector.querySelector('.options')!
 
-        const toggleLanguageSelector = () => {
-            arrow.classList.toggle('rotate-180')
-            options.classList.toggle('hidden')
+        const showLanguageSelector = () => {
+            isOpen = true
+            arrow.classList.add('rotate-180')
+            options.classList.remove('hidden')
+            document.addEventListener('mousedown', hideLanguageSelector)
         }
 
-        const hideLanguageSelector = (e: MouseEvent) => {
-            if (!options.contains(e.target as Node)) {
-                toggleLanguageSelector()
-                document.removeEventListener('mousedown', hideLanguageSelector)
-            }
+        const hideLanguageSelector = () => {
+            isOpen = false
+            arrow.classList.remove('rotate-180')
+            options.classList.add('hidden')
+            document.removeEventListener('mousedown', hideLanguageSelector)
         }
 
         languageSelector.addEventListener('mousedown', (e) => {
             e.stopPropagation()
 
-            if (options.classList.contains('hidden')) {
-                toggleLanguageSelector()
-                document.addEventListener('mousedown', hideLanguageSelector)
+            if (!isOpen) {
+                showLanguageSelector()
             } else if (!options.contains(e.target as Node)) {
-                toggleLanguageSelector()
-                document.removeEventListener('mousedown', hideLanguageSelector)
+                hideLanguageSelector()
             }
         })
     })
