@@ -13,13 +13,13 @@ const { images } = Astro.props
         name='Chevron'
         width={40}
         height={40}
-        class='pointer-events-none absolute right-full top-1/2 mx-1 -translate-y-full rotate-90 text-gray-400 opacity-50 duration-200 hover:scale-110'
+        class='pointer-events-none absolute right-full top-1/2 -translate-y-full rotate-90 text-gray-400 opacity-50 duration-200 hover:scale-110 sm:mx-1'
         stroke-width={2.5}
         id='previous'
     />
 
-    <div class='overflow-hidden'>
-        <div class='flex select-none' id='imagesContainer'>
+    <div class='overflow-hidden' id='imagesContainer'>
+        <div class='flex select-none' id='images'>
             {images.map((source) => <img src={source} />)}
         </div>
     </div>
@@ -29,7 +29,7 @@ const { images } = Astro.props
         width={40}
         height={40}
         stroke-width={2.5}
-        class='absolute left-full top-1/2 mx-1 -translate-y-full -rotate-90 text-gray-400 duration-200 hover:scale-110'
+        class='absolute left-full top-1/2 -translate-y-full -rotate-90 text-gray-400 duration-200 hover:scale-110 sm:mx-1'
         id='next'
     />
     <div class='indicators mx-auto mt-5 flex w-fit gap-1.5'>
@@ -48,8 +48,7 @@ const { images } = Astro.props
     const next = document.getElementById('next')!
 
     const indicators = document.querySelector('.indicators')!
-
-    const imagesContainer = document.getElementById('imagesContainer')!
+    const images = document.getElementById('images')!
 
     previous.addEventListener('click', () => {
         const currentIndicator = indicators.children[currentIndex]
@@ -61,7 +60,7 @@ const { images } = Astro.props
         newIndicator.classList.toggle('scale-110')
         newIndicator.classList.replace('bg-zinc-600', 'bg-zinc-400')
 
-        imagesContainer.style.translate = `${-(currentIndex - 1) * 1100}px 0`
+        images.style.translate = `${-(currentIndex - 1) * 100}% 0`
 
         if (currentIndex === 1) {
             previous.classList.add('pointer-events-none', 'opacity-50')
@@ -81,7 +80,7 @@ const { images } = Astro.props
         newIndicator.classList.toggle('scale-110')
         newIndicator.classList.replace('bg-zinc-600', 'bg-zinc-400')
 
-        imagesContainer.style.translate = `${-(currentIndex + 1) * 1100}px 0`
+        images.style.translate = `${-(currentIndex + 1) * 100}% 0`
 
         if (currentIndex === 0) {
             previous.classList.remove('pointer-events-none', 'opacity-50')

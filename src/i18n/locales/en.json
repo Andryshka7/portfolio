@@ -67,15 +67,15 @@
         },
         "lapchess": {
             "brief-description": "Online chess platform where players can play against each other",
-            "description": "Lapchess is a comprehensive chess platform tailored to cater to enthusiasts and professionals alike.  Whether you're a novice looking to learn the basics or a seasoned player aiming to master advanced techniques, Lapchess equips you with the tools needed to enhance your gameplay.",
+            "description": "Lapchess is a comprehensive chess platform designed for both enthusiasts and professionals. Whether you're a beginner looking to learn the basics or a seasoned player looking to master advanced techniques, Lapchess will give you the tools you need to improve your gaming experience.",
             "tech-stack": "React, TypeScript, ReduxToolkit, Express Js, JWT, Socket Io, MongoDB",
-            "development-process": "The development process of Lapchess involved meticulous planning and hard work. It commenced with brainstorming ideas and identifying key features based on player preferences. The development team then undertook the task of coding and building the platform from scratch. This process included implementing features such as player matchmaking, game rooms, and real-time gameplay."
+            "development-process": "The development of Lapchess started with market research and user feedback to shape its design. Through iterative prototyping and testing, the focus was on refining gameplay and interface elements. Regular feedback sessions ensured a seamless user experience."
         },
         "carmarket": {
             "brief-description": "User-friendly platform for buying and selling cars effortlessly",
             "description": "Discover the ultimate ease of buying and selling cars with Carmarket. Our seamless platform connects buyers and sellers, offering hassle-free browsing and secure transactions. With intuitive search filters and transparent pricing, Carmarket ensures a smooth and efficient experience. Say goodbye to traditional car buying stress with Carmarket.",
             "tech-stack": "React, TypeScript, Zustand, Express Js, JWT, MySQL",
-            "development-process": "Carmarket development process begins with thorough planning and design, followed by backend and frontend development. Integration and testing ensure functionality before deployment, with ongoing support and maintenance post-launch, including user feedback incorporation for continuous improvement."
+            "development-process": "Carmarket development process begins with thorough planning and design, followed by backend and frontend development. Integration and testing ensure stable functionality before deployment, with ongoing support and maintenance post-launch, including user feedback incorporation for continuous improvement."
         }
     }
 }

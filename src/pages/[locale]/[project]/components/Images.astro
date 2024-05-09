@@ -19,7 +19,7 @@ const { images } = Astro.props
     />
 
     <div class='overflow-hidden'>
-        <div class='flex select-none' id='imagesContainer'>
+        <div class='flex select-none' id='images'>
             {images.map((source) => <img src={source} />)}
         </div>
     </div>
@@ -48,8 +48,7 @@ const { images } = Astro.props
     const next = document.getElementById('next')!
 
     const indicators = document.querySelector('.indicators')!
-
-    const imagesContainer = document.getElementById('imagesContainer')!
+    const images = document.getElementById('images')!
 
     previous.addEventListener('click', () => {
         const currentIndicator = indicators.children[currentIndex]
@@ -61,7 +60,7 @@ const { images } = Astro.props
         newIndicator.classList.toggle('scale-110')
         newIndicator.classList.replace('bg-zinc-600', 'bg-zinc-400')
 
-        imagesContainer.style.translate = `${-(currentIndex - 1) * 1100}px 0`
+        images.style.translate = `${-(currentIndex - 1) * 100}% 0`
 
         if (currentIndex === 1) {
             previous.classList.add('pointer-events-none', 'opacity-50')
@@ -81,7 +80,7 @@ const { images } = Astro.props
         newIndicator.classList.toggle('scale-110')
         newIndicator.classList.replace('bg-zinc-600', 'bg-zinc-400')
 
-        imagesContainer.style.translate = `${-(currentIndex + 1) * 1100}px 0`
+        images.style.translate = `${-(currentIndex + 1) * 100}% 0`
 
         if (currentIndex === 0) {
             previous.classList.remove('pointer-events-none', 'opacity-50')

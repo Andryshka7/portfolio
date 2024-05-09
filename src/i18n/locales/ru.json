@@ -61,21 +61,21 @@
     "projects": {
         "tasker": {
             "brief-description": "Система управления задачами для командной работы",
-            "description": "Lapchess is a comprehensive chess platform tailored to cater to enthusiasts and professionals alike.  Whether you're a novice looking to learn the basics or a seasoned player aiming to master advanced techniques, Lapchess equips you with the tools needed to enhance your gameplay.",
+            "description": "Tasker - это надёжная система управления задачами, предназначенная для оптимизации совместной работы и повышения продуктивности внутри команд. Она помогает организовывать задачи, устанавливать приоритеты и отслеживать прогресс, независимо от размера проекта или сложности рабочих процессов.",
             "tech-stack": "Next Js, TypeScript, Nest Js, Zustand, TanStack Query, MySQL, TypeORM, JWT",
-            "development-process": "The development process involved a lot of careful planning and hard work. We started by gathering ideas and figuring out what features players would enjoy the most. Then, our team of developers got to work, writing code and creating the platform from scratch."
+            "development-process": "Разработка Tasker началась с тщательного исследования желаний и потребностей пользователей. Серверная часть фокусируется на масштабируемости, безопасности и производительности, а UI/UX стремится к простоте и удобству использования. Детальное тестирование обеспечивает надежность и постоянное совершенствование функционала, основанное на полученных отзывах."
         },
         "lapchess": {
             "brief-description": "Онлайн шахматы, где игроки могут играть друг против друга",
-            "description": "Lapchess is a comprehensive chess platform tailored to cater to enthusiasts and professionals alike.  Whether you're a novice looking to learn the basics or a seasoned player aiming to master advanced techniques, Lapchess equips you with the tools needed to enhance your gameplay.",
+            "description": "Lapchess — это комплексная шахматная платформа, предназначенная как для энтузиастов, так и для профессионалов. Независимо от того, являетесь ли вы новичком, желающим изучить основы, или опытным игроком, стремящимся освоить продвинутые методы, Lapchess предоставит вам инструменты, необходимые для улучшения вашего навыка игры.",
             "tech-stack": "React, TypeScript, ReduxToolkit, Express Js, JWT, Socket Io, MongoDB",
-            "development-process": "The development process involved a lot of careful planning and hard work. We started by gathering ideas and figuring out what features players would enjoy the most. Then, our team of developers got to work, writing code and creating the platform from scratch."
+            "development-process": "Разработка Lapchess началась с исследования рынка и отзывов пользователей, которые помогли сформировать его дизайн. Посредством итеративного прототипирования и тестирования основное внимание уделялось совершенствованию элементов игрового процесса и интерфейса. Регулярные сеансы обратной связи обеспечили удобство взаимодействия с пользователеми."
         },
         "carmarket": {
             "brief-description": "Удобная площадка для покупки и продажи автомобилей",
-            "description": "Lapchess is a comprehensive chess platform tailored to cater to enthusiasts and professionals alike.  Whether you're a novice looking to learn the basics or a seasoned player aiming to master advanced techniques, Lapchess equips you with the tools needed to enhance your gameplay.",
+            "description": "Откройте для себя максимальную простоту покупки и продажи автомобилей с Carmarket. Наша платформа объединяет покупателей и продавцов, предлагая удобный просмотр и безопасные транзакции. Благодаря интуитивно понятным поисковым фильтрам платформа обеспечивает бесперебойную и эффективную работу. Попрощайтесь с традиционным стрессом при покупке автомобиля вместе с Carmarket.",
             "tech-stack": "React, TypeScript, Zustand, Express Js, JWT, MySQL",
-            "development-process": "The development process involved a lot of careful planning and hard work. We started by gathering ideas and figuring out what features players would enjoy the most. Then, our team of developers got to work, writing code and creating the platform from scratch."
+            "development-process": "Процесс разработки Carmarket начинается с тщательного планирования и проектирования, за которым следует разработка backend и frontend частей. Интеграция и тестирование обеспечивают стабильную функциональность перед развертыванием, а также постоянную поддержку и обслуживание после запуска, включая учет отзывов пользователей для постоянного улучшения."
         }
     }
 }
