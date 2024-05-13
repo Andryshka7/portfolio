@@ -35,7 +35,13 @@ const carmarket = {
         source: '/images/projects/carmarket/icon.png',
         style: 'h-16 sm:h-20'
     },
-    images: [],
+    images: [
+        '/images/projects/carmarket/listings.png',
+        '/images/projects/carmarket/car preview.png',
+        '/images/projects/carmarket/edit listing.png',
+        '/images/projects/carmarket/create listing.png',
+        '/images/projects/carmarket/register.png'
+    ],
     title: 'Carmarket',
     about: './carmarket',
     figma: 'https://www.figma.com/file/o9qvXJxHA9dfUlcrLTvyS1/Car-market?type=design&node-id=0%3A1&mode=design&t=3ZwUYh8p2HO50d1K-1',
