@@ -36,14 +36,32 @@ const language = Astro.currentLocale as Locale
         <Alert />
 
         <script>
+            const { lang } = document.documentElement
+            const origin = `${window.location.origin}/${lang}`
+
             document.addEventListener('DOMContentLoaded', function () {
+                const target = sessionStorage.getItem('scrollTo')
+
+                if (target) {
+                    const element = document.getElementById(target.substring(1))!
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    sessionStorage.removeItem('scrollTo')
+                }
+
                 const anchors = document.querySelectorAll('a[href^="#"]')
+
                 anchors.forEach((anchor) => {
                     anchor.addEventListener('click', (event) => {
                         event.preventDefault()
-                        const target = anchor?.getAttribute('href')?.substring(1)!
-                        const element = document.getElementById(target)!
-                        element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                        const target = anchor?.getAttribute('href')!
+                        const element = document.getElementById(target.substring(1))
+
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                        } else {
+                            sessionStorage.setItem('scrollTo', target)
+                            window.location.replace(origin)
+                        }
                     })
                 })
             })

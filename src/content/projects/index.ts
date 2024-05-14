@@ -5,10 +5,10 @@ const lapchess = {
     },
     images: [
         '/images/projects/lapchess/game.png',
+        '/images/projects/lapchess/game over.png',
+        '/images/projects/lapchess/create room.png',
         '/images/projects/lapchess/rooms.png',
-        '/images/projects/lapchess/game-over.png',
-        '/images/projects/lapchess/practice.png',
-        '/images/projects/lapchess/sign-in.png'
+        '/images/projects/lapchess/sign up.png'
     ],
     title: 'Lapchess',
     about: './lapchess',
@@ -40,7 +40,7 @@ const carmarket = {
         '/images/projects/carmarket/car preview.png',
         '/images/projects/carmarket/edit listing.png',
         '/images/projects/carmarket/create listing.png',
-        '/images/projects/carmarket/register.png'
+        '/images/projects/carmarket/sign up.png'
     ],
     title: 'Carmarket',
     about: './carmarket',
