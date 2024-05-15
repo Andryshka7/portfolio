@@ -22,7 +22,13 @@ const tasker = {
         source: '/images/projects/tasker/icon.png',
         style: 'h-16 sm:h-20'
     },
-    images: [],
+    images: [
+        '/images/projects/tasker/tasks.png',
+        '/images/projects/tasker/edit task.png',
+        '/images/projects/tasker/team.png',
+        '/images/projects/tasker/edit user.png',
+        '/images/projects/tasker/report bug.png'
+    ],
     title: 'Tasker',
     about: './tasker',
     figma: 'https://www.figma.com/file/jJUCyOJwBXnueiz1czMSk5/Tasker?type=design&node-id=18%3A121&mode=design&t=bKv0vA0WGRFTsBX5-1',
