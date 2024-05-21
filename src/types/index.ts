@@ -10,6 +10,16 @@ interface Skill {
     level: 1 | 2 | 3
 }
 
+interface Project {
+    icon: string
+    title: string
+    about: string
+    images: string[]
+    source: string
+    figma: string
+    preview: string
+}
+
 type Locale = 'en' | 'ru' | 'lv'
 
-export { type Alert, type Locale, type Skill }
+export { type Alert, type Locale, type Skill, type Project }

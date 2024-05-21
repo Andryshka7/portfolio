@@ -1,15 +1,12 @@
 ---
 import { useTranslations } from 'i18n'
-import type { Locale } from 'types'
+import type { Locale, Skill } from 'types'
 
 import { Icon } from 'components/ui'
 
 interface Props {
     title: string
-    skills: {
-        skill: string
-        level: 1 | 2 | 3
-    }[]
+    skills: Skill[]
 }
 
 const { title, skills } = Astro.props

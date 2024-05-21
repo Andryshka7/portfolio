@@ -43,11 +43,11 @@ const t = useTranslations(locale)
 </form>
 
 <script>
+    import { showAlert } from 'helpers'
     import { useTranslations } from 'i18n'
     import type { Locale } from 'types'
 
     import { sendForm } from 'emailjs-com'
-    import { showAlert } from './helpers'
 
     const locale = document.documentElement.lang as Locale
     const t = useTranslations(locale)

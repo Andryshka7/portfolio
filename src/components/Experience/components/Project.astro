@@ -1,17 +1,9 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n'
 import { useTranslations } from 'i18n'
-import type { Locale } from 'types'
+import type { Locale, Project } from 'types'
 
-interface Props {
-    icon: {
-        source: string
-        style: string
-    }
-    title: string
-    about: string
-    preview: string
-}
+interface Props extends Project {}
 
 const { title, icon, about, preview } = Astro.props
 
@@ -21,7 +13,7 @@ const t = useTranslations(locale)
 
 <div class='rounded-3xl bg-zinc-200 px-8 pt-5 dark:bg-[#2A2A67] sm:px-10'>
     <div class='m-auto flex w-fit items-center sm:mt-1'>
-        <img src={icon.source} class={`${icon.style} sm:scale-1 scale-75`} alt='' />
+        <img src={icon} class='sm:scale-1 h-16 scale-75 sm:h-20' alt='' />
         <h2 class='text-4xl font-bold text-zinc-800 dark:text-white'>
             {title}
         </h2>

@@ -1,8 +1,5 @@
 const lapchess = {
-    icon: {
-        source: '/images/projects/lapchess/icon.png',
-        style: 'h-16 sm:h-20'
-    },
+    icon: '/images/projects/lapchess/icon.png',
     images: [
         '/images/projects/lapchess/game.png',
         '/images/projects/lapchess/game over.png',
@@ -18,10 +15,7 @@ const lapchess = {
 }
 
 const tasker = {
-    icon: {
-        source: '/images/projects/tasker/icon.png',
-        style: 'h-16 sm:h-20'
-    },
+    icon: '/images/projects/tasker/icon.png',
     images: [
         '/images/projects/tasker/tasks.png',
         '/images/projects/tasker/edit task.png',
@@ -37,10 +31,7 @@ const tasker = {
 }
 
 const carmarket = {
-    icon: {
-        source: '/images/projects/carmarket/icon.png',
-        style: 'h-16 sm:h-20'
-    },
+    icon: '/images/projects/carmarket/icon.png',
     images: [
         '/images/projects/carmarket/listings.png',
         '/images/projects/carmarket/car preview.png',

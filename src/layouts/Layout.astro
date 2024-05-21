@@ -1,8 +1,7 @@
 ---
 import type { Locale } from 'types'
+import { MobileNavbar, DesktopNavbar, Footer, Alert } from 'components/ui'
 import '../index.css'
-
-import { Navbar, Footer, Alert } from 'components/ui'
 
 interface Props {
     title: string
@@ -27,13 +26,15 @@ const language = Astro.currentLocale as Locale
     </head>
 
     <body class='flex min-h-screen flex-col bg-slate-100 dark:bg-midnight'>
-        <Navbar />
+        <DesktopNavbar />
+        <MobileNavbar />
+
         <main class='flex flex-col items-center'>
             <slot />
         </main>
-        <Footer />
 
         <Alert />
+        <Footer />
 
         <script>
             const { lang } = document.documentElement
