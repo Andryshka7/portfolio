@@ -10,7 +10,7 @@ type NestedObject = {
     [key: string]: string | NestedObject
 }
 
-const returnNested = (object: NestedObject, nestedKey: string) => {
+const returnNested = (object: NestedObject, nestedKey: string) : string => {
     if (!nestedKey.includes('.')) return object[nestedKey] as string
 
     const key = nestedKey.slice(0, nestedKey.indexOf('.'))
