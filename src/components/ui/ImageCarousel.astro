@@ -50,7 +50,7 @@ const { images } = Astro.props
     const indicators = document.querySelector('.indicators')!
     const images = document.getElementById('images')!
 
-    previous.addEventListener('click', () => {
+    previous?.addEventListener('click', () => {
         const currentIndicator = indicators.children[currentIndex]
         const newIndicator = indicators.children[currentIndex - 1]
 
@@ -71,7 +71,7 @@ const { images } = Astro.props
         currentIndex -= 1
     })
 
-    next.addEventListener('click', () => {
+    next?.addEventListener('click', () => {
         const currentIndicator = indicators.children[currentIndex]
         const newIndicator = indicators.children[currentIndex + 1]
 

@@ -56,11 +56,12 @@ const t = useTranslations(locale)
     const TEMPLATE = import.meta.env.PUBLIC_EMAILJS_TEMPLATE!
     const USER_KEY = import.meta.env.PUBLIC_EMAILJS_USER_KEY!
 
-    const form = document.getElementById('contact-form')! as HTMLFormElement
-    const button = form.querySelector('button[type="submit"]')!
+    const form = document.getElementById('contact-form') as HTMLFormElement | null
 
-    form.addEventListener('submit', async (e) => {
+    form?.addEventListener('submit', async (e) => {
         e.preventDefault()
+
+        const button = form.querySelector('button[type="submit"]')!
 
         button.classList.add('pointer-events-none', 'bg-opacity-70', 'dark:bg-opacity-70')
         button.classList.remove('hover:bg-opacity-70', 'dark:hover:bg-opacity-70')
@@ -69,8 +70,8 @@ const t = useTranslations(locale)
             await sendForm(SERVICE, TEMPLATE, form, USER_KEY)
             showAlert({
                 content: {
-                    name: t('contact.alert.messageSent.name'),
-                    text: t('contact.alert.messageSent.text')
+                    name: t('ui.alert.messageSent.name'),
+                    text: t('ui.alert.messageSent.text')
                 },
                 type: 'success'
             })
