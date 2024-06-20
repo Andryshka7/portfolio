@@ -10,7 +10,7 @@ type NestedObject = {
     [key: string]: string | NestedObject
 }
 
-const returnNested = (object: NestedObject, nestedKey: string) : string => {
+const returnNested = (object: NestedObject, nestedKey: string): string => {
     if (!nestedKey.includes('.')) return object[nestedKey] as string
 
     const key = nestedKey.slice(0, nestedKey.indexOf('.'))
@@ -19,9 +19,7 @@ const returnNested = (object: NestedObject, nestedKey: string) : string => {
     return returnNested(object[key] as NestedObject, nestedKeys)
 }
 
-const useTranslations =
-    (language: Locale = 'en') =>
-    (key: string) =>
-        returnNested(translations[language], key)
+const useTranslations = (language: Locale) => (key: string) =>
+    returnNested(translations[language], key)
 
 export { useTranslations }

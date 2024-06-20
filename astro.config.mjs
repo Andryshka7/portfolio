@@ -5,6 +5,7 @@ import icon from 'astro-icon'
 
 export default defineConfig({
     prefetch: true,
+    site: import.meta.env.PUBLIC_URL,
     integrations: [tailwind(), icon({ iconDir: 'public/icons' })],
     i18n: {
         defaultLocale: 'en',
