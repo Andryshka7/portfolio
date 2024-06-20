@@ -1,5 +1,4 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n'
 import { useTranslations } from 'i18n'
 import type { Locale } from 'types'
 
@@ -15,7 +14,7 @@ const t = useTranslations(locale)
 <nav class='flex w-full items-center justify-between px-8 py-8 lg:hidden'>
     <a
         class='-mt-1.5 text-4xl font-bold text-zinc-800 dark:text-white'
-        href={getRelativeLocaleUrl(locale)}
+        href={`${Astro.url.origin}/${locale}`}
     >
         {t('title')}
     </a>

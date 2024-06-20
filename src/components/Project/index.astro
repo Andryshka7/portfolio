@@ -1,5 +1,6 @@
 ---
 import { useTranslations } from 'i18n'
+import { capitalize } from 'helpers'
 import type { Locale, Project } from 'types'
 
 import { ImageCarousel } from 'components/ui'
@@ -17,7 +18,9 @@ const t = useTranslations(locale)
     <div class='flex items-center justify-between'>
         <div class='flex items-center gap-2'>
             <img src={icon} class='h-16 sm:h-20' />
-            <h3 class='mt-1 text-4xl font-bold text-zinc-800 dark:text-white'>{title}</h3>
+            <h3 class='mt-1 text-4xl font-bold text-zinc-800 dark:text-white'>
+                {capitalize(title)}
+            </h3>
         </div>
 
         <div class='mt-2 flex gap-1.5 md:gap-4'>
@@ -58,21 +61,21 @@ const t = useTranslations(locale)
         {t('ui.labels.description')}
     </h2>
     <p class='mt-2 text-2xl font-normal text-zinc-800 dark:text-white'>
-        {t(`projects.${title.toLowerCase()}.description`)}
+        {t(`projects.${title}.description`)}
     </p>
 
     <h2 class='mt-6 text-3xl font-bold text-zinc-800 dark:text-white'>
         {t('ui.labels.tech-stack')}
     </h2>
     <p class='mt-2 text-2xl font-normal text-zinc-800 dark:text-white'>
-        {t(`projects.${title.toLowerCase()}.tech-stack`)}
+        {t(`projects.${title}.tech-stack`)}
     </p>
 
     <h2 class='mt-6 text-3xl font-bold text-zinc-800 dark:text-white'>
         {t('ui.labels.development-process')}
     </h2>
     <p class='mt-2 text-2xl font-normal text-zinc-800 dark:text-white'>
-        {t(`projects.${title.toLowerCase()}.development-process`)}
+        {t(`projects.${title}.development-process`)}
     </p>
 
     <h2 class='mt-6 text-3xl font-bold text-zinc-800 dark:text-white'>

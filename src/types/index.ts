@@ -13,7 +13,6 @@ interface Skill {
 interface Project {
     icon: string
     title: string
-    about: string
     images: string[]
     source: string
     figma: string
