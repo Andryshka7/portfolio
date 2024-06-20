@@ -2,7 +2,7 @@
 import { useTranslations } from 'i18n'
 import type { Locale, Skill } from 'types'
 
-import { Icon } from 'components/ui'
+import { Icon } from 'astro-icon/components'
 
 interface Props {
     title: string
@@ -26,7 +26,7 @@ const t = useTranslations(locale)
         {
             skills.map(({ skill, level }) => (
                 <div class='flex gap-2'>
-                    <Icon name='Checkmark' height='20' width='20' class='mt-1 text-[#3EB9ED]' />
+                    <Icon name='Checkmark' height={20} width={20} class='mt-1 text-[#3EB9ED]' />
                     <div class='h-fit w-fit'>
                         <h1 class='text-base font-bold text-zinc-800 dark:text-white sm:text-xl'>
                             {skill}

@@ -3,7 +3,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n'
 import { useTranslations } from 'i18n'
 import type { Locale } from 'types'
 
-import { Icon } from 'components/ui'
+import { Icon } from 'astro-icon/components'
 
 import LanguageSelector from './shared/LanguageSelector.astro'
 import ThemeSelector from './shared/ThemeSelector.astro'
@@ -19,7 +19,7 @@ const t = useTranslations(locale)
     >
         {t('title')}
     </a>
-    <Icon name='Menu' width='35' height='35' class='open-navbar dark:text-white' />
+    <Icon name='Menu' width={35} height={35} class='open-navbar dark:text-white' />
 
     <div
         class='fixed left-0 top-0 z-10 h-full w-full -translate-y-full bg-zinc-200 dark:bg-slate-800'
@@ -57,9 +57,9 @@ const t = useTranslations(locale)
             </div>
             <Icon
                 name='Close'
-                height='100'
-                width='100'
-                class='close-navbar my-10 text-zinc-800 transition-transform hover:scale-105 dark:text-white'
+                height={100}
+                width={100}
+                class='close-navbar my-10 text-zinc-800 hover:scale-105 dark:text-white'
             />
         </div>
     </div>

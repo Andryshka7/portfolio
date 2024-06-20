@@ -1,6 +1,6 @@
 ---
 import type { Locale } from 'types'
-import { Icon } from 'components/ui'
+import { Icon } from 'astro-icon/components'
 
 interface Option {
     locale: Locale
@@ -35,7 +35,7 @@ const creteLocaleUrl = (locale: Locale) => {
             name='Chevron'
             width={16}
             height={16}
-            class='language-arrow -ml-0.5 transition-transform dark:text-white'
+            class='language-arrow -ml-0.5 dark:text-white'
         />
     </div>
 
@@ -46,7 +46,7 @@ const creteLocaleUrl = (locale: Locale) => {
             options.map(({ locale, language }) => (
                 <a
                     href={creteLocaleUrl(locale)}
-                    class='my-1 flex cursor-pointer items-center gap-2.5 px-10 transition hover:bg-zinc-400 hover:bg-opacity-80 dark:hover:bg-[#05CEC2]'
+                    class='my-1 flex cursor-pointer items-center gap-2.5 px-10 hover:bg-zinc-400 hover:bg-opacity-80 dark:hover:bg-[#05CEC2]'
                 >
                     <Icon name={`flags/${locale}`} width={24} class='rounded-[3px]' />
                     <h2 class='text-lg font-semibold text-zinc-800 dark:text-white'>{language}</h2>
