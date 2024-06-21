@@ -13,13 +13,13 @@ const options: Option[] = [
     { locale: 'lv', language: 'Latviešu' }
 ]
 
-const language = Astro.currentLocale as Locale
+const currentLocale = Astro.currentLocale as Locale
 
 const creteLocaleUrl = (locale: Locale) => {
     const pathName = Astro.url.pathname
     const origin = Astro.url.origin
 
-    return `${origin}/${locale}` + pathName.replace(`/${language}`, '')
+    return `${origin}/${locale}` + pathName.replace(`/${currentLocale}`, '')
 }
 ---
 
@@ -28,7 +28,7 @@ const creteLocaleUrl = (locale: Locale) => {
         <Icon name='Earth' width={28} height={28} class='text-zinc-800 dark:text-white' />
 
         <h2 class='w-5 text-base font-semibold dark:text-white'>
-            {language.toUpperCase()}
+            {currentLocale.toUpperCase()}
         </h2>
 
         <Icon

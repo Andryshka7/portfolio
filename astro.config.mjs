@@ -1,19 +1,26 @@
-import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
-import icon from 'astro-icon';
-import netlify from "@astrojs/netlify";
+import { defineConfig } from 'astro/config'
 
-// https://astro.build/config
+import tailwind from '@astrojs/tailwind'
+import netlify from '@astrojs/netlify'
+
+import icon from 'astro-icon'
+
 export default defineConfig({
-  prefetch: true,
-  site: import.meta.env.PUBLIC_URL,
-  integrations: [tailwind(), icon({
-    iconDir: 'public/icons'
-  })],
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'ru', 'lv']
-  },
-  output: "server",
-  adapter: netlify()
-});
+    prefetch: true,
+    integrations: [
+        tailwind(),
+        icon({
+            iconDir: 'public/icons'
+        })
+    ],
+    i18n: {
+        defaultLocale: 'en',
+        locales: ['en', 'ru', 'lv'],
+        routing: {
+            prefixDefaultLocale: true
+        }
+    },
+
+    output: 'server',
+    adapter: netlify({ edgeMiddleware: true })
+})

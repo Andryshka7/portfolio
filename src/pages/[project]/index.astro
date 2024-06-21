@@ -1,5 +1,6 @@
 ---
 import projects from 'content/projects'
+import { capitalize } from 'helpers'
 
 import Layout from 'layouts/Layout.astro'
 import { Project } from 'components'
@@ -14,9 +15,9 @@ export const getStaticPaths = () => {
     return paths
 }
 
-const project = projects.find((element) => element.title.toLowerCase() === Astro.params.project)!
+const project = projects.find((element) => element.title === Astro.params.project)!
 ---
 
-<Layout title={project.title}>
+<Layout title={capitalize(project.title)}>
     <Project {...project} />
 </Layout>
