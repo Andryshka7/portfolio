@@ -14,14 +14,14 @@ const locale = Astro.currentLocale as Locale
 const t = useTranslations(locale)
 ---
 
-<div class='mt-10 w-5/6 min-w-[300px] lg:w-3/4 2xl:w-[1120px]'>
+<div class='mt-4 w-5/6 min-w-[300px] xs:mt-6 md:mt-10 lg:w-3/4 2xl:w-[1120px]'>
     <div class='flex items-center justify-between'>
-        <div class='flex items-center gap-2'>
-            <img src={icon} class='h-16 sm:h-20' />
-            <h3 class='mt-1 text-4xl font-bold text-zinc-800 dark:text-white'>
+        <a href=`${preview}` target='_blank' class='flex items-center gap-2 md:gap-3'>
+            <img src={icon} class='h-14 md:h-20' />
+            <h3 class='mt-1 text-3xl font-bold text-zinc-800 dark:text-white md:text-4xl'>
                 {capitalize(title)}
             </h3>
-        </div>
+        </a>
 
         <div class='mt-2 flex gap-1.5 md:gap-4'>
             <a href={source} target='blank'>
@@ -57,36 +57,38 @@ const t = useTranslations(locale)
 
     <ImageCarousel images={images} />
 
-    <h2 class='mt-4 text-3xl font-bold text-zinc-800 dark:text-white'>
+    <h2 class='mt-4 text-2xl font-bold text-zinc-800 dark:text-white md:text-3xl'>
         {t('ui.labels.description')}
     </h2>
-    <p class='mt-2 text-2xl font-normal text-zinc-800 dark:text-white'>
+    <p class='mt-2 text-xl font-normal text-zinc-800 dark:text-white md:text-2xl'>
         {t(`projects.${title}.description`)}
     </p>
 
-    <h2 class='mt-6 text-3xl font-bold text-zinc-800 dark:text-white'>
+    <h2 class='mt-6 text-2xl font-bold text-zinc-800 dark:text-white md:text-3xl'>
         {t('ui.labels.tech-stack')}
     </h2>
-    <p class='mt-2 text-2xl font-normal text-zinc-800 dark:text-white'>
+    <p class='mt-2 text-xl font-normal text-zinc-800 dark:text-white md:text-2xl'>
         {t(`projects.${title}.tech-stack`)}
     </p>
 
-    <h2 class='mt-6 text-3xl font-bold text-zinc-800 dark:text-white'>
+    <h2 class='mt-6 text-2xl font-bold text-zinc-800 dark:text-white md:text-3xl'>
         {t('ui.labels.development-process')}
     </h2>
-    <p class='mt-2 text-2xl font-normal text-zinc-800 dark:text-white'>
+    <p class='mt-2 text-xl font-normal text-zinc-800 dark:text-white md:text-2xl'>
         {t(`projects.${title}.development-process`)}
     </p>
 
-    <h2 class='mt-6 text-3xl font-bold text-zinc-800 dark:text-white'>
+    <h2 class='mt-6 text-2xl font-bold text-zinc-800 dark:text-white md:text-3xl'>
         {t('ui.labels.links')}
     </h2>
 
-    <p class='mt-2 text-2xl font-normal text-zinc-800 underline-offset-4 dark:text-white'>
+    <p
+        class='mt-2 text-xl font-normal text-zinc-800 underline-offset-4 dark:text-white md:text-2xl'
+    >
         <a href={figma} target='blank' class='underline'>{t('ui.links.figma-file')}</a>
-        <span class='mx-1'>|</span>
+        <span class='sm:mx-1'>|</span>
         <a href={source} target='blank' class='underline'>{t('ui.links.source-code')}</a>
-        <span class='mx-1'>|</span>
+        <span class='sm:mx-1'>|</span>
         <a href={preview} target='blank' class='underline'>{t('ui.links.live-version')}</a>
     </p>
 </div>

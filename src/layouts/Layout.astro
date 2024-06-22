@@ -47,7 +47,7 @@ const language = Astro.currentLocale as Locale
 
                 if (target) {
                     const element = document.getElementById(target.substring(1))!
-                    element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
                     sessionStorage.removeItem('scrollTo')
                 }
 
@@ -60,7 +60,7 @@ const language = Astro.currentLocale as Locale
                         const element = document.getElementById(target.substring(1))
 
                         if (element) {
-                            element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                            element.scrollIntoView({ behavior: 'smooth', block: 'start' })
                         } else {
                             sessionStorage.setItem('scrollTo', target)
                             window.location.replace(origin)
