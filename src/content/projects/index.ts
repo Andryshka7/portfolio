@@ -25,7 +25,7 @@ const tasker = {
     title: 'tasker',
     figma: 'https://www.figma.com/file/jJUCyOJwBXnueiz1czMSk5/Tasker?type=design&node-id=18%3A121&mode=design&t=bKv0vA0WGRFTsBX5-1',
     source: 'https://github.com/Andryshka7/tasker',
-    preview: 'https://shopify-online.netlify.app'
+    preview: 'https://agile-tasker.netlify.app'
 }
 
 const carmarket = {
@@ -40,7 +40,7 @@ const carmarket = {
     title: 'carmarket',
     figma: 'https://www.figma.com/file/o9qvXJxHA9dfUlcrLTvyS1/Car-market?type=design&node-id=0%3A1&mode=design&t=3ZwUYh8p2HO50d1K-1',
     source: 'https://github.com/Andryshka7/carmarket',
-    preview: 'https://wordscope.netlify.app'
+    preview: 'https://carmarket-shop.netlify.app'
 }
 
 export default [tasker, lapchess, carmarket]
