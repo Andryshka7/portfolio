@@ -8,7 +8,7 @@ import { Icon } from 'astro-icon/components'
 
 interface Props extends Project {}
 
-const { icon, title, images, source, figma, preview } = Astro.props
+const { icon, title, images, source, figma } = Astro.props
 
 const locale = Astro.currentLocale as Locale
 const t = useTranslations(locale)
@@ -16,7 +16,7 @@ const t = useTranslations(locale)
 
 <div class='mt-4 w-5/6 min-w-[300px] xs:mt-6 md:mt-10 lg:w-3/4 2xl:w-[1120px]'>
     <div class='flex items-center justify-between'>
-        <a href=`${preview}` target='_blank' class='flex items-center gap-2 md:gap-3'>
+        <a href=`${source}` target='_blank' class='flex items-center gap-2 md:gap-3'>
             <img src={icon} class='h-14 md:h-20' />
             <h3 class='mt-1 text-3xl font-bold text-zinc-800 dark:text-white md:text-4xl'>
                 {capitalize(title)}
@@ -38,7 +38,7 @@ const t = useTranslations(locale)
                     {t('ui.buttons.source')}
                 </button>
             </a>
-            <a href={preview} target='blank'>
+            <a href={figma} target='blank'>
                 <Icon
                     name='Monitor'
                     width={30}
@@ -49,7 +49,7 @@ const t = useTranslations(locale)
                 <button
                     class='hidden w-32 rounded-md border-2 border-red-400 bg-red-400 py-0.5 text-center font-medium text-zinc-200 duration-300 hover:border-slate-400 hover:bg-slate-400 dark:border-[#05CEC2] dark:bg-[#05CEC2] dark:text-midnight dark:hover:border-slate-200 dark:hover:bg-slate-200 md:block'
                 >
-                    {t('ui.buttons.preview')}
+                    {t('ui.buttons.design')}
                 </button>
             </a>
         </div>
@@ -85,10 +85,8 @@ const t = useTranslations(locale)
     <p
         class='mt-2 text-xl font-normal text-zinc-800 underline-offset-4 dark:text-white md:text-2xl'
     >
-        <a href={figma} target='blank' class='underline'>{t('ui.links.figma-file')}</a>
-        <span class='sm:mx-1'>|</span>
         <a href={source} target='blank' class='underline'>{t('ui.links.source-code')}</a>
         <span class='sm:mx-1'>|</span>
-        <a href={preview} target='blank' class='underline'>{t('ui.links.live-version')}</a>
+        <a href={figma} target='blank' class='underline'>{t('ui.links.figma-file')}</a>
     </p>
 </div>

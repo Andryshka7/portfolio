@@ -16,7 +16,6 @@ interface Project {
     images: string[]
     source: string
     figma: string
-    preview: string
 }
 
 type Locale = 'en' | 'ru' | 'lv'

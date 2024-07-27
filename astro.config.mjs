@@ -20,7 +20,6 @@ export default defineConfig({
             prefixDefaultLocale: true
         }
     },
-
     output: 'server',
     adapter: netlify({ edgeMiddleware: true })
 })
