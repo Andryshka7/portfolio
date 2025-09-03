@@ -1,29 +1,27 @@
 {
-    "name": "portfolio",
+    "name": "andrey-lapchik-portfolio",
     "type": "module",
     "version": "0.0.1",
     "scripts": {
         "dev": "astro dev",
-        "start": "astro dev",
-        "build": "astro check && astro build",
+        "build": "astro build",
         "preview": "astro preview",
-        "astro": "astro"
+        "astro": "astro",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
     },
     "dependencies": {
-        "@astrojs/check": "^0.5.10",
-        "@astrojs/netlify": "^5.3.2",
-        "@astrojs/tailwind": "^5.1.0",
-        "astro": "^4.6.3",
-        "astro-icon": "^1.1.0",
-        "emailjs-com": "^3.2.0",
-        "tailwindcss": "^3.4.3",
-        "typescript": "^5.4.5"
+        "@iconify-json/mdi": "^1.2.3",
+        "@lucide/astro": "^0.542.0",
+        "astro": "^5.13.5",
+        "astro-icon": "^1.1.5"
     },
     "devDependencies": {
-        "@types/node": "^20.12.7",
-        "prettier-plugin-astro": "^0.13.0",
-        "prettier-plugin-tailwindcss": "^0.5.14"
-    },
-    "prettier:write-fix": "prettier --write . --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss",
-    "prettier:check-fix": "prettier --check . --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss"
+        "@tailwindcss/vite": "^4.0.0",
+        "prettier": "^3.6.2",
+        "prettier-plugin-astro": "^0.14.1",
+        "prettier-plugin-tailwindcss": "^0.6.14",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    }
 }

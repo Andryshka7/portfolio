@@ -1,0 +1,70 @@
+---
+// Footer component with simplified social links
+import { Github, Linkedin, MessageCircle, Phone } from '@lucide/astro'
+
+const year = new Date().getFullYear()
+---
+
+<section class='bg-gray-800 py-16'>
+    <div class='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <!-- Social Links -->
+        <div class='flex flex-col items-center space-y-8'>
+            <h3 class='text-2xl font-bold text-white'>Connect With Me</h3>
+            <p class='max-w-md text-center text-gray-300'>
+                Follow my work, check out my projects, or reach out directly through your preferred
+                platform.
+            </p>
+
+            <div class='flex flex-wrap justify-center gap-4'>
+                <a
+                    href='https://github.com/yourusername'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    class='flex items-center gap-2 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3 text-gray-300 transition-all duration-200 hover:border-cyan-500 hover:bg-gray-700 hover:text-white'
+                >
+                    <Github class='h-5 w-5' />
+                    <span>GitHub</span>
+                </a>
+
+                <a
+                    href='https://linkedin.com/in/yourusername'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    class='flex items-center gap-2 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3 text-gray-300 transition-all duration-200 hover:border-cyan-500 hover:bg-gray-700 hover:text-white'
+                >
+                    <Linkedin class='h-5 w-5' />
+                    <span>LinkedIn</span>
+                </a>
+
+                <a
+                    href='https://t.me/yourusername'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    class='flex items-center gap-2 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3 text-gray-300 transition-all duration-200 hover:border-cyan-500 hover:bg-gray-700 hover:text-white'
+                >
+                    <MessageCircle class='h-5 w-5' />
+                    <span>Telegram</span>
+                </a>
+
+                <a
+                    href='https://wa.me/yourphonenumber'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    class='flex items-center gap-2 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3 text-gray-300 transition-all duration-200 hover:border-cyan-500 hover:bg-gray-700 hover:text-white'
+                >
+                    <Phone class='h-5 w-5' />
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class='mt-12 border-t border-gray-600 pt-8'>
+            <div class='flex flex-col items-center justify-center gap-4 text-center'>
+                <p class='text-gray-400'>
+                    © {year} Andrey Lapchik. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

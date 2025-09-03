@@ -1,0 +1,142 @@
+---
+// Hero component with enhanced design
+import { Mail, Phone, MapPin } from '@lucide/astro'
+---
+
+<section
+    id='home'
+    class='relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black'
+>
+    <!-- Background decorative elements -->
+    <div class='absolute inset-0'>
+        <div
+            class='absolute top-20 -right-20 h-96 w-96 rounded-full bg-gradient-to-br from-cyan-500/10 to-blue-600/10 blur-3xl'
+        >
+        </div>
+        <div
+            class='absolute bottom-20 -left-20 h-80 w-80 rounded-full bg-gradient-to-tr from-purple-500/10 to-pink-600/10 blur-3xl'
+        >
+        </div>
+        <div
+            class='absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-gradient-to-r from-cyan-500/5 to-blue-600/5 blur-3xl'
+        >
+        </div>
+    </div>
+
+    <div class='max-w-8xl relative z-10 mx-auto px-4 pt-32 pb-20 sm:px-6 lg:px-8'>
+        <div class='grid items-center gap-12 lg:grid-cols-2'>
+            <!-- Content -->
+            <div class='space-y-8'>
+                <!-- Name and Title -->
+                <div class='space-y-4'>
+                    <div class='relative inline-block'>
+                        <h1
+                            class='text-4xl leading-tight font-bold text-white sm:text-6xl lg:text-7xl'
+                        >
+                            Andrey Lapchik
+                        </h1>
+                        <div
+                            class='absolute -inset-1 rounded-lg bg-gradient-to-r from-cyan-500/20 to-blue-600/20 blur-xl'
+                        >
+                        </div>
+                    </div>
+                    <h2
+                        class='text-xl leading-relaxed font-medium text-cyan-400 sm:text-2xl lg:text-3xl'
+                    >
+                        Full-Stack Developer
+                    </h2>
+                </div>
+
+                <!-- Description -->
+                <p class='max-w-2xl text-lg leading-relaxed text-gray-300 sm:text-xl'>
+                    Full-stack developer specializing in high-performance web applications,
+                    real-time systems, and user-friendly interfaces. Passionate about clean code,
+                    optimal performance, and delivering exceptional user experiences across various
+                    domains.
+                </p>
+
+                <!-- Core Skills -->
+                <div class='flex flex-wrap gap-3'>
+                    <span
+                        class='rounded-full border border-cyan-500/30 bg-cyan-600/20 px-4 py-2 text-sm font-medium text-cyan-400'
+                    >
+                        React/Next.js
+                    </span>
+                    <span
+                        class='rounded-full border border-blue-500/30 bg-blue-600/20 px-4 py-2 text-sm font-medium text-blue-400'
+                    >
+                        NestJS/Node.js
+                    </span>
+                    <span
+                        class='rounded-full border border-purple-500/30 bg-purple-600/20 px-4 py-2 text-sm font-medium text-purple-400'
+                    >
+                        TypeScript
+                    </span>
+                    <span
+                        class='rounded-full border border-green-500/30 bg-green-600/20 px-4 py-2 text-sm font-medium text-green-400'
+                    >
+                        Web3 / DeFi
+                    </span>
+                </div>
+
+                <!-- Contact Info -->
+                <div class='space-y-3 text-gray-300'>
+                    <div class='flex items-center gap-3'>
+                        <Mail class='h-5 w-5 text-cyan-400' />
+                        <a
+                            href='mailto:a.lapchik7@gmail.com'
+                            class='break-all transition-colors hover:text-cyan-400'
+                        >
+                            a.lapchik7@gmail.com
+                        </a>
+                    </div>
+                    <div class='flex items-center gap-3'>
+                        <Phone class='h-5 w-5 text-cyan-400' />
+                        <a href='tel:+37128176717' class='transition-colors hover:text-cyan-400'>
+                            +371 28176717
+                        </a>
+                    </div>
+                    <div class='flex items-center gap-3'>
+                        <MapPin class='h-5 w-5 text-cyan-400' />
+                        <span>Riga, Latvia</span>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class='flex flex-col gap-4 sm:flex-row'>
+                    <a
+                        href='#experience'
+                        class='rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 px-8 py-4 text-center font-semibold text-white transition-all duration-300 hover:scale-105 hover:from-cyan-700 hover:to-blue-700 hover:shadow-lg hover:shadow-cyan-500/25'
+                    >
+                        View Experience
+                    </a>
+                    <a
+                        href='#contact'
+                        class='rounded-lg border border-cyan-500/50 px-8 py-4 text-center font-semibold text-cyan-400 transition-all duration-300 hover:bg-cyan-500/10'
+                    >
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+
+            <!-- Photo -->
+            <div class='flex justify-center lg:justify-end'>
+                <div class='relative'>
+                    <div
+                        class='h-64 w-64 overflow-hidden rounded-2xl border-4 border-gray-700/50 shadow-2xl sm:h-80 sm:w-80'
+                    >
+                        <img
+                            src='/me.png'
+                            alt='Andrey Lapchik'
+                            class='h-full w-full object-cover'
+                        />
+                    </div>
+                    <div
+                        class='absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-r from-cyan-500/20 to-blue-600/20 blur-2xl'
+                    >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

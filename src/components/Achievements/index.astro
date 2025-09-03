@@ -1,0 +1,123 @@
+---
+// Achievements and Soft Skills component
+import { Trophy, Users, Lightbulb, Target, Award, Heart } from '@lucide/astro'
+---
+
+<section id='achievements' class='bg-gray-900 py-20'>
+    <div class='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <h2 class='relative mb-8 text-center text-3xl font-bold text-white'>
+            <span class='relative z-10'>Achievements & Soft Skills</span>
+            <div
+                class='absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 opacity-20 blur'
+            >
+            </div>
+        </h2>
+
+        <div class='grid gap-8 md:grid-cols-2'>
+            <!-- Achievements -->
+            <div
+                class='group rounded-xl border border-gray-700/50 bg-gray-800/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-cyan-500/50 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-cyan-500/25'
+            >
+                <div class='mb-6 text-center'>
+                    <Trophy
+                        class='mx-auto mb-4 h-12 w-12 text-cyan-400 transition-transform duration-300 group-hover:scale-110'
+                    />
+                    <h3
+                        class='text-xl font-bold text-white transition-colors duration-300 group-hover:text-cyan-400'
+                    >
+                        Key Achievements
+                    </h3>
+                </div>
+                <div class='space-y-4'>
+                    <div
+                        class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'
+                    >
+                        <Award class='mt-0.5 h-5 w-5 text-cyan-400' />
+                        <div>
+                            <h4 class='font-semibold text-white'>Crypto Trading Platform</h4>
+                            <p class='text-sm text-gray-300'>
+                                Built full-stack Solana trading platform competing with Axiom and
+                                Photon
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'
+                    >
+                        <Target class='mt-0.5 h-5 w-5 text-cyan-400' />
+                        <div>
+                            <h4 class='font-semibold text-white'>Scalable Backend Architecture</h4>
+                            <p class='text-sm text-gray-300'>
+                                Designed scalable architecture reducing latency in real-time systems
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'
+                    >
+                        <Trophy class='mt-0.5 h-5 w-5 text-cyan-400' />
+                        <div>
+                            <h4 class='font-semibold text-white'>15+ Production Systems</h4>
+                            <p class='text-sm text-gray-300'>
+                                Delivered e-commerce platforms, financial applications, and
+                                enterprise solutions for clients
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div
+                class='group rounded-xl border border-gray-700/50 bg-gray-800/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-green-500/50 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-green-500/25'
+            >
+                <div class='mb-6 text-center'>
+                    <Heart
+                        class='mx-auto mb-4 h-12 w-12 text-green-400 transition-transform duration-300 group-hover:scale-110'
+                    />
+                    <h3
+                        class='text-xl font-bold text-white transition-colors duration-300 group-hover:text-green-400'
+                    >
+                        Soft Skills
+                    </h3>
+                </div>
+                <div class='space-y-4'>
+                    <div
+                        class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'
+                    >
+                        <Users class='mt-0.5 h-5 w-5 text-green-400' />
+                        <div>
+                            <h4 class='font-semibold text-white'>International Collaboration</h4>
+                            <p class='text-sm text-gray-300'>
+                                Worked with international teams across time zones on NDA projects
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'
+                    >
+                        <Lightbulb class='mt-0.5 h-5 w-5 text-green-400' />
+                        <div>
+                            <h4 class='font-semibold text-white'>Client Communication</h4>
+                            <p class='text-sm text-gray-300'>
+                                Translating business goals into technical requirements and solutions
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'
+                    >
+                        <Heart class='mt-0.5 h-5 w-5 text-green-400' />
+                        <div>
+                            <h4 class='font-semibold text-white'>Continuous Learning</h4>
+                            <p class='text-sm text-gray-300'>
+                                Active in hackathons, coding challenges, and discussions with senior
+                                engineers
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,25 +1,12 @@
+// @ts-check
 import { defineConfig } from 'astro/config'
-
-import tailwind from '@astrojs/tailwind'
-import netlify from '@astrojs/netlify'
-
+import tailwindcss from '@tailwindcss/vite'
 import icon from 'astro-icon'
 
+// https://astro.build/config
 export default defineConfig({
-    prefetch: true,
-    integrations: [
-        tailwind(),
-        icon({
-            iconDir: 'public/icons'
-        })
-    ],
-    i18n: {
-        defaultLocale: 'en',
-        locales: ['en', 'ru', 'lv'],
-        routing: {
-            prefixDefaultLocale: true
-        }
-    },
-    output: 'server',
-    adapter: netlify({ edgeMiddleware: true })
+    integrations: [icon()],
+    vite: {
+        plugins: [tailwindcss()]
+    }
 })

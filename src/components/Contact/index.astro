@@ -1,0 +1,166 @@
+---
+// Contact component with contact form
+import { Mail, Phone, MapPin, Send } from '@lucide/astro'
+---
+
+<section id='contact' class='bg-gray-900 py-20'>
+    <div class='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <h2 class='relative mb-16 text-center text-3xl font-bold text-white'>
+            <span class='relative z-10'>Get In Touch</span>
+            <div
+                class='absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 opacity-20 blur'
+            >
+            </div>
+        </h2>
+
+        <div class='grid gap-8 md:grid-cols-2'>
+            <!-- Contact Form Card -->
+            <div
+                class='group rounded-xl border border-cyan-500/30 bg-gradient-to-r from-cyan-900/20 to-gray-800/40 p-6 shadow-lg transition-all duration-300 hover:border-cyan-400/50 hover:shadow-cyan-500/10'
+            >
+                <div class='mb-6 text-center'>
+                    <Send
+                        class='mx-auto mb-4 h-12 w-12 text-cyan-400 transition-transform duration-300 group-hover:scale-110'
+                    />
+                    <h3
+                        class='text-xl font-bold text-white transition-colors duration-300 group-hover:text-cyan-400'
+                    >
+                        Send Message
+                    </h3>
+                </div>
+
+                <form class='space-y-4' action='#' method='POST'>
+                    <div class='grid gap-4 sm:grid-cols-2'>
+                        <div>
+                            <label for='name' class='mb-2 block text-sm font-medium text-gray-300'
+                                >Name</label
+                            >
+                            <input
+                                type='text'
+                                id='name'
+                                name='name'
+                                required
+                                class='w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none'
+                                placeholder='Your name'
+                            />
+                        </div>
+                        <div>
+                            <label for='email' class='mb-2 block text-sm font-medium text-gray-300'
+                                >Email</label
+                            >
+                            <input
+                                type='email'
+                                id='email'
+                                name='email'
+                                required
+                                class='w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none'
+                                placeholder='your@email.com'
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for='subject' class='mb-2 block text-sm font-medium text-gray-300'
+                            >Subject</label
+                        >
+                        <input
+                            type='text'
+                            id='subject'
+                            name='subject'
+                            required
+                            class='w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none'
+                            placeholder='What is this about?'
+                        />
+                    </div>
+
+                    <div>
+                        <label for='message' class='mb-2 block text-sm font-medium text-gray-300'
+                            >Message</label
+                        >
+                        <textarea
+                            id='message'
+                            name='message'
+                            rows='4'
+                            required
+                            class='w-full resize-none rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white placeholder-gray-400 transition-colors focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none'
+                            placeholder='Tell me about your project...'></textarea>
+                    </div>
+
+                    <button
+                        type='submit'
+                        class='w-full rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 font-semibold text-white transition-all duration-200 hover:from-cyan-600 hover:to-blue-600 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none'
+                    >
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Info Card -->
+            <div
+                class='group rounded-xl border border-blue-500/30 bg-gradient-to-r from-blue-900/20 to-gray-800/40 p-6 shadow-lg transition-all duration-300 hover:border-blue-400/50 hover:shadow-blue-500/10'
+            >
+                <div class='mb-6 text-center'>
+                    <Mail
+                        class='mx-auto mb-4 h-12 w-12 text-blue-400 transition-transform duration-300 group-hover:scale-110'
+                    />
+                    <h3
+                        class='text-xl font-bold text-white transition-colors duration-300 group-hover:text-blue-400'
+                    >
+                        Get In Touch
+                    </h3>
+                </div>
+
+                <div class='space-y-4'>
+                    <div
+                        class='flex items-center gap-3 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3'
+                    >
+                        <Mail class='h-5 w-5 text-cyan-400' />
+                        <div>
+                            <p class='font-medium text-white'>Email</p>
+                            <a
+                                href='mailto:a.lapchik7@gmail.com'
+                                class='text-gray-300 transition-colors hover:text-cyan-400'
+                            >
+                                a.lapchik7@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class='flex items-center gap-3 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3'
+                    >
+                        <Phone class='h-5 w-5 text-cyan-400' />
+                        <div>
+                            <p class='font-medium text-white'>Phone</p>
+                            <a
+                                href='tel:+37128176717'
+                                class='text-gray-300 transition-colors hover:text-cyan-400'
+                            >
+                                +371 28176717
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class='flex items-center gap-3 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3'
+                    >
+                        <MapPin class='h-5 w-5 text-cyan-400' />
+                        <div>
+                            <p class='font-medium text-white'>Location</p>
+                            <span class='text-gray-300'>Riga, Latvia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class='mt-6 rounded-lg border border-cyan-500/30 bg-gradient-to-r from-cyan-900/20 to-gray-800/40 p-4'
+                >
+                    <h4 class='mb-2 font-semibold text-white'>Available for Projects</h4>
+                    <p class='text-sm text-gray-300'>
+                        I typically respond within 24 hours and am always open to new opportunities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

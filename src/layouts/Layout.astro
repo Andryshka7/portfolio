@@ -1,73 +1,51 @@
----
-import type { Locale } from 'types'
-import { MobileNavbar, DesktopNavbar, Footer, Alert } from 'components/ui'
-import '../index.css'
-
-interface Props {
-    title: string
-}
-
-const { title } = Astro.props
-
-const language = Astro.currentLocale as Locale
----
-
-<html lang={language}>
+<!doctype html>
+<html lang='en' class='dark'>
     <head>
-        <meta charset='utf-8' />
+        <meta charset='UTF-8' />
+        <meta
+            name='description'
+            content='Full-stack developer experienced in trading platforms, e-commerce, and productivity tools'
+        />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+        <meta name='generator' content={Astro.generator} />
 
-        <link rel='icon' href='/favicon.png' />
+        <!-- Canonical URL -->
+        <link rel='canonical' href='https://andryshka.com' />
 
-        <title>{title}</title>
+        <!-- Open Graph -->
+        <meta property='og:type' content='website' />
+        <meta property='og:title' content='Andrey Lapchik' />
+        <meta
+            property='og:description'
+            content='Full-stack developer experienced in trading platforms, e-commerce, and productivity tools'
+        />
+        <meta property='og:url' content='https://andryshka.com' />
+        <meta property='og:image' content='/preview.png' />
 
-        <script is:inline>
-            const theme = localStorage.getItem('theme')
-            document.querySelector('html').classList.toggle('dark', theme !== 'light')
-        </script>
+        <!-- Twitter -->
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:title' content='Andrey Lapchik' />
+        <meta
+            name='twitter:description'
+            content='Full-stack developer experienced in trading platforms, e-commerce, and productivity tools'
+        />
+        <meta name='twitter:image' content='/preview.png' />
+
+        <!-- Theme -->
+        <meta name='theme-color' content='#0D0D0D' />
+        <meta name='color-scheme' content='dark' />
+
+        <title>Andrey Lapchik</title>
+
+        <!-- Preload critical fonts -->
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+
+        <!-- Import CSS -->
+        <link rel='stylesheet' href='/src/styles/index.css' />
     </head>
-
-    <body class='flex min-h-screen flex-col bg-slate-100 dark:bg-midnight'>
-        <DesktopNavbar />
-        <MobileNavbar />
-
-        <main class='flex flex-col items-center'>
-            <slot />
-        </main>
-
-        <Alert />
-        <Footer />
-
-        <script>
-            const { lang } = document.documentElement
-            const origin = `${window.location.origin}/${lang}`
-
-            document.addEventListener('DOMContentLoaded', function () {
-                const target = sessionStorage.getItem('scrollTo')
-
-                if (target) {
-                    const element = document.getElementById(target.substring(1))!
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                    sessionStorage.removeItem('scrollTo')
-                }
-
-                const anchors = document.querySelectorAll('a[href^="#"]')
-
-                anchors.forEach((anchor) => {
-                    anchor.addEventListener('click', (event) => {
-                        event.preventDefault()
-                        const target = anchor?.getAttribute('href')!
-                        const element = document.getElementById(target.substring(1))
-
-                        if (element) {
-                            element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                        } else {
-                            sessionStorage.setItem('scrollTo', target)
-                            window.location.replace(origin)
-                        }
-                    })
-                })
-            })
-        </script>
+    <body class='bg-gray-900 text-gray-100 antialiased'>
+        <slot />
     </body>
 </html>

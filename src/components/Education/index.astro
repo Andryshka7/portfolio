@@ -1,0 +1,96 @@
+---
+// Education component with academic background and courses
+import { GraduationCap, School, BookOpen, Code } from '@lucide/astro'
+---
+
+<section id='education' class='bg-gray-900 py-20'>
+    <div class='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <h2 class='relative mb-16 text-center text-3xl font-bold text-white'>
+            <span class='relative z-10'>Education & Learning</span>
+            <div
+                class='absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 opacity-20 blur'
+            >
+            </div>
+        </h2>
+
+        <div class='grid gap-8 lg:grid-cols-2'>
+            <!-- Formal Education -->
+            <div class='space-y-6'>
+                <h3 class='mb-6 text-2xl font-bold text-white'>Formal Education</h3>
+
+                <!-- University -->
+                <div
+                    class='rounded-xl border border-cyan-500/30 bg-gradient-to-r from-cyan-900/20 to-gray-800/40 p-6 shadow-lg'
+                >
+                    <div class='mb-3 flex items-center justify-between'>
+                        <div class='flex items-center gap-3'>
+                            <GraduationCap class='h-5 w-5 text-cyan-400' />
+                            <h4 class='text-lg font-bold text-white'>University of Latvia</h4>
+                        </div>
+                        <span
+                            class='rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-medium text-cyan-400'
+                            >Current</span
+                        >
+                    </div>
+                    <p class='mb-2 text-sm text-gray-400'>Computer Science • 2024–present</p>
+                    <p class='text-sm text-gray-300'>
+                        Currently in the 2nd year, 3rd semester, with a focus on computer science
+                        fundamentals and practical applications in software engineering.
+                    </p>
+                </div>
+
+                <!-- High School -->
+                <div
+                    class='rounded-xl border border-blue-500/30 bg-gradient-to-r from-blue-900/20 to-gray-800/40 p-6 shadow-lg'
+                >
+                    <div class='mb-3 flex items-center gap-3'>
+                        <School class='h-5 w-5 text-blue-400' />
+                        <h4 class='text-lg font-bold text-white'>Riga State Classical Gymnasium</h4>
+                    </div>
+                    <p class='mb-2 text-sm text-gray-400'>
+                        Electronics & Telecommunication Faculty • 2021–2024
+                    </p>
+                    <p class='text-sm text-gray-300'>
+                        Gained technical foundation in electronics and communication systems, which
+                        built a strong analytical base for my programming journey.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Courses & Training -->
+            <div class='space-y-6'>
+                <h3 class='mb-6 text-2xl font-bold text-white'>Courses & Training</h3>
+
+                <!-- Datorium -->
+                <div
+                    class='rounded-xl border border-green-500/30 bg-gradient-to-r from-green-900/20 to-gray-800/40 p-6 shadow-lg'
+                >
+                    <div class='mb-3 flex items-center gap-3'>
+                        <BookOpen class='h-5 w-5 text-green-400' />
+                        <h4 class='text-lg font-bold text-white'>Datorium Coding Courses</h4>
+                    </div>
+                    <p class='mb-2 text-sm text-gray-400'>Python & JavaScript • 2022</p>
+                    <p class='text-sm text-gray-300'>
+                        Hands-on training in Python and JavaScript, focused on algorithms and
+                        building small projects.
+                    </p>
+                </div>
+
+                <!-- Fireship -->
+                <div
+                    class='rounded-xl border border-purple-500/30 bg-gradient-to-r from-purple-900/20 to-gray-800/40 p-6 shadow-lg'
+                >
+                    <div class='mb-3 flex items-center gap-3'>
+                        <Code class='h-5 w-5 text-purple-400' />
+                        <h4 class='text-lg font-bold text-white'>Fireship Courses</h4>
+                    </div>
+                    <p class='mb-2 text-sm text-gray-400'>Next.js • 2023</p>
+                    <p class='text-sm text-gray-300'>
+                        Learned advanced concepts of Next.js and server-side rendering, applied
+                        later in production projects.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
