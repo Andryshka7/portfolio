@@ -1,6 +1,44 @@
 ---
 // Achievements and Soft Skills component
 import { Trophy, Users, Lightbulb, Target, Award, Heart } from '@lucide/astro'
+
+const ACHIEVEMENTS = [
+    {
+        name: 'Crypto Trading Platform',
+        icon: Award,
+        description: 'Built full-stack Solana trading platform competing with Axiom and Photon'
+    },
+    {
+        name: 'Scalable Backend Architecture',
+        icon: Target,
+        description: 'Designed scalable architecture reducing latency in real-time systems'
+    },
+    {
+        name: '10+ Production Systems',
+        icon: Trophy,
+        description:
+            'Delivered e-commerce platforms, financial applications, and enterprise solutions for clients'
+    }
+]
+
+const SOFT_SKILLS = [
+    {
+        name: 'International Collaboration',
+        icon: Users,
+        description: 'Worked with international teams across time zones on NDA projects'
+    },
+    {
+        name: 'Client Communication',
+        icon: Lightbulb,
+        description: 'Translating business goals into technical requirements and solutions'
+    },
+    {
+        name: 'Continuous Learning',
+        icon: Heart,
+        description:
+            'Active in hackathons, coding challenges, and discussions with senior engineers'
+    }
+]
 ---
 
 <section id='achievements' class='bg-gray-900 py-20'>
@@ -29,41 +67,17 @@ import { Trophy, Users, Lightbulb, Target, Award, Heart } from '@lucide/astro'
                     </h3>
                 </div>
                 <div class='space-y-4'>
-                    <div
-                        class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'
-                    >
-                        <Award class='mt-0.5 h-5 w-5 text-cyan-400' />
-                        <div>
-                            <h4 class='font-semibold text-white'>Crypto Trading Platform</h4>
-                            <p class='text-sm text-gray-300'>
-                                Built full-stack Solana trading platform competing with Axiom and
-                                Photon
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'
-                    >
-                        <Target class='mt-0.5 h-5 w-5 text-cyan-400' />
-                        <div>
-                            <h4 class='font-semibold text-white'>Scalable Backend Architecture</h4>
-                            <p class='text-sm text-gray-300'>
-                                Designed scalable architecture reducing latency in real-time systems
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'
-                    >
-                        <Trophy class='mt-0.5 h-5 w-5 text-cyan-400' />
-                        <div>
-                            <h4 class='font-semibold text-white'>15+ Production Systems</h4>
-                            <p class='text-sm text-gray-300'>
-                                Delivered e-commerce platforms, financial applications, and
-                                enterprise solutions for clients
-                            </p>
-                        </div>
-                    </div>
+                    {
+                        ACHIEVEMENTS.map((achievement) => (
+                            <div class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'>
+                                <achievement.icon class='mt-0.5 h-5 w-5 text-cyan-400' />
+                                <div>
+                                    <h4 class='font-semibold text-white'>{achievement.name}</h4>
+                                    <p class='text-sm text-gray-300'>{achievement.description}</p>
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
 
@@ -82,40 +96,17 @@ import { Trophy, Users, Lightbulb, Target, Award, Heart } from '@lucide/astro'
                     </h3>
                 </div>
                 <div class='space-y-4'>
-                    <div
-                        class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'
-                    >
-                        <Users class='mt-0.5 h-5 w-5 text-green-400' />
-                        <div>
-                            <h4 class='font-semibold text-white'>International Collaboration</h4>
-                            <p class='text-sm text-gray-300'>
-                                Worked with international teams across time zones on NDA projects
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'
-                    >
-                        <Lightbulb class='mt-0.5 h-5 w-5 text-green-400' />
-                        <div>
-                            <h4 class='font-semibold text-white'>Client Communication</h4>
-                            <p class='text-sm text-gray-300'>
-                                Translating business goals into technical requirements and solutions
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'
-                    >
-                        <Heart class='mt-0.5 h-5 w-5 text-green-400' />
-                        <div>
-                            <h4 class='font-semibold text-white'>Continuous Learning</h4>
-                            <p class='text-sm text-gray-300'>
-                                Active in hackathons, coding challenges, and discussions with senior
-                                engineers
-                            </p>
-                        </div>
-                    </div>
+                    {
+                        SOFT_SKILLS.map((softSkill) => (
+                            <div class='flex items-start gap-3 rounded-lg border border-gray-600 bg-gray-700/50 p-4'>
+                                <softSkill.icon class='mt-0.5 h-5 w-5 text-green-400' />
+                                <div>
+                                    <h4 class='font-semibold text-white'>{softSkill.name}</h4>
+                                    <p class='text-sm text-gray-300'>{softSkill.description}</p>
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </div>

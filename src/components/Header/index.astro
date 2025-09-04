@@ -10,12 +10,20 @@ import {
     MessageCircle,
     FileText
 } from '@lucide/astro'
+
+const NAV_LINKS = [
+    { name: 'Home', href: '#home', icon: Home },
+    { name: 'Experience', href: '#experience', icon: Briefcase },
+    { name: 'Education', href: '#education', icon: GraduationCap },
+    { name: 'Skills', href: '#tech-stack', icon: Code },
+    { name: 'Contact', href: '#contact', icon: MessageCircle }
+]
 ---
 
 <header
     class='fixed top-0 right-0 left-0 z-50 border-b border-gray-700/50 bg-gray-900/95 backdrop-blur-md'
 >
-    <nav class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+    <nav class='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div class='flex h-16 items-center justify-between'>
             <!-- Logo/Brand -->
             <div class='flex items-center'>
@@ -34,41 +42,18 @@ import {
 
             <!-- Desktop Navigation -->
             <div class='hidden items-center space-x-8 lg:flex'>
-                <a
-                    href='#home'
-                    class='nav-link flex items-center space-x-1 text-gray-300 transition-colors duration-200 hover:text-cyan-400'
-                >
-                    <Home class='h-4 w-4' />
-                    <span>Home</span>
-                </a>
-                <a
-                    href='#experience'
-                    class='nav-link flex items-center space-x-1 text-gray-300 transition-colors duration-200 hover:text-cyan-400'
-                >
-                    <Briefcase class='h-4 w-4' />
-                    <span>Experience</span>
-                </a>
-                <a
-                    href='#education'
-                    class='nav-link flex items-center space-x-1 text-gray-300 transition-colors duration-200 hover:text-cyan-400'
-                >
-                    <GraduationCap class='h-4 w-4' />
-                    <span>Education</span>
-                </a>
-                <a
-                    href='#tech-stack'
-                    class='nav-link flex items-center space-x-1 text-gray-300 transition-colors duration-200 hover:text-cyan-400'
-                >
-                    <Code class='h-4 w-4' />
-                    <span>Skills</span>
-                </a>
-                <a
-                    href='#contact'
-                    class='nav-link flex items-center space-x-1 text-gray-300 transition-colors duration-200 hover:text-cyan-400'
-                >
-                    <MessageCircle class='h-4 w-4' />
-                    <span>Contact</span>
-                </a>
+                {
+                    NAV_LINKS.map((link) => (
+                        <a
+                            href={link.href}
+                            class='nav-link flex items-center space-x-1 text-gray-300 transition-colors duration-200 hover:text-cyan-400'
+                        >
+                            <link.icon class='h-4 w-4' />
+                            <span>{link.name}</span>
+                        </a>
+                    ))
+                }
+
                 <a
                     href='/CV.pdf'
                     target='_blank'
@@ -93,51 +78,20 @@ import {
         <!-- Mobile Navigation -->
         <div id='mobile-menu' class='hidden border-t border-gray-700/50 lg:hidden'>
             <div class='space-y-1 px-2 pt-2 pb-3'>
-                <a
-                    href='#home'
-                    class='mobile-nav-link block rounded-md px-3 py-2 text-gray-300 transition-colors duration-200 hover:bg-gray-800/50 hover:text-cyan-400'
-                >
-                    <div class='flex items-center space-x-2'>
-                        <Home class='h-4 w-4' />
-                        <span>Home</span>
-                    </div>
-                </a>
-                <a
-                    href='#experience'
-                    class='mobile-nav-link block rounded-md px-3 py-2 text-gray-300 transition-colors duration-200 hover:bg-gray-800/50 hover:text-cyan-400'
-                >
-                    <div class='flex items-center space-x-2'>
-                        <Briefcase class='h-4 w-4' />
-                        <span>Experience</span>
-                    </div>
-                </a>
-                <a
-                    href='#education'
-                    class='mobile-nav-link block rounded-md px-3 py-2 text-gray-300 transition-colors duration-200 hover:bg-gray-800/50 hover:text-cyan-400'
-                >
-                    <div class='flex items-center space-x-2'>
-                        <GraduationCap class='h-4 w-4' />
-                        <span>Education</span>
-                    </div>
-                </a>
-                <a
-                    href='#tech-stack'
-                    class='mobile-nav-link block rounded-md px-3 py-2 text-gray-300 transition-colors duration-200 hover:bg-gray-800/50 hover:text-cyan-400'
-                >
-                    <div class='flex items-center space-x-2'>
-                        <Code class='h-4 w-4' />
-                        <span>Skills</span>
-                    </div>
-                </a>
-                <a
-                    href='#contact'
-                    class='mobile-nav-link block rounded-md px-3 py-2 text-gray-300 transition-colors duration-200 hover:bg-gray-800/50 hover:text-cyan-400'
-                >
-                    <div class='flex items-center space-x-2'>
-                        <MessageCircle class='h-4 w-4' />
-                        <span>Contact</span>
-                    </div>
-                </a>
+                {
+                    NAV_LINKS.map((link) => (
+                        <a
+                            href={link.href}
+                            class='mobile-nav-link block rounded-md px-3 py-2 text-gray-300 transition-colors duration-200 hover:bg-gray-800/50 hover:text-cyan-400'
+                        >
+                            <div class='flex items-center space-x-2'>
+                                <link.icon class='h-4 w-4' />
+                                <span>{link.name}</span>
+                            </div>
+                        </a>
+                    ))
+                }
+
                 <a
                     href='/CV.pdf'
                     target='_blank'

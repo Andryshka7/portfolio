@@ -1,6 +1,68 @@
 ---
 // Testimonials component showcasing client feedback and recommendations
 import { Quote, Star, User, Building2, Calendar } from '@lucide/astro'
+
+enum ThemeEnum {
+    CYAN = 'cyan',
+    GREEN = 'green',
+    PURPLE = 'purple'
+}
+
+const TESTIMONIALS = [
+    {
+        name: 'Senior Backend Developer',
+        testimonial:
+            'Built crypto platform frontend with sub-100ms latency. Led WebSocket optimizations.',
+        company: 'Cryptonit',
+        rating: 5,
+        theme: ThemeEnum.CYAN
+    },
+
+    {
+        name: 'E-commerce Client',
+        testimonial: 'Delivered scalable e-commerce solution. Handles high traffic seamlessly.',
+        company: 'Retail Startup',
+        rating: 5,
+        theme: ThemeEnum.GREEN
+    },
+
+    {
+        name: 'International Team Lead',
+        testimonial: 'Proven collaborator in diverse teams maintaining quality and deadlines.',
+        company: 'Global Tech Company',
+        rating: 5,
+        theme: ThemeEnum.PURPLE
+    }
+]
+
+const THEMES = {
+    [ThemeEnum.CYAN]: {
+        border: 'border-cyan-500/30',
+        gradient: 'from-cyan-900/20 to-gray-800/40',
+        icon: 'text-cyan-400',
+        avatarGradient: 'from-cyan-500 to-blue-500',
+        hoverBorder: 'hover:border-cyan-400/50',
+        hoverShadow: 'hover:shadow-cyan-500/10'
+    },
+
+    [ThemeEnum.GREEN]: {
+        border: 'border-green-500/30',
+        gradient: 'from-green-900/20 to-gray-800/40',
+        icon: 'text-green-400',
+        avatarGradient: 'from-green-500 to-emerald-500',
+        hoverBorder: 'hover:border-green-400/50',
+        hoverShadow: 'hover:shadow-green-500/10'
+    },
+
+    [ThemeEnum.PURPLE]: {
+        border: 'border-purple-500/30',
+        gradient: 'from-purple-900/20 to-gray-800/40',
+        icon: 'text-purple-400',
+        avatarGradient: 'from-purple-500 to-pink-500',
+        hoverBorder: 'hover:border-purple-400/50',
+        hoverShadow: 'hover:shadow-purple-500/10'
+    }
+}
 ---
 
 <section id='testimonials' class='bg-gray-900 py-16'>
@@ -14,108 +76,43 @@ import { Quote, Star, User, Building2, Calendar } from '@lucide/astro'
         </h2>
 
         <div class='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
-            <!-- Testimonial 1 - Cryptonit Colleague -->
-            <div
-                class='group rounded-xl border border-cyan-500/30 bg-gradient-to-r from-cyan-900/20 to-gray-800/40 p-6 shadow-lg transition-all duration-300 hover:border-cyan-400/50 hover:shadow-cyan-500/10'
-            >
-                <div class='mb-4 flex items-center space-x-1'>
-                    {
-                        Array.from({ length: 5 }).map((_, i) => (
-                            <Star class='h-4 w-4 fill-yellow-400 text-yellow-400' />
-                        ))
-                    }
-                </div>
+            {
+                TESTIMONIALS.map(({ name, testimonial, company, rating, theme }) => {
+                    const { border, gradient, icon, avatarGradient, hoverBorder, hoverShadow } =
+                        THEMES[theme]
 
-                <Quote class='mb-4 h-8 w-8 text-cyan-400' />
+                    return (
+                        <div
+                            class={`group rounded-xl border ${border} bg-gradient-to-r ${gradient} p-6 shadow-lg transition-all duration-300 ${hoverBorder} ${hoverShadow}`}
+                        >
+                            <div class='mb-4 flex items-center space-x-1'>
+                                {Array.from({ length: rating }).map((_, i) => (
+                                    <Star class='h-4 w-4 fill-yellow-400 text-yellow-400' />
+                                ))}
+                            </div>
 
-                <p class='mb-6 text-gray-300 italic'>
-                    "Built crypto platform frontend with sub-100ms latency. Led WebSocket
-                    optimizations."
-                </p>
+                            <Quote class={`mb-4 h-8 w-8 ${icon}`} />
 
-                <div class='flex items-center space-x-3'>
-                    <div
-                        class='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-blue-500'
-                    >
-                        <User class='h-6 w-6 text-white' />
-                    </div>
-                    <div>
-                        <h4 class='font-semibold text-white'>Senior Backend Developer</h4>
-                        <div class='flex items-center space-x-2 text-sm text-gray-400'>
-                            <Building2 class='h-4 w-4' />
-                            <span>Cryptonit</span>
+                            <p class='mb-6 text-gray-300 italic'>"{testimonial}"</p>
+
+                            <div class='flex items-center space-x-3'>
+                                <div
+                                    class={`flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r ${avatarGradient}`}
+                                >
+                                    <User class='h-6 w-6 text-white' />
+                                </div>
+                                <div>
+                                    <h4 class='font-semibold text-white'>{name}</h4>
+                                    <div class='flex items-center space-x-2 text-sm text-gray-400'>
+                                        <Building2 class='h-4 w-4' />
+                                        <span>{company}</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial 2 - Freelance Client -->
-            <div
-                class='group rounded-xl border border-green-500/30 bg-gradient-to-r from-green-900/20 to-gray-800/40 p-6 shadow-lg transition-all duration-300 hover:border-green-400/50 hover:shadow-green-500/10'
-            >
-                <div class='mb-4 flex items-center space-x-1'>
-                    {
-                        Array.from({ length: 5 }).map((_, i) => (
-                            <Star class='h-4 w-4 fill-yellow-400 text-yellow-400' />
-                        ))
-                    }
-                </div>
-
-                <Quote class='mb-4 h-8 w-8 text-green-400' />
-
-                <p class='mb-6 text-gray-300 italic'>
-                    "Delivered scalable e-commerce solution. Handles high traffic seamlessly."
-                </p>
-
-                <div class='flex items-center space-x-3'>
-                    <div
-                        class='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-green-500 to-emerald-500'
-                    >
-                        <User class='h-6 w-6 text-white' />
-                    </div>
-                    <div>
-                        <h4 class='font-semibold text-white'>E-commerce Client</h4>
-                        <div class='flex items-center space-x-2 text-sm text-gray-400'>
-                            <Building2 class='h-4 w-4' />
-                            <span>Retail Startup</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial 3 - International Team Member -->
-            <div
-                class='group rounded-xl border border-purple-500/30 bg-gradient-to-r from-purple-900/20 to-gray-800/40 p-6 shadow-lg transition-all duration-300 hover:border-purple-400/50 hover:shadow-purple-500/10'
-            >
-                <div class='mb-4 flex items-center space-x-1'>
-                    {
-                        Array.from({ length: 5 }).map((_, i) => (
-                            <Star class='h-4 w-4 fill-yellow-400 text-yellow-400' />
-                        ))
-                    }
-                </div>
-
-                <Quote class='mb-4 h-8 w-8 text-purple-400' />
-
-                <p class='mb-6 text-gray-300 italic'>
-                    "Proven collaborator in diverse teams maintaining quality and deadlines."
-                </p>
-
-                <div class='flex items-center space-x-3'>
-                    <div
-                        class='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-pink-500'
-                    >
-                        <User class='h-6 w-6 text-white' />
-                    </div>
-                    <div>
-                        <h4 class='font-semibold text-white'>International Team Lead</h4>
-                        <div class='flex items-center space-x-2 text-sm text-gray-400'>
-                            <Building2 class='h-4 w-4' />
-                            <span>Global Tech Company</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    )
+                })
+            }
         </div>
         <!-- Call to Action -->
         <div class='mt-16 text-center'>

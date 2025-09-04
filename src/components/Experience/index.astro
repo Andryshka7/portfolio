@@ -1,6 +1,109 @@
 ---
 // Experience component with visual timeline roadmap design
 import { Briefcase, Building2, Users, Code } from '@lucide/astro'
+
+enum ThemeEnum {
+    GREEN = 'green',
+    BLUE = 'blue',
+    PURPLE = 'purple',
+    GRAY = 'gray'
+}
+
+const EXPERIENCE = [
+    {
+        name: 'Freelance Full-stack Developer',
+        description:
+            'Building modern e-commerce platforms and high-converting landing pages for diverse clients.',
+        icon: Briefcase,
+        year: 'Aug 2025 - Present',
+        company: 'Independent',
+        duration: 'Current',
+        skills: ['React/Next.js', 'E-commerce', 'Trading solutions', 'Payment Integration'],
+        theme: ThemeEnum.GREEN
+    },
+
+    {
+        name: 'Full-stack Developer',
+        description:
+            'Built high-performance crypto trading platform with real-time data processing and scalable architecture.',
+        icon: Code,
+        year: 'Dec 2024 - Aug 2025',
+        company: 'Cryptonit',
+        duration: '8 months',
+        skills: ['React/TypeScript', 'Node.js/NestJS', 'Redis/WebSockets', 'PostgreSQL'],
+        theme: ThemeEnum.BLUE
+    },
+
+    {
+        name: 'Lead Frontend Developer',
+        description:
+            'Led team of 3 developers building trading interfaces with advanced charting and 40% UX improvement.',
+        icon: Users,
+        year: 'Jul 2024 - Dec 2024',
+        company: 'Cryptonit',
+        duration: '6 months',
+        skills: ['TradingView Charts', 'Real-time UI', 'UX Optimization'],
+        theme: ThemeEnum.PURPLE
+    },
+
+    {
+        name: 'Freelance Developer',
+        description:
+            'Delivered 5+ custom web applications for SMBs including e-commerce stores and business tools.',
+        icon: Building2,
+        year: 'Dec 2023 - Jul 2024',
+        company: 'Independent',
+        duration: '8 months',
+        skills: ['E-commerce', 'Payment Systems', 'Business Tools', 'Landing Pages'],
+        theme: ThemeEnum.GRAY
+    }
+]
+
+// Color theme mapping
+const THEMES = {
+    [ThemeEnum.GREEN]: {
+        dot: 'bg-green-500',
+        border: 'border-green-500/30',
+        gradient: 'from-green-900/20 to-gray-800/40',
+        hoverBorder: 'hover:border-green-400/50',
+        hoverShadow: 'hover:shadow-green-500/10',
+        icon: 'text-green-400',
+        badge: 'bg-green-500/20 text-green-400',
+        skill: 'bg-green-500/20 text-green-300'
+    },
+
+    [ThemeEnum.BLUE]: {
+        dot: 'bg-blue-500',
+        border: 'border-blue-500/30',
+        gradient: 'from-blue-900/20 to-gray-800/40',
+        hoverBorder: 'hover:border-blue-400/50',
+        hoverShadow: 'hover:shadow-blue-500/10',
+        icon: 'text-blue-400',
+        badge: 'bg-blue-500/20 text-blue-400',
+        skill: 'bg-blue-500/20 text-blue-300'
+    },
+
+    [ThemeEnum.PURPLE]: {
+        dot: 'bg-purple-500',
+        border: 'border-purple-500/30',
+        gradient: 'from-purple-900/20 to-gray-800/40',
+        hoverBorder: 'hover:border-purple-400/50',
+        hoverShadow: 'hover:shadow-purple-500/10',
+        icon: 'text-purple-400',
+        badge: 'bg-purple-500/20 text-purple-400',
+        skill: 'bg-purple-500/20 text-purple-300'
+    },
+    [ThemeEnum.GRAY]: {
+        dot: 'bg-gray-500',
+        border: 'border-gray-500/30',
+        gradient: 'from-gray-900/20 to-gray-800/40',
+        hoverBorder: 'hover:border-gray-400/50',
+        hoverShadow: 'hover:shadow-gray-500/10',
+        icon: 'text-gray-400',
+        badge: 'bg-gray-500/20 text-gray-400',
+        skill: 'bg-gray-500/20 text-gray-300'
+    }
+}
 ---
 
 <section id='experience' class='bg-gray-900 py-20'>
@@ -11,192 +114,61 @@ import { Briefcase, Building2, Users, Code } from '@lucide/astro'
         <div class='relative'>
             <!-- Timeline Line -->
             <div
-                class='absolute top-0 left-8 h-full w-0.5 bg-gradient-to-b from-green-500 via-blue-500 via-purple-500 to-gray-500 md:left-1/2 md:-translate-x-0.5'
+                class='absolute top-0 left-8 -ml-8 h-full w-0.5 bg-gradient-to-b from-green-500 via-purple-500 to-gray-500 md:left-1/2 md:-translate-x-0.5 lg:m-0'
             >
             </div>
 
-            <div class='space-y-[-1.5rem]'>
-                <!-- Current Position -->
-                <div class='relative flex items-center'>
-                    <!-- Timeline Dot -->
-                    <div
-                        class='absolute left-6 z-10 h-4 w-4 rounded-full border-4 border-gray-900 bg-green-500 md:left-1/2 md:-translate-x-2'
-                    >
-                    </div>
+            <div class='-ml-8 space-y-[1rem] lg:m-0 lg:space-y-[-1.5rem]'>
+                {
+                    EXPERIENCE.map((item, index) => {
+                        const theme = THEMES[item.theme]
 
-                    <!-- Content Card -->
-                    <div
-                        class='ml-16 w-full rounded-xl border border-green-500/30 bg-gradient-to-r from-green-900/20 to-gray-800/40 p-4 shadow-lg transition-all duration-300 hover:border-green-400/50 hover:shadow-green-500/10 md:ml-0 md:w-5/12 md:pr-16'
-                    >
-                        <div class='mb-2 flex items-center justify-between'>
-                            <div class='flex items-center gap-3'>
-                                <Briefcase class='h-5 w-5 text-green-400' />
-                                <h3 class='text-lg font-bold text-white'>Freelance Full-stack</h3>
+                        const isEven = index % 2 === 0
+
+                        return (
+                            <div
+                                class={`relative flex items-center ${!isEven ? 'justify-end' : ''}`}
+                            >
+                                <div
+                                    class={`absolute left-6 z-10 h-4 w-4 rounded-full border-4 border-gray-900 ${theme.dot} md:left-1/2 md:-translate-x-2`}
+                                />
+
+                                <div
+                                    class={`ml-16 w-full rounded-xl border ${theme.border} bg-gradient-to-r ${theme.gradient} p-5 shadow-lg transition-all duration-300 ${theme.hoverBorder} ${theme.hoverShadow} md:ml-0 md:w-5/12 ${
+                                        isEven ? 'md:pr-16' : 'md:ml-auto md:pl-16'
+                                    }`}
+                                >
+                                    <div class='mb-3 flex items-center justify-between'>
+                                        <div class='flex items-center gap-3'>
+                                            <item.icon class={`h-5 w-5 ${theme.icon}`} />
+                                            <h3 class='text-lg font-bold text-white'>
+                                                {item.name}
+                                            </h3>
+                                        </div>
+                                        <span
+                                            class={`rounded-full ${theme.badge} px-3 py-1 text-xs font-medium`}
+                                        >
+                                            {item.duration}
+                                        </span>
+                                    </div>
+                                    <p class='mb-2 text-sm text-gray-400'>
+                                        {item.company} • {item.year}
+                                    </p>
+                                    <p class='mb-3 text-sm text-gray-300'>{item.description}</p>
+                                    <div class='flex flex-wrap gap-1.5'>
+                                        {item.skills.map((skill) => (
+                                            <span
+                                                class={`rounded-md ${theme.skill} px-2 py-1 text-xs`}
+                                            >
+                                                {skill}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
-                            <span
-                                class='rounded-full bg-green-500/20 px-3 py-1 text-xs font-medium text-green-400'
-                                >Current</span
-                            >
-                        </div>
-                        <p class='mb-2 text-sm text-gray-400'>Independent • Aug 2025 - Present</p>
-                        <p class='mb-2 text-sm text-gray-300'>
-                            Building modern e-commerce platforms and high-converting landing pages
-                            for diverse clients.
-                        </p>
-                        <div class='flex flex-wrap gap-1.5'>
-                            <span
-                                class='rounded-md bg-green-500/20 px-2 py-1 text-xs text-green-300'
-                                >React/Next.js</span
-                            >
-                            <span
-                                class='rounded-md bg-green-500/20 px-2 py-1 text-xs text-green-300'
-                                >E-commerce</span
-                            >
-                            <span
-                                class='rounded-md bg-green-500/20 px-2 py-1 text-xs text-green-300'
-                                >Trading solutions</span
-                            >
-                            <span
-                                class='rounded-md bg-green-500/20 px-2 py-1 text-xs text-green-300'
-                                >Payment Integration</span
-                            >
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Full-stack Developer -->
-                <div class='relative flex items-center justify-end'>
-                    <!-- Timeline Dot -->
-                    <div
-                        class='absolute left-6 z-10 h-4 w-4 rounded-full border-4 border-gray-900 bg-blue-500 md:left-1/2 md:-translate-x-2'
-                    >
-                    </div>
-
-                    <!-- Content Card -->
-                    <div
-                        class='ml-16 w-full rounded-xl border border-blue-500/30 bg-gradient-to-r from-blue-900/20 to-gray-800/40 p-5 shadow-lg transition-all duration-300 hover:border-blue-400/50 hover:shadow-blue-500/10 md:ml-0 md:ml-auto md:w-5/12 md:pl-16'
-                    >
-                        <div class='mb-3 flex items-center justify-between'>
-                            <div class='flex items-center gap-3'>
-                                <Code class='h-5 w-5 text-blue-400' />
-                                <h3 class='text-lg font-bold text-white'>Full-stack Developer</h3>
-                            </div>
-                            <span
-                                class='rounded-full bg-blue-500/20 px-3 py-1 text-xs font-medium text-blue-400'
-                                >8 months</span
-                            >
-                        </div>
-                        <p class='mb-2 text-sm text-gray-400'>Cryptonit • Dec 2024 - Aug 2025</p>
-                        <p class='mb-3 text-sm text-gray-300'>
-                            Built high-performance crypto trading platform with real-time data
-                            processing and sub-100ms latency.
-                        </p>
-                        <div class='flex flex-wrap gap-1.5'>
-                            <span class='rounded-md bg-blue-500/20 px-2 py-1 text-xs text-blue-300'
-                                >React/TypeScript</span
-                            >
-                            <span class='rounded-md bg-blue-500/20 px-2 py-1 text-xs text-blue-300'
-                                >Node.js/NestJS</span
-                            >
-                            <span class='rounded-md bg-blue-500/20 px-2 py-1 text-xs text-blue-300'
-                                >Redis/WebSockets</span
-                            >
-                            <span class='rounded-md bg-blue-500/20 px-2 py-1 text-xs text-blue-300'
-                                >PostgreSQL</span
-                            >
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Lead Frontend Developer -->
-                <div class='relative flex items-center'>
-                    <!-- Timeline Dot -->
-                    <div
-                        class='absolute left-6 z-10 h-4 w-4 rounded-full border-4 border-gray-900 bg-purple-500 md:left-1/2 md:-translate-x-2'
-                    >
-                    </div>
-
-                    <!-- Content Card -->
-                    <div
-                        class='ml-16 w-full rounded-xl border border-purple-500/30 bg-gradient-to-r from-purple-900/20 to-gray-800/40 p-5 shadow-lg transition-all duration-300 hover:border-purple-400/50 hover:shadow-purple-500/10 md:ml-0 md:w-5/12 md:pr-16'
-                    >
-                        <div class='mb-3 flex items-center justify-between'>
-                            <div class='flex items-center gap-3'>
-                                <Users class='h-5 w-5 text-purple-400' />
-                                <h3 class='text-lg font-bold text-white'>Lead Frontend</h3>
-                            </div>
-                            <span
-                                class='rounded-full bg-purple-500/20 px-3 py-1 text-xs font-medium text-purple-400'
-                                >6 months</span
-                            >
-                        </div>
-                        <p class='mb-2 text-sm text-gray-400'>Cryptonit • Jul 2024 - Dec 2024</p>
-                        <p class='mb-3 text-sm text-gray-300'>
-                            Led team of 3 developers building trading interfaces with advanced
-                            charting and 40% UX improvement.
-                        </p>
-                        <div class='flex flex-wrap gap-1.5'>
-                            <span
-                                class='rounded-md bg-purple-500/20 px-2 py-1 text-xs text-purple-300'
-                                >TradingView Charts</span
-                            >
-
-                            <span
-                                class='rounded-md bg-purple-500/20 px-2 py-1 text-xs text-purple-300'
-                                >Real-time UI</span
-                            >
-                            <span
-                                class='rounded-md bg-purple-500/20 px-2 py-1 text-xs text-purple-300'
-                                >UX Optimization</span
-                            >
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Freelance Developer -->
-                <div class='relative flex items-center justify-end'>
-                    <!-- Timeline Dot -->
-                    <div
-                        class='absolute left-6 z-10 h-4 w-4 rounded-full border-4 border-gray-900 bg-gray-500 md:left-1/2 md:-translate-x-2'
-                    >
-                    </div>
-
-                    <!-- Content Card -->
-                    <div
-                        class='ml-16 w-full rounded-xl border border-gray-500/30 bg-gradient-to-r from-gray-900/20 to-gray-800/40 p-5 shadow-lg transition-all duration-300 hover:border-gray-400/50 hover:shadow-gray-500/10 md:ml-0 md:ml-auto md:w-5/12 md:pl-16'
-                    >
-                        <div class='mb-3 flex items-center justify-between'>
-                            <div class='flex items-center gap-3'>
-                                <Building2 class='h-5 w-5 text-gray-400' />
-                                <h3 class='text-lg font-bold text-white'>Freelance Developer</h3>
-                            </div>
-                            <span
-                                class='rounded-full bg-gray-500/20 px-3 py-1 text-xs font-medium text-gray-400'
-                                >16 months</span
-                            >
-                        </div>
-                        <p class='mb-2 text-sm text-gray-400'>Independent • Mar 2023 - Jul 2024</p>
-                        <p class='mb-3 text-sm text-gray-300'>
-                            Delivered 15+ custom web applications for SMBs including e-commerce
-                            stores and business tools.
-                        </p>
-                        <div class='flex flex-wrap gap-1.5'>
-                            <span class='rounded-md bg-gray-500/20 px-2 py-1 text-xs text-gray-300'
-                                >E-commerce</span
-                            >
-
-                            <span class='rounded-md bg-gray-500/20 px-2 py-1 text-xs text-gray-300'
-                                >Payment Systems</span
-                            >
-                            <span class='rounded-md bg-gray-500/20 px-2 py-1 text-xs text-gray-300'
-                                >Business Tools</span
-                            >
-                            <span class='rounded-md bg-gray-500/20 px-2 py-1 text-xs text-gray-300'
-                                >Landing Pages</span
-                            >
-                        </div>
-                    </div>
-                </div>
+                        )
+                    })
+                }
             </div>
         </div>
     </div>

@@ -1,6 +1,46 @@
 ---
 // Hero component with enhanced design
 import { Mail, Phone, MapPin } from '@lucide/astro'
+
+enum ThemeEnum {
+    CYAN = 'cyan',
+    BLUE = 'blue',
+    PURPLE = 'purple',
+    GREEN = 'green'
+}
+
+const TECHNOLOGIES = [
+    { name: 'React/Next.js', theme: ThemeEnum.CYAN },
+    { name: 'NestJS/Node.js', theme: ThemeEnum.BLUE },
+    { name: 'TypeScript', theme: ThemeEnum.PURPLE },
+    { name: 'Web3 / DeFi', theme: ThemeEnum.GREEN }
+]
+
+const THEMES = {
+    [ThemeEnum.CYAN]: {
+        border: 'border-cyan-500/30',
+        background: 'bg-cyan-600/20',
+        text: 'text-cyan-400'
+    },
+
+    [ThemeEnum.BLUE]: {
+        border: 'border-blue-500/30',
+        background: 'bg-blue-600/20',
+        text: 'text-blue-400'
+    },
+
+    [ThemeEnum.PURPLE]: {
+        border: 'border-purple-500/30',
+        background: 'bg-purple-600/20',
+        text: 'text-purple-400'
+    },
+
+    [ThemeEnum.GREEN]: {
+        border: 'border-green-500/30',
+        background: 'bg-green-600/20',
+        text: 'text-green-400'
+    }
+}
 ---
 
 <section
@@ -57,26 +97,19 @@ import { Mail, Phone, MapPin } from '@lucide/astro'
 
                 <!-- Core Skills -->
                 <div class='flex flex-wrap gap-3'>
-                    <span
-                        class='rounded-full border border-cyan-500/30 bg-cyan-600/20 px-4 py-2 text-sm font-medium text-cyan-400'
-                    >
-                        React/Next.js
-                    </span>
-                    <span
-                        class='rounded-full border border-blue-500/30 bg-blue-600/20 px-4 py-2 text-sm font-medium text-blue-400'
-                    >
-                        NestJS/Node.js
-                    </span>
-                    <span
-                        class='rounded-full border border-purple-500/30 bg-purple-600/20 px-4 py-2 text-sm font-medium text-purple-400'
-                    >
-                        TypeScript
-                    </span>
-                    <span
-                        class='rounded-full border border-green-500/30 bg-green-600/20 px-4 py-2 text-sm font-medium text-green-400'
-                    >
-                        Web3 / DeFi
-                    </span>
+                    {
+                        TECHNOLOGIES.map((technology) => {
+                            const { border, background, text } = THEMES[technology.theme]
+
+                            return (
+                                <span
+                                    class={`rounded-full border ${border} ${background} px-4 py-2 text-sm font-medium ${text}`}
+                                >
+                                    {technology.name}
+                                </span>
+                            )
+                        })
+                    }
                 </div>
 
                 <!-- Contact Info -->
