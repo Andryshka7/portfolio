@@ -1,0 +1,21 @@
+.nav-link,
+.mobile-nav-link {
+    position: relative;
+}
+
+.nav-link::after,
+.mobile-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #06b6d4, #3b82f6);
+    transition: width 0.3s ease;
+}
+
+.nav-link.text-cyan-400::after,
+.mobile-nav-link.text-cyan-400::after {
+    width: 100%;
+}

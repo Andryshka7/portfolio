@@ -1,0 +1,139 @@
+---
+import Analytics from '@vercel/analytics/astro'
+import '../styles/index.css'
+
+const CONFIG = {
+    title: 'Andrey Lapchik - Full-Stack Developer',
+    description:
+        'Experienced full-stack developer specializing in React/Next.js, Node.js/NestJS, and crypto trading platforms. Available for freelance projects and collaborations.',
+    url: 'https://andryshka.com',
+    image: '/preview.png',
+    author: 'Andrey Lapchik',
+    keywords: [
+        'full-stack developer',
+        'React developer',
+        'Next.js developer',
+        'Node.js developer',
+        'TypeScript developer',
+        'crypto trading platform',
+        'e-commerce developer',
+        'freelance developer',
+        'web developer Latvia',
+        'Riga developer'
+    ].join(', '),
+    locale: 'en_US',
+    type: 'website'
+}
+---
+
+<!doctype html>
+<html lang='en' class='dark'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta name='generator' content={Astro.generator} />
+
+        <!-- Primary Meta Tags -->
+        <title>{CONFIG.title}</title>
+        <meta name='title' content={CONFIG.title} />
+        <meta name='description' content={CONFIG.description} />
+        <meta name='keywords' content={CONFIG.keywords} />
+        <meta name='author' content={CONFIG.author} />
+        <meta
+            name='robots'
+            content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+        />
+        <meta name='googlebot' content='index, follow' />
+        <meta name='bingbot' content='index, follow' />
+
+        <!-- Language and Locale -->
+        <meta name='language' content='English' />
+        <meta name='geo.region' content='LV' />
+        <meta name='geo.placename' content='Riga' />
+        <meta name='geo.position' content='56.9496;24.1052' />
+        <meta name='ICBM' content='56.9496, 24.1052' />
+
+        <!-- Canonical URL -->
+        <link rel='canonical' href={CONFIG.url} />
+
+        <!-- Favicon and Icons -->
+        <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+        <link rel='apple-touch-icon' href='/favicon.svg' />
+        <link rel='manifest' href='/meta/manifest.json' />
+
+        <!-- Open Graph / Facebook -->
+        <meta property='og:type' content={CONFIG.type} />
+        <meta property='og:url' content={CONFIG.url} />
+        <meta property='og:title' content={CONFIG.title} />
+        <meta property='og:description' content={CONFIG.description} />
+        <meta property='og:image' content={`${CONFIG.url}${CONFIG.image}`} />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='630' />
+        <meta property='og:image:alt' content='Andrey Lapchik - Full-Stack Developer Portfolio' />
+        <meta property='og:site_name' content='Andrey Lapchik Portfolio' />
+        <meta property='og:locale' content={CONFIG.locale} />
+
+        <!-- Twitter -->
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:url' content={CONFIG.url} />
+        <meta name='twitter:title' content={CONFIG.title} />
+        <meta name='twitter:description' content={CONFIG.description} />
+        <meta name='twitter:image' content={`${CONFIG.url}${CONFIG.image}`} />
+        <meta name='twitter:image:alt' content='Andrey Lapchik - Full-Stack Developer Portfolio' />
+        <meta name='twitter:creator' content='@andryshka16' />
+        <meta name='twitter:site' content='@andryshka16' />
+
+        <!-- Additional Meta Tags -->
+        <meta name='theme-color' content='#0D0D0D' />
+        <meta name='color-scheme' content='dark' />
+        <meta name='msapplication-TileColor' content='#0D0D0D' />
+        <meta name='msapplication-config' content='/meta/browserconfig.xml' />
+
+        <!-- Preconnect to external domains -->
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link rel='preconnect' href='https://api.telegram.org' />
+
+        <!-- DNS Prefetch -->
+        <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+        <link rel='dns-prefetch' href='//fonts.gstatic.com' />
+
+        <!-- Font Preloading -->
+        <link
+            rel='preload'
+            href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
+            as='style'
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript
+            ><link
+                rel='stylesheet'
+                href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
+            /></noscript
+        >
+
+        <!-- Preload critical images -->
+        <link rel='preload' as='image' href='/me.png' />
+        <link rel='preload' as='image' href='/preview.png' />
+
+        <!-- Resource hints for better performance -->
+        <link rel='prefetch' href='/CV.pdf' />
+        <link rel='prefetch' href='/favicon.svg' />
+
+        <!-- Additional SEO -->
+        <meta name='format-detection' content='telephone=yes' />
+        <meta name='mobile-web-app-capable' content='yes' />
+        <meta name='apple-mobile-web-app-capable' content='yes' />
+        <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
+        <meta name='apple-mobile-web-app-title' content='Andrey Lapchik' />
+
+        <!-- Security Headers (only valid meta tags) -->
+        <meta http-equiv='X-Content-Type-Options' content='nosniff' />
+        <meta http-equiv='X-XSS-Protection' content='1; mode=block' />
+        <meta http-equiv='Referrer-Policy' content='strict-origin-when-cross-origin' />
+    </head>
+    <body class='bg-gray-900 text-gray-100 antialiased'>
+        <slot />
+        <Analytics />
+    </body>
+</html>

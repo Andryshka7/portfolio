@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://andryshka.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Block access to admin or sensitive areas (if any)
+Disallow: /api/
+Disallow: /admin/
+Disallow: /.env
+Disallow: /node_modules/
+
+# Allow access to important files
+Allow: /CV.pdf
+Allow: /favicon.svg
+Allow: /me.png
+Allow: /preview.png

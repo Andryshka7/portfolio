@@ -9,6 +9,12 @@ enum ThemeEnum {
     GREEN = 'green'
 }
 
+const CONTACT_INFO = [
+    { name: 'Email', icon: Mail, value: 'contact@andryshka.com' },
+    { name: 'Phone', icon: Phone, value: '+371 28176717' },
+    { name: 'Location', icon: MapPin, value: 'Riga, Latvia' }
+]
+
 const TECHNOLOGIES = [
     { name: 'React/Next.js', theme: ThemeEnum.CYAN },
     { name: 'NestJS/Node.js', theme: ThemeEnum.BLUE },
@@ -114,25 +120,16 @@ const THEMES = {
 
                 <!-- Contact Info -->
                 <div class='space-y-3 text-gray-300'>
-                    <div class='flex items-center gap-3'>
-                        <Mail class='h-5 w-5 text-cyan-400' />
-                        <a
-                            href='mailto:a.lapchik7@gmail.com'
-                            class='break-all transition-colors hover:text-cyan-400'
-                        >
-                            a.lapchik7@gmail.com
-                        </a>
-                    </div>
-                    <div class='flex items-center gap-3'>
-                        <Phone class='h-5 w-5 text-cyan-400' />
-                        <a href='tel:+37128176717' class='transition-colors hover:text-cyan-400'>
-                            +371 28176717
-                        </a>
-                    </div>
-                    <div class='flex items-center gap-3'>
-                        <MapPin class='h-5 w-5 text-cyan-400' />
-                        <span>Riga, Latvia</span>
-                    </div>
+                    {
+                        CONTACT_INFO.map((info) => (
+                            <div class='flex items-center gap-3'>
+                                <info.icon class='h-5 w-5 text-cyan-400' />
+                                <a href={info.value} class='transition-colors hover:text-cyan-400'>
+                                    {info.value}
+                                </a>
+                            </div>
+                        ))
+                    }
                 </div>
 
                 <!-- Quick Links -->
@@ -160,8 +157,12 @@ const THEMES = {
                     >
                         <img
                             src='/me.png'
-                            alt='Andrey Lapchik'
+                            alt='Andrey Lapchik - Full-Stack Developer'
                             class='h-full w-full object-cover'
+                            loading='lazy'
+                            decoding='async'
+                            width='320'
+                            height='320'
                         />
                     </div>
                     <div

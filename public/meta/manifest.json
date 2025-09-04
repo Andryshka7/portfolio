@@ -1,0 +1,21 @@
+{
+    "name": "Andrey Lapchik - Full-Stack Developer",
+    "short_name": "Andrey Lapchik",
+    "description": "Experienced full-stack developer specializing in React/Next.js, Node.js/NestJS, and crypto trading platforms",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0D0D0D",
+    "theme_color": "#06b6d4",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["portfolio", "developer", "business"],
+    "lang": "en",
+    "dir": "ltr"
+}

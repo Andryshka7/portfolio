@@ -3,6 +3,31 @@
 import { Github, Linkedin, MessageCircle, Phone } from '@lucide/astro'
 
 const year = new Date().getFullYear()
+
+const SOCIAL_LINKS = [
+    {
+        name: 'GitHub',
+        icon: Github,
+        value: 'https://github.com/Andryshka7'
+    },
+    {
+        name: 'LinkedIn',
+        icon: Linkedin,
+        value: 'https://linkedin.com/in/andrey-lapchik-03b72326b'
+    },
+
+    {
+        name: 'Telegram',
+        icon: MessageCircle,
+        value: 'https://t.me/andryshka16'
+    },
+
+    {
+        name: 'WhatsApp',
+        icon: Phone,
+        value: 'https://wa.me/+37128176717'
+    }
+]
 ---
 
 <section class='bg-gray-800 py-16'>
@@ -16,45 +41,19 @@ const year = new Date().getFullYear()
             </p>
 
             <div class='flex flex-wrap justify-center gap-4'>
-                <a
-                    href='https://github.com/yourusername'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    class='flex items-center gap-2 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3 text-gray-300 transition-all duration-200 hover:border-cyan-500 hover:bg-gray-700 hover:text-white'
-                >
-                    <Github class='h-5 w-5' />
-                    <span>GitHub</span>
-                </a>
-
-                <a
-                    href='https://linkedin.com/in/yourusername'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    class='flex items-center gap-2 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3 text-gray-300 transition-all duration-200 hover:border-cyan-500 hover:bg-gray-700 hover:text-white'
-                >
-                    <Linkedin class='h-5 w-5' />
-                    <span>LinkedIn</span>
-                </a>
-
-                <a
-                    href='https://t.me/yourusername'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    class='flex items-center gap-2 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3 text-gray-300 transition-all duration-200 hover:border-cyan-500 hover:bg-gray-700 hover:text-white'
-                >
-                    <MessageCircle class='h-5 w-5' />
-                    <span>Telegram</span>
-                </a>
-
-                <a
-                    href='https://wa.me/yourphonenumber'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    class='flex items-center gap-2 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3 text-gray-300 transition-all duration-200 hover:border-cyan-500 hover:bg-gray-700 hover:text-white'
-                >
-                    <Phone class='h-5 w-5' />
-                    <span>WhatsApp</span>
-                </a>
+                {
+                    SOCIAL_LINKS.map((link) => (
+                        <a
+                            href={link.value}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            class='flex items-center gap-2 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3 text-gray-300 transition-all duration-200 hover:border-cyan-500 hover:bg-gray-700 hover:text-white'
+                        >
+                            <link.icon class='h-5 w-5' />
+                            <span>{link.name}</span>
+                        </a>
+                    ))
+                }
             </div>
         </div>
 

@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './navbar.css';
 
 @theme {
     --spacing-8xl: 1440px;

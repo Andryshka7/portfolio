@@ -1,15 +1,6 @@
 ---
 // Sticky navigation header component
-import {
-    Menu,
-    X,
-    Home,
-    Briefcase,
-    GraduationCap,
-    Code,
-    MessageCircle,
-    FileText
-} from '@lucide/astro'
+import { Menu, Home, Briefcase, GraduationCap, Code, MessageCircle, FileText } from '@lucide/astro'
 
 const NAV_LINKS = [
     { name: 'Home', href: '#home', icon: Home },
@@ -22,8 +13,13 @@ const NAV_LINKS = [
 
 <header
     class='fixed top-0 right-0 left-0 z-50 border-b border-gray-700/50 bg-gray-900/95 backdrop-blur-md'
+    role='banner'
 >
-    <nav class='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <nav
+        class='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'
+        role='navigation'
+        aria-label='Main navigation'
+    >
         <div class='flex h-16 items-center justify-between'>
             <!-- Logo/Brand -->
             <div class='flex items-center'>
@@ -69,6 +65,9 @@ const NAV_LINKS = [
                 <button
                     id='mobile-menu-button'
                     class='text-gray-300 transition-colors duration-200 hover:text-cyan-400'
+                    aria-label='Toggle mobile menu'
+                    aria-expanded='false'
+                    aria-controls='mobile-menu'
                 >
                     <Menu class='h-6 w-6' />
                 </button>
@@ -130,6 +129,7 @@ const NAV_LINKS = [
 
     // Close mobile menu when clicking on a link
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link')
+
     mobileNavLinks.forEach((link) => {
         link.addEventListener('click', () => {
             mobileMenu?.classList.add('hidden')
@@ -142,6 +142,7 @@ const NAV_LINKS = [
 
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link')
+
     navLinks.forEach((link) => {
         link.addEventListener('click', (e) => {
             e.preventDefault()
@@ -164,7 +165,7 @@ const NAV_LINKS = [
     const sections = document.querySelectorAll('section[id]')
     const navLinkElements = document.querySelectorAll('.nav-link, .mobile-nav-link')
 
-    function highlightActiveLink() {
+    const highlightActiveLink = () => {
         const scrollPosition = window.scrollY + 100
 
         sections.forEach((section) => {
@@ -204,28 +205,3 @@ const NAV_LINKS = [
     window.addEventListener('scroll', highlightActiveLink)
     highlightActiveLink() // Initial call
 </script>
-
-<style>
-    /* Ensure smooth transitions for active states */
-    .nav-link,
-    .mobile-nav-link {
-        position: relative;
-    }
-
-    .nav-link::after,
-    .mobile-nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(to right, #06b6d4, #3b82f6);
-        transition: width 0.3s ease;
-    }
-
-    .nav-link.text-cyan-400::after,
-    .mobile-nav-link.text-cyan-400::after {
-        width: 100%;
-    }
-</style>

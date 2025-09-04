@@ -1,6 +1,24 @@
 ---
 // Contact component with contact form
 import { Mail, Phone, MapPin, Send } from '@lucide/astro'
+
+const CONTACT_OPTINS = [
+    {
+        name: 'Email',
+        icon: Mail,
+        value: 'contact@andryshka.com'
+    },
+    {
+        name: 'Phone',
+        icon: Phone,
+        value: '+371 28176717'
+    },
+    {
+        name: 'Location',
+        icon: MapPin,
+        value: 'Riga, Latvia'
+    }
+]
 ---
 
 <section id='contact' class='bg-gray-900 py-20'>
@@ -29,7 +47,7 @@ import { Mail, Phone, MapPin, Send } from '@lucide/astro'
                     </h3>
                 </div>
 
-                <form class='space-y-4' action='#' method='POST'>
+                <form id='contact-form' class='space-y-4' action='/api/contact' method='POST'>
                     <div class='grid gap-4 sm:grid-cols-2'>
                         <div>
                             <label for='name' class='mb-2 block text-sm font-medium text-gray-300'
@@ -88,9 +106,27 @@ import { Mail, Phone, MapPin, Send } from '@lucide/astro'
 
                     <button
                         type='submit'
-                        class='w-full rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 font-semibold text-white transition-all duration-200 hover:from-cyan-600 hover:to-blue-600 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none'
+                        id='submit-btn'
+                        class='relative w-full overflow-hidden rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg focus:ring-2 focus:ring-cyan-500/20 focus:outline-none disabled:pointer-events-none'
                     >
-                        Send Message
+                        <div
+                            class='absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-0 transition-opacity duration-300 hover:opacity-100'
+                        >
+                        </div>
+                        <!-- Success overlay -->
+                        <div
+                            id='success-overlay'
+                            class='pointer-events-none absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 opacity-0 duration-300'
+                        >
+                        </div>
+                        <div
+                            id='error-overlay'
+                            class='pointer-events-none absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 opacity-0 duration-300'
+                        >
+                        </div>
+                        <span class='pointer-events-none relative z-10' id='btn-text'
+                            >Send Message</span
+                        >
                     </button>
                 </form>
             </div>
@@ -111,45 +147,22 @@ import { Mail, Phone, MapPin, Send } from '@lucide/astro'
                 </div>
 
                 <div class='space-y-4'>
-                    <div
-                        class='flex items-center gap-3 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3'
-                    >
-                        <Mail class='h-5 w-5 text-cyan-400' />
-                        <div>
-                            <p class='font-medium text-white'>Email</p>
-                            <a
-                                href='mailto:a.lapchik7@gmail.com'
-                                class='text-gray-300 transition-colors hover:text-cyan-400'
-                            >
-                                a.lapchik7@gmail.com
-                            </a>
-                        </div>
-                    </div>
-
-                    <div
-                        class='flex items-center gap-3 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3'
-                    >
-                        <Phone class='h-5 w-5 text-cyan-400' />
-                        <div>
-                            <p class='font-medium text-white'>Phone</p>
-                            <a
-                                href='tel:+37128176717'
-                                class='text-gray-300 transition-colors hover:text-cyan-400'
-                            >
-                                +371 28176717
-                            </a>
-                        </div>
-                    </div>
-
-                    <div
-                        class='flex items-center gap-3 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3'
-                    >
-                        <MapPin class='h-5 w-5 text-cyan-400' />
-                        <div>
-                            <p class='font-medium text-white'>Location</p>
-                            <span class='text-gray-300'>Riga, Latvia</span>
-                        </div>
-                    </div>
+                    {
+                        CONTACT_OPTINS.map((option) => (
+                            <div class='flex items-center gap-3 rounded-lg border border-gray-600 bg-gray-700/50 px-4 py-3'>
+                                <option.icon class='h-5 w-5 text-cyan-400' />
+                                <div>
+                                    <p class='font-medium text-white'>{option.name}</p>
+                                    <a
+                                        href={option.value}
+                                        class='text-gray-300 transition-colors hover:text-cyan-400'
+                                    >
+                                        {option.value}
+                                    </a>
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
 
                 <div
@@ -164,3 +177,70 @@ import { Mail, Phone, MapPin, Send } from '@lucide/astro'
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('contact-form') as HTMLFormElement
+        const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement
+        const btnText = document.getElementById('btn-text') as HTMLSpanElement
+        const successOverlay = document.getElementById('success-overlay') as HTMLDivElement
+        const errorOverlay = document.getElementById('error-overlay') as HTMLDivElement
+
+        const resetButton = () => {
+            submitBtn.disabled = false
+            submitBtn.classList.remove('opacity-60')
+            btnText.textContent = 'Send Message'
+
+            successOverlay.style.opacity = '0'
+            errorOverlay.style.opacity = '0'
+        }
+
+        const showSuccess = () => {
+            submitBtn.disabled = true
+            submitBtn.classList.remove('opacity-60')
+
+            btnText.textContent = 'Message Sent!'
+
+            errorOverlay.style.opacity = '0'
+            successOverlay.style.opacity = '1'
+
+            form.reset()
+            setTimeout(resetButton, 3000)
+        }
+
+        const showError = () => {
+            submitBtn.disabled = true
+            submitBtn.classList.remove('opacity-60')
+
+            btnText.textContent = 'Error sending message'
+
+            successOverlay.style.opacity = '0'
+            errorOverlay.style.opacity = '1'
+
+            setTimeout(resetButton, 3000)
+        }
+
+        form?.addEventListener('submit', async function (e) {
+            e.preventDefault()
+
+            submitBtn.disabled = true
+            submitBtn.classList.add('opacity-60')
+            btnText.textContent = 'Sending...'
+
+            try {
+                const formData = new FormData(form)
+
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    body: formData
+                })
+
+                const result = await response.json()
+                result.success ? showSuccess() : showError()
+            } catch (error) {
+                console.error('Form submission error:', error)
+                showError()
+            }
+        })
+    })
+</script>
