@@ -2,6 +2,8 @@ const sendTelegramMessage = async (message: string) => {
     const BOT_TOKEN = import.meta.env.BOT_TOKEN
     const CHAT_ID = import.meta.env.CHAT_ID
 
+    if (process.env.NODE_ENV !== 'production') return
+
     const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`
 
     const response = await fetch(url, {
