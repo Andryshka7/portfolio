@@ -1,0 +1,117 @@
+---
+import { Rocket, Globe, Layers } from '@lucide/astro'
+
+type Project = {
+    title: string
+    subtitle: string
+    period: string
+    role: string
+    impact: string
+    tech: string[]
+    highlights: string[]
+    icon: any
+    tag: 'Commercial' | 'Pet project'
+}
+
+const PROJECTS: Project[] = [
+    {
+        title: 'Cryptonit',
+        subtitle: 'High‑Performance Crypto Trading Platform (Solana)',
+        period: '2024–2025',
+        role: 'Fullstack • ex‑Lead Frontend',
+        impact: 'Low‑latency Solana trading: real‑time UI, Protobuf WS, Redis caching.',
+        tag: 'Commercial',
+        tech: ['React', 'TypeScript', 'NestJS', 'Nats.io', 'PostgreSQL', 'Redis'],
+        highlights: [
+            'Advanced TradingView charts with custom overlays',
+            'Lossless Protobuf WebSocket streaming'
+        ],
+        icon: Rocket
+    },
+    {
+        title: 'Token Creation Platform',
+        subtitle: 'Token creation, wallet warming, and realtime trading tools',
+        period: '2024–2025',
+        role: 'Frontend • international team • NDA',
+        impact: 'Built performant UI for token management and wallet warming with live data.',
+        tag: 'Commercial',
+        tech: ['Vite', 'React', 'TypeScript', 'Tailwind', 'Zustand', 'Docker'],
+        highlights: [
+            'Wallet warming dashboard with live performance metrics',
+            'Real-time trading tools and token data streaming'
+        ],
+        icon: Globe
+    },
+    {
+        title: 'Lapchess',
+        subtitle: 'Online Chess Platform',
+        period: '2023–2024',
+        role: 'Full-stack • sole developer',
+        impact: 'Realtime multiplayer chess with Socket.IO, secure auth, and configurable time controls.',
+        tag: 'Pet project',
+        tech: ['React', 'Redux Toolkit', 'Express.js', 'Socket.IO', 'JWT', 'Docker'],
+        highlights: [
+            'Configurable time controls and public/private rooms',
+            'Server-validated moves with reconnection sync'
+        ],
+        icon: Layers
+    }
+]
+---
+
+<section id='projects' class='bg-gray-900 py-20'>
+    <div class='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <h2 class='relative mb-12 text-center text-3xl font-bold text-white'>
+            <span class='relative z-10'>Highlighted Work</span>
+            <div
+                class='absolute -inset-1 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 opacity-20 blur'
+            >
+            </div>
+        </h2>
+
+        <div class='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
+            {
+                PROJECTS.map((project) => (
+                    <article class='group relative flex h-full flex-col rounded-xl border border-gray-700/50 bg-gradient-to-br from-gray-800/60 to-gray-900/40 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-500/20'>
+                        <div class='pointer-events-none absolute -inset-px rounded-xl bg-gradient-to-br from-purple-500/0 via-transparent to-cyan-500/0 opacity-0 blur-[2px] transition-opacity duration-300 group-hover:opacity-20' />
+                        <div class='mb-4 flex items-center justify-between'>
+                            <div class='flex items-center gap-3'>
+                                <project.icon class='h-6 w-6 text-purple-400 transition-transform duration-300 group-hover:scale-110' />
+                                <h3 class='text-xl font-semibold text-white'>{project.title}</h3>
+                            </div>
+                            <span class='rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-300'>
+                                {project.period}
+                            </span>
+                        </div>
+                        <div class='mb-3'>
+                            <span
+                                class={`${project.tag === 'Commercial' ? 'border-emerald-500/30 bg-emerald-500/15 text-emerald-300' : 'border-amber-500/30 bg-amber-500/15 text-amber-300'} inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-[10px] font-medium tracking-wide uppercase`}
+                            >
+                                {project.tag}
+                            </span>
+                        </div>
+
+                        <p class='mb-1 text-sm text-cyan-300'>{project.subtitle}</p>
+                        <p class='mb-2 text-xs text-gray-400'>{project.role}</p>
+
+                        <p class='mb-3 text-sm text-gray-300'>{project.impact}</p>
+
+                        <div class='mb-3 flex flex-wrap gap-1.5'>
+                            {project.tech.map((t) => (
+                                <span class='rounded-md bg-gray-700/60 px-2 py-1 text-xs text-gray-200'>
+                                    {t}
+                                </span>
+                            ))}
+                        </div>
+
+                        <ul class='mt-auto ml-4 list-disc space-y-1 text-sm text-gray-300'>
+                            {project.highlights.slice(0, 2).map((h) => (
+                                <li>{h}</li>
+                            ))}
+                        </ul>
+                    </article>
+                ))
+            }
+        </div>
+    </div>
+</section>
