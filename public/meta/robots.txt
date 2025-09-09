@@ -15,6 +15,6 @@ Disallow: /node_modules/
 
 # Allow access to important files
 Allow: /CV.pdf
-Allow: /favicon.ico
+Allow: /favicon.png
 Allow: /me.png
 Allow: /preview.png
