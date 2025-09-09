@@ -3,26 +3,26 @@
 import { Monitor, Server, Settings, Globe } from '@lucide/astro'
 
 const FRONTEND = [
-    { name: 'React/Next.js', level: '90%' },
-    { name: 'TypeScript', level: '85%' },
-    { name: 'Tailwind CSS', level: '80%' },
-    { name: 'Redux/Zustand', level: '75%' },
-    { name: 'TradingView Charts', level: '70%' }
+    { name: 'React/Next.js', level: '95%' },
+    { name: 'TypeScript', level: '92%' },
+    { name: 'Tailwind CSS', level: '89%' },
+    { name: 'Redux/Zustand', level: '86%' },
+    { name: 'TradingView Charts', level: '83%' }
 ]
 
 const BACKEND = [
-    { name: 'Node.js/NestJS', level: '90%' },
-    { name: 'WebSockets/SSE', level: '85%' },
-    { name: 'REST APIs/GraphQL', level: '80%' },
-    { name: 'Redis/PostgreSQL', level: '75%' },
-    { name: 'Blockchain APIs', level: '70%' }
+    { name: 'Node.js/NestJS', level: '93%' },
+    { name: 'WebSockets/SSE', level: '90%' },
+    { name: 'REST APIs/GraphQL', level: '87%' },
+    { name: 'Redis/PostgreSQL', level: '84%' },
+    { name: 'Blockchain APIs', level: '81%' }
 ]
 
 const TOOLS = [
-    { name: 'Git/Docker', level: '85%' },
-    { name: 'Vite/Webpack', level: '80%' },
-    { name: 'CI/CD Pipelines', level: '75%' },
-    { name: 'AWS/Vercel', level: '70%' }
+    { name: 'Git/Docker', level: '90%' },
+    { name: 'Vite/Webpack', level: '86%' },
+    { name: 'CI/CD Pipelines', level: '83%' },
+    { name: 'AWS/Vercel', level: '80%' }
 ]
 
 const LANGUAGES = [
@@ -32,7 +32,7 @@ const LANGUAGES = [
 ]
 ---
 
-<section id='tech-stack' class='bg-gray-900 py-20'>
+<section id='tech-stack' class='bg-gray-900 py-20' data-nosnippet>
     <div class='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'>
         <h2 class='relative mb-8 text-center text-3xl font-bold text-white'>
             <span class='relative z-10'>Technical Expertise</span>
@@ -64,7 +64,8 @@ const LANGUAGES = [
                                 <span class='text-gray-300'>{skill.name}</span>
                                 <div class='h-2 w-20 overflow-hidden rounded-full bg-gray-700'>
                                     <div
-                                        class={`w-[${skill.level}] h-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 transition-all duration-1000 ease-out`}
+                                        class={`h-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 transition-all duration-1000 ease-out`}
+                                        style={`width: ${skill.level}`}
                                     />
                                 </div>
                             </div>
@@ -95,7 +96,8 @@ const LANGUAGES = [
                                 <span class='text-gray-300'>{skill.name}</span>
                                 <div class='h-2 w-20 overflow-hidden rounded-full bg-gray-700'>
                                     <div
-                                        class={`w-[${skill.level}] h-full rounded-full bg-gradient-to-r from-green-500 to-emerald-500 transition-all duration-1000 ease-out`}
+                                        class={`h-full rounded-full bg-gradient-to-r from-green-500 to-emerald-500 transition-all duration-1000 ease-out`}
+                                        style={`width: ${skill.level}`}
                                     />
                                 </div>
                             </div>
@@ -125,7 +127,8 @@ const LANGUAGES = [
                                 <span class='text-gray-300'>{skill.name}</span>
                                 <div class='h-2 w-20 overflow-hidden rounded-full bg-gray-700'>
                                     <div
-                                        class={`w-[${skill.level}] h-full rounded-full bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-1000 ease-out`}
+                                        class={`h-full rounded-full bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-1000 ease-out`}
+                                        style={`width: ${skill.level}`}
                                     />
                                 </div>
                             </div>

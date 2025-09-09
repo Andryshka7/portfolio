@@ -100,7 +100,7 @@ const THEMES = {
                         systems. Passionate about clean code and optimal performance.
                     </p>
 
-                    <div class='flex items-center gap-2 text-emerald-400'>
+                    <div class='flex items-center gap-2 text-emerald-400' data-nosnippet>
                         <CheckCircle class='h-5 w-5' />
                         <span class='text-sm font-medium'
                             >Available for full-time positions and contract work</span
@@ -109,7 +109,7 @@ const THEMES = {
                 </div>
 
                 <!-- Core Skills -->
-                <div class='flex flex-wrap gap-3'>
+                <div class='flex flex-wrap gap-3' data-nosnippet>
                     {
                         TECHNOLOGIES.map((technology) => {
                             const { border, background, text } = THEMES[technology.theme]
@@ -126,7 +126,7 @@ const THEMES = {
                 </div>
 
                 <!-- Contact Info -->
-                <div class='space-y-3 text-gray-300'>
+                <div class='space-y-3 text-gray-300' data-nosnippet>
                     {
                         CONTACT_INFO.map((info) => (
                             <div class='flex items-center gap-3'>
@@ -140,7 +140,7 @@ const THEMES = {
                 </div>
 
                 <!-- Quick Links -->
-                <div class='flex flex-col gap-4 sm:flex-row'>
+                <div class='flex flex-col gap-4 sm:flex-row' data-nosnippet>
                     <a
                         href='#experience'
                         class='rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 px-8 py-4 text-center font-semibold text-white transition-all duration-300 hover:scale-105 hover:from-cyan-700 hover:to-blue-700 hover:shadow-lg hover:shadow-cyan-500/25'
@@ -157,12 +157,12 @@ const THEMES = {
             </div>
 
             <!-- Photo -->
-            <div class='flex justify-center lg:justify-end'>
+            <div class='m-12 flex justify-center lg:justify-end'>
                 <div class='relative'>
                     <!-- Main image container -->
                     <div class='relative'>
                         <div
-                            class='h-64 w-64 overflow-hidden rounded-4xl border-4 border-gray-700/50 shadow-2xl sm:h-80 sm:w-80'
+                            class='size-64 overflow-hidden rounded-4xl border-4 border-gray-700/50 shadow-2xl sm:size-80'
                         >
                             <img
                                 src='/me.png'
@@ -194,6 +194,7 @@ const THEMES = {
                         style='animation-delay: 0s; animation-duration: 3s;'
                     >
                     </div>
+
                     <div
                         class='absolute -bottom-6 -left-6 h-4 w-4 animate-bounce rounded-full bg-gradient-to-r from-purple-400 to-pink-500'
                         style='animation-delay: 1s; animation-duration: 2.5s;'
