@@ -38,13 +38,22 @@ const formatTelegramMessage = (message: Message): string => {
     const formattedMessage = formatMessageContent(message.message)
     const escapedEmail = escapeEmail(message.email)
 
+    const { ip, location } = message
+
+    let info = ''
+
+    if (location) info += `\n\n🌍 *Location:* ${location}`
+    if (ip) info += location ? `\n🌐 *IP:* \`${ip}\`` : `\n\n🌐 *IP:* \`${ip}\``
+
     return `✨ *New Message*
 
 👤 *${escapedName}*
 📧 ${escapedEmail}
-📝 ${escapedSubject}
+📝 ${escapedSubject} ${info}
 
-💬 ${formattedMessage}`
+💬 *Message:*
+${formattedMessage}
+`
 }
 
 export { formatTelegramMessage }

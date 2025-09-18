@@ -1,4 +1,9 @@
-import { formatTelegramMessage, sendTelegramMessage } from '@/helpers'
+import {
+    formatTelegramMessage,
+    sendTelegramMessage,
+    extractIpFromRequest,
+    extractLocationFromIp
+} from '@/helpers'
 import type { APIRoute } from 'astro'
 
 const POST: APIRoute = async ({ request }) => {
@@ -10,7 +15,17 @@ const POST: APIRoute = async ({ request }) => {
         const subject = formData.get('subject') as string
         const message = formData.get('message') as string
 
-        const telegramMessage = formatTelegramMessage({ name, email, subject, message })
+        const ip = extractIpFromRequest(request)
+        const location = await extractLocationFromIp(ip)
+
+        const telegramMessage = formatTelegramMessage({
+            name,
+            email,
+            subject,
+            message,
+            ip,
+            location
+        })
 
         await sendTelegramMessage(telegramMessage)
 
