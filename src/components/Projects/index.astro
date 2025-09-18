@@ -1,19 +1,7 @@
 ---
 import { Rocket, Globe, Layers } from '@lucide/astro'
 
-type Project = {
-    title: string
-    subtitle: string
-    period: string
-    role: string
-    impact: string
-    tech: string[]
-    highlights: string[]
-    icon: any
-    tag: 'Commercial' | 'Pet project'
-}
-
-const PROJECTS: Project[] = [
+const PROJECTS = [
     {
         title: 'Cryptonit',
         subtitle: 'High‑Performance Crypto Trading Platform (Solana)',

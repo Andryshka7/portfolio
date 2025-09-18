@@ -10,9 +10,23 @@ enum ThemeEnum {
 }
 
 const CONTACT_INFO = [
-    { name: 'Email', icon: Mail, value: 'mailto:contact@andryshka.com' },
-    { name: 'Phone', icon: Phone, value: 'tel:+371 28176717' },
-    { name: 'Location', icon: MapPin, value: 'Riga, Latvia' }
+    {
+        name: 'Email',
+        icon: Mail,
+        value: 'contact@andryshka.com',
+        href: 'mailto:contact@andryshka.com'
+    },
+    {
+        name: 'Phone',
+        icon: Phone,
+        value: '+371 28176717',
+        href: 'tel:+371 28176717'
+    },
+    {
+        name: 'Location',
+        icon: MapPin,
+        value: 'Riga, Latvia'
+    }
 ]
 
 const TECHNOLOGIES = [
@@ -131,7 +145,7 @@ const THEMES = {
                         CONTACT_INFO.map((info) => (
                             <div class='flex items-center gap-3'>
                                 <info.icon class='h-5 w-5 text-cyan-400' />
-                                <a href={info.value} class='transition-colors hover:text-cyan-400'>
+                                <a href={info.href} class='transition-colors hover:text-cyan-400'>
                                     {info.value.replace(/^(mailto:|tel:)/, '')}
                                 </a>
                             </div>
